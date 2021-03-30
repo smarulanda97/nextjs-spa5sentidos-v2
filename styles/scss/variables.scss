@@ -1,0 +1,30 @@
+@import '~bootstrap/scss/functions', '~bootstrap/scss/variables';
+
+$dark: #212529;
+
+$primary: #1bdacc;
+$secondary: #b5b5b5;
+
+$theme-colors: (
+  'white': $white,
+  'primary': $primary,
+  'secondary': $secondary,
+);
+
+$text-colors: (
+  'dark': $dark,
+  'white': $white,
+  'primary': $primary,
+  'secondary': $secondary,
+);
+
+$hovers: (
+  'main-menu-item': rgb(255 255 255 / 53%),
+);
+
+$margin-base: 1rem;
+$padding-base: 1rem;
+
+$font-family-montez: 'Montez', cursive;
+$font-family-open-sans: 'Open Sans', sans-serif;
+$font-family-paytone-one: 'Paytone One', sans-serif;

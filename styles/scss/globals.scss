@@ -1,0 +1,84 @@
+@import 'styles/scss/mixins', 'styles/scss/variables', 'styles/scss/functions';
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #FFF;
+  font-family: $font-family-open-sans !important;
+
+  a {
+    transition: 0.5s all;
+    text-decoration: none;
+
+    &:hover {
+      transition: 0.5s all;
+      text-decoration: none;
+    }
+
+    &:focus, &:hover {
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  input {
+    [type="button"], [type="submit"] {
+      transition: 0.5s all;
+    }
+  }
+
+  label {
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-paytone-one;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    &.title {
+      color: $primary;
+      font-size: 42px;
+      letter-spacing: 3px;
+      font-family: $font-family-montez;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    color: #999;
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: 1px;
+    font-family: $font-family-open-sans;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    .social-menu {
+      a {
+        width: 37px !important;
+        height: 37px !important;
+      }
+    }
+  }
+
+  .footer {
+    .social-menu {
+      margin: 1rem 0;
+
+      a {
+        width: 42px !important;
+        height: 42px !important;
+      }
+    }
+  }
+
+}
