@@ -4,14 +4,14 @@ import { ApolloProvider } from '@apollo/client';
 
 import '@styles/scss/index.scss';
 
-function App({ Component, pageProps }: AppProps) : JSX.Element {
-  const apolloClient = useApollo(pageProps)
+function App({ Component, pageProps }: AppProps): JSX.Element {
+  const apolloClient = useApollo(pageProps);
 
   return (
     <ApolloProvider client={apolloClient}>
       <Component {...pageProps} />
     </ApolloProvider>
-  )
+  );
 }
 
 export default App;

@@ -11,6 +11,15 @@
       "@components/*": [
         "components/*"
       ],
+      "@test/*": [
+        "test/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@types-app/*": [
+        "types/*"
+      ]
     },
     "target": "es5",
     "lib": [
@@ -18,7 +27,6 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -27,8 +35,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
-    "jsx": "preserve"
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "allowJs": false
   },
   "include": [
     "next-env.d.ts",
@@ -36,6 +45,7 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "./*.d.ts"
   ]
 }

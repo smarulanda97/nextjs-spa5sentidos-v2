@@ -4,18 +4,34 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
   ],
-  setupFilesAfterEnv: ['<rootDir>/lib/jest/setupTests.js'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
+  globalSetup: '<rootDir>/lib/jest/setupEnv.ts',
+  setupFilesAfterEnv: ['<rootDir>/lib/jest/setupTests.tsx'],
+  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.css$': '<rootDir>/lib/jest/cssTransform.js',
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   moduleNameMapper: {
+    /**
+     * Path aliases
+     */
+    '^@hoc/(.*)': '<rootDir>/hoc/$1',
+    '^@lib/(.*)': '<rootDir>/lib/$1',
+    '^@utils/(.*)': '<rootDir>/utils/$1',
+    '^@hooks/(.*)': '<rootDir>/hooks/$1',
+    '^@pages/(.*)': '<rootDir>/pages/$1',
+    '^@styles/(.*)': '<rootDir>/styles/$1',
+    '^@components/(.*)': '<rootDir>/components/$1',
+    '^@test/(.*)': '<rootDir>/test/$1',
+    '^@types-app/(.*)': '<rootDir>/types/$1',
+    /**
+     * Mocks
+     */
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/mocks/fileMock.js',
   },
 };
