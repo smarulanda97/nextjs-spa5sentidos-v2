@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { useApollo } from '@lib/apollo/client';
 import { ApolloProvider } from '@apollo/client';
+import { appWithTranslation } from 'next-i18next';
 
 import '@styles/scss/index.scss';
 
@@ -14,4 +15,4 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
   );
 }
 
-export default App;
+export default appWithTranslation(App);

@@ -1,10 +1,12 @@
 import { useQuery } from '@apollo/client';
+import { useTranslation } from 'next-i18next';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import { ServicesList, Link } from '@components/index';
 import { GET_SERVICES_HOME } from '@components/queries';
 
 const ServicesHome: React.FC = (): React.ReactElement => {
+  const { t } = useTranslation('common');
   const { loading, error, data } = useQuery(GET_SERVICES_HOME);
 
   return (
@@ -14,7 +16,7 @@ const ServicesHome: React.FC = (): React.ReactElement => {
           <h2
             className={`text-capitalize font-weight-bold text-center title mb-sm-5 mb-4`}
           >
-            {'Popular services'}
+            {t('popular_services')}
           </h2>
           <ServicesList loading={loading} data={data} error={error} />
           <Row>
