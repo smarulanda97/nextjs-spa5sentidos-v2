@@ -37,7 +37,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "allowJs": false
+    "allowJs": false,
+    "plugins": [{
+      "name": "typescript-plugin-css-modules"
+    }]
   },
   "include": [
     "next-env.d.ts",
