@@ -1,0 +1,35 @@
+@import 'styles/scss/variables', 'styles/scss/mixins';
+
+.service {
+  text-align: center;
+
+  h3 {
+    min-height: 4rem;
+    letter-spacing: 1px;
+    font-size: $font-size-base * 1.35;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.serviceButtons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 1rem;
+
+  a {
+    width: 72%;
+    margin-bottom: $margin-base * .625;
+
+    @include respond-below(lg) {
+      width: 50%
+    }
+    @include respond-below(sm) {
+      width: 55%;
+    }
+  }
+}

@@ -5,10 +5,7 @@ const ServicesList: React.FC<any> = ({ loading, data = {}, error }) => {
   const { services = [] }: { services?: Array<any> } = data;
 
   return (
-    <div
-      className={`row text-sm-left text-center justify-content-center`}
-      data-testid={'services-list'}
-    >
+    <div className={`row text-sm-left text-center justify-content-center`}>
       {!loading &&
         !error &&
         services.map((service) => (

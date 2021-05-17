@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles, { linkComponent } from './Link.module.scss';
 
 import { LinkComponentProps } from '@types-app/index';
 
@@ -11,7 +12,10 @@ const LinkComponent: React.FC<LinkComponentProps> = ({
 }): React.ReactElement => {
   return (
     <Link href={href}>
-      <a className={`btn btn-sm ${color} ${className}`} target={target}>
+      <a
+        className={`btn btn-sm ${linkComponent} ${styles[color]} ${className}`}
+        target={target}
+      >
         {text}
       </a>
     </Link>

@@ -1,26 +1,27 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 
 export const GET_SERVICES_HOME = gql`
-  query getServicesHome {
+  query getServicesHomes($locale: String) {
     services(
-      where: { published: true, promoted_to_front_page: true }
+      locale: $locale
+      where: { featured: true }
       sort: "updated_at:desc"
       limit: 4
     ) {
       id
-      title_es
-      title_en
-      slug_es
-      slug_en
-      summary_es
-      summary_en
+      title
+      summary
+      slug
       images {
-        featured {
-          name
-          ext
+        thumbnail {
           url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
         }
       }
     }
   }
-`
+`;
