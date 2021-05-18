@@ -21,9 +21,7 @@ export const getServerSideProps: any = async ({
 
   await apolloClient.query({
     query: GET_SERVICES_HOME,
-    variables: {
-      locale,
-    },
+    variables: { locale },
   });
 
   return addApolloState(apolloClient, {

@@ -2,19 +2,14 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import { server } from '@test/mocks/server';
+import '@mocks/next/index';
+import { server } from '@mocks/msw/server';
 import '@testing-library/jest-dom/extend-expect';
 
 beforeAll(() => {
   server.listen();
 });
 
-afterEach(() => {
-  server.resetHandlers();
-});
-
 afterAll(() => {
   server.close();
 });
-
-jest.mock('next/image', () => ({ src, alt }) => <img src={src} alt={alt} />);

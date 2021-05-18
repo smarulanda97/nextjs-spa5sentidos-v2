@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_SERVICES_HOME = gql`
-  query getServicesHomes($locale: String) {
+  query GetServicesHomes($locale: String) {
     services(
       locale: $locale
       where: { featured: true }
