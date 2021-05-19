@@ -1,4 +1,4 @@
-import { ServicesHome } from '@components/index';
+import { App, ServicesHome } from '@components/index';
 import { GET_SERVICES_HOME } from '@components/queries';
 import { GetServerSidePropsContext, NextPage } from 'next';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
@@ -6,11 +6,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <main>
-        <ServicesHome />
-      </main>
-    </div>
+    <App layout={true}>
+      <ServicesHome />
+    </App>
   );
 };
 
