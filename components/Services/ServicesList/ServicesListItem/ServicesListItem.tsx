@@ -22,7 +22,12 @@ const ServicesListItem = ({ service }) => {
         alt={`${service.title} service`}
       />
       <div>
-        <h3 className="text-capitalize text-dark mt-3 mb-2">{service.title}</h3>
+        <h3
+          className="text-capitalize text-dark mt-3 mb-2"
+          data-testid={'service-title'}
+        >
+          {service.title}
+        </h3>
         <p>
           {service.summary.slice(0, 180)}
           {service.summary.length > 180 && ' ...'}

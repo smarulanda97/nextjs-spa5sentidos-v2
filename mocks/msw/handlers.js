@@ -13,7 +13,7 @@ export const handlers = [
             slug: 'facial-cleansing',
             images: {
               thumbnail: {
-                url: '/uploads/facial_4b4ed17ca5.jpg',
+                url: '/facial_4b4ed17ca5.jpg',
                 name: 'facial.jpg',
                 width: 300,
                 height: 200,
@@ -30,7 +30,7 @@ export const handlers = [
             slug: 'suction-cups',
             images: {
               thumbnail: {
-                url: '/uploads/ventosas_e996b63215.jpg',
+                url: '/ventosas_e996b63215.jpg',
                 name: 'ventosas.jpg',
                 width: 255,
                 height: 170,
@@ -47,7 +47,7 @@ export const handlers = [
             slug: 'volcanic-rocks',
             images: {
               thumbnail: {
-                url: '/uploads/piedras_e480a7949f.jpg',
+                url: '/piedras_e480a7949f.jpg',
                 name: 'piedras.jpg',
                 width: 300,
                 height: 200,
@@ -64,7 +64,7 @@ export const handlers = [
             slug: 'relaxing-massage',
             images: {
               thumbnail: {
-                url: '/uploads/relajante_0bdc85cbc9.jpg',
+                url: '/relajante_0bdc85cbc9.jpg',
                 name: 'relajante.jpg',
                 width: 300,
                 height: 200,

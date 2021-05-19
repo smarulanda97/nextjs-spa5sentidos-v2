@@ -17,16 +17,19 @@ describe('Home page - Services list', () => {
     const servicesImages = await screen.findAllByRole('img');
     expect(servicesImages).toHaveLength(4);
 
-    // const altText = servicesImages.map((element: any) => element.alt);
-    // expect(altText).toEqual([
-    //   'Facial cleansing service',
-    //   'Suction cups service',
-    // ]);
-    //
-    // /** Render links */
-    const linksLearnMore = await screen.getAllByText(
-      /(learn_more|book_massage)/i
-    );
+    const servicesTitles = screen.getAllByTestId('service-title');
+    const titlesText: string[] = servicesTitles.map((element: HTMLElement) => {
+      return `${element.textContent.toLowerCase()} service`;
+    });
+    expect(titlesText).toEqual([
+      'facial cleansing service',
+      'suction cups service',
+      'volcanic rocks service',
+      'relaxing massage service',
+    ]);
+
+    /** Render links */
+    const linksLearnMore = screen.getAllByText(/(learn_more|book_massage)/i);
     expect(linksLearnMore).toHaveLength(8);
   });
 });
