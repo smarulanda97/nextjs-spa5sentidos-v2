@@ -1,4 +1,4 @@
-@import 'styles/scss/variables', 'styles/scss/functions', '~bootstrap/scss/variables';
+@import 'styles/scss/variables', 'styles/scss/functions', './../../node_modules/bootstrap/scss/variables';
 
 @mixin respond-above($breakpoint) {
   @if map-has-key($grid-breakpoints, $breakpoint) {
