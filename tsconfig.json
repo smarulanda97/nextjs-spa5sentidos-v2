@@ -14,6 +14,9 @@
       "@mocks/*": [
         "mocks/*"
       ],
+      "@context/*": [
+        "context/*"
+      ],
       "@utils/*": [
         "utils/*"
       ],

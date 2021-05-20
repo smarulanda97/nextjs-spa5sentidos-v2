@@ -25,6 +25,7 @@ module.exports = {
     '^@hooks/(.*)': '<rootDir>/hooks/$1',
     '^@pages/(.*)': '<rootDir>/pages/$1',
     '^@styles/(.*)': '<rootDir>/styles/$1',
+    '^@context/(.*)': '<rootDir>/context/$1',
     '^@components/(.*)': '<rootDir>/components/$1',
     '^@mocks/(.*)': '<rootDir>/mocks/$1',
     '^@types-app/(.*)': '<rootDir>/types/$1',
