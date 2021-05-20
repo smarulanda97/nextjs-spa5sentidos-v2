@@ -1,6 +1,36 @@
 import { graphql } from 'msw';
 
 export const handlers = [
+  graphql.query('GetAppConfig', (req, res, ctx) => {
+    return res(
+      ctx.data({
+        config: {
+          system: {
+            site_name: 'Spa 5 Sentidos',
+            email: 'leidymejia17@gmail.com',
+            phone_number: '+57 301 4808380',
+            address: 'Cra 90 # 43-57',
+            logo: {
+              url: '/uploads/logo_b896676e1c.png',
+              name: 'logo.png',
+              width: 250,
+              height: 60,
+              alternativeText: 'Spa 5 Sentidos logo',
+              provider_metadata: null,
+            },
+            favicon: {
+              url: '/uploads/favicon_f4c102cac2.ico',
+              name: 'favicon.ico',
+              width: null,
+              height: null,
+              alternativeText: '',
+              provider_metadata: null,
+            },
+          },
+        },
+      })
+    );
+  }),
   graphql.query('GetServicesHomes', (req, res, ctx) => {
     return res(
       ctx.data({
@@ -13,7 +43,7 @@ export const handlers = [
             slug: 'facial-cleansing',
             images: {
               thumbnail: {
-                url: '/facial_4b4ed17ca5.jpg',
+                url: '/uploads/facial_4b4ed17ca5.jpg',
                 name: 'facial.jpg',
                 width: 300,
                 height: 200,
@@ -30,7 +60,7 @@ export const handlers = [
             slug: 'suction-cups',
             images: {
               thumbnail: {
-                url: '/ventosas_e996b63215.jpg',
+                url: '/uploads/ventosas_e996b63215.jpg',
                 name: 'ventosas.jpg',
                 width: 255,
                 height: 170,
@@ -47,7 +77,7 @@ export const handlers = [
             slug: 'volcanic-rocks',
             images: {
               thumbnail: {
-                url: '/piedras_e480a7949f.jpg',
+                url: '/uploads/piedras_e480a7949f.jpg',
                 name: 'piedras.jpg',
                 width: 300,
                 height: 200,
@@ -64,7 +94,7 @@ export const handlers = [
             slug: 'relaxing-massage',
             images: {
               thumbnail: {
-                url: '/relajante_0bdc85cbc9.jpg',
+                url: '/uploads/relajante_0bdc85cbc9.jpg',
                 name: 'relajante.jpg',
                 width: 300,
                 height: 200,

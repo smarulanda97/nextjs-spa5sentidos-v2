@@ -3,6 +3,7 @@ import { NextRouter } from 'next/router';
 import { mockRouter } from '@mocks/next';
 import { createApolloClient } from '@lib/apollo/client';
 import { ApolloClient, ApolloProvider } from '@apollo/client';
+import { AppConfigProvider } from '@context/AppConfig/AppConfigContext';
 import { RouterContext } from 'next/dist/next-server/lib/router-context';
 import { render as defaultRender, RenderResult } from '@testing-library/react';
 
@@ -25,7 +26,9 @@ export function render(
   if (!wrapper) {
     wrapper = ({ children }: { children: React.ReactElement }) => (
       <RouterContext.Provider value={{ ...mockRouter, ...router }}>
-        <ApolloProvider client={client}>{children}</ApolloProvider>
+        <ApolloProvider client={client}>
+          <AppConfigProvider>{children}</AppConfigProvider>
+        </ApolloProvider>
       </RouterContext.Provider>
     );
   }
