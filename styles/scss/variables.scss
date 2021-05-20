@@ -9,6 +9,8 @@ $theme-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
+  "white-transparent": rgb(255, 255, 255, .55),
+  "primary-transparent": rgb(27, 218, 204, .75),
 );
 
 $text-colors: (
