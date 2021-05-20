@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import styles, { linkComponent } from './Link.module.scss';
 
-import { LinkComponentProps } from '@types-app/index';
+import { ButtonColors } from '@types-app/index';
+
+export type LinkComponentProps = {
+  text: string;
+  href?: string;
+  target?: string;
+  className?: string;
+  color: ButtonColors;
+};
 
 const LinkComponent: React.FC<LinkComponentProps> = ({
   text,
