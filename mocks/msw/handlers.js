@@ -31,6 +31,81 @@ export const handlers = [
       })
     );
   }),
+  graphql.query('GetLayoutData', (req, res, ctx) => {
+    return res(
+      ctx.data({
+        mainMenu: [
+          {
+            id: '2',
+            name: 'main-navigation',
+            machine_name: 'main-navigation-en',
+            items: [
+              {
+                id: '6',
+                title: 'Home',
+                link: '/',
+              },
+              {
+                id: '7',
+                title: 'About us',
+                link: '/about-us',
+              },
+              {
+                id: '8',
+                title: 'Services',
+                link: '/services',
+              },
+              {
+                id: '9',
+                title: 'Gallery',
+                link: '/gallery',
+              },
+              {
+                id: '10',
+                title: 'Contact us',
+                link: '/contact-us',
+              },
+            ],
+          },
+        ],
+        socialMenu: [
+          {
+            id: '4',
+            name: 'social-navigation',
+            machine_name: 'social-navigation-en',
+            items: [
+              {
+                id: '13',
+                title: 'Instagram',
+                link: 'https://www.instagram.com/spa5sentidos_medellin/',
+                icon: {
+                  url: '/uploads/instagram_ba8c4f6fbf.svg',
+                  name: 'instagram.svg',
+                  width: 448,
+                  height: 448,
+                  alternativeText: '',
+                  provider_metadata: null,
+                },
+              },
+              {
+                id: '14',
+                title: 'Whatsapp',
+                link: 'https://api.whatsapp.com/send?phone=573014808380',
+                icon: {
+                  url: '/uploads/whatsapp_bb5d1863fb.svg',
+                  name: 'whatsapp.svg',
+                  width: 512,
+                  height: 512,
+                  alternativeText: '',
+                  provider_metadata: null,
+                },
+              },
+            ],
+          },
+        ],
+      })
+    );
+  }),
   graphql.query('GetServicesHomes', (req, res, ctx) => {
     return res(
       ctx.data({

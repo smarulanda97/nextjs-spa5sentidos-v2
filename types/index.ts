@@ -34,3 +34,19 @@ export type AppConfigQueryData = {
     system: SystemConfig;
   };
 };
+
+export type MenuItem = {
+  id: string;
+  link: string;
+  title: string;
+  icon?: StrapiImage;
+  __typename?: string;
+};
+
+export type Menu = {
+  id: string;
+  name: string;
+  __typename?: string;
+  machine_name: string;
+  items: MenuItem[];
+};

@@ -1,5 +1,5 @@
 import { App } from '@components/index';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@utils/testUtils';
 
 describe('App component', () => {
   test('Render layout component when layout property is set to true', () => {

@@ -1,5 +1,5 @@
 import { App, ServicesHome } from '@components/index';
-import { GET_SERVICES_HOME } from '@components/queries';
+import { GET_SERVICES_HOME, GET_LAYOUT_DATA } from '@components/queries';
 import { GetServerSidePropsContext, NextPage } from 'next';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -23,6 +23,10 @@ export const getServerSideProps: any = async ({
     apolloClient.query({
       variables,
       query: GET_APP_CONFIG,
+    }),
+    apolloClient.query({
+      variables,
+      query: GET_LAYOUT_DATA,
     }),
     apolloClient.query({
       variables,

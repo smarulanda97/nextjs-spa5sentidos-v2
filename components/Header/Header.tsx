@@ -6,14 +6,18 @@ import { asset } from '@utils/imageUtils';
 import styles from './Header.module.scss';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  children?: JSX.Element;
+};
+
+const Header: React.FC<HeaderProps> = ({ children }) => {
   const {
     system: { logo },
   } = useAppConfig();
 
   return (
     <div className={styles.header}>
-      <Navbar>
+      <Navbar expand={'lg'}>
         <div className={styles.brand}>
           {logo && (
             <Link href={'/'}>
@@ -28,6 +32,13 @@ const Header: React.FC = () => {
             </Link>
           )}
         </div>
+        <Navbar.Toggle aria-controls={'basic-navbar-nav'} />
+        <Navbar.Collapse
+          id={'basic-navbar-nav'}
+          data-testid={'navbar-collapse'}
+        >
+          {children}
+        </Navbar.Collapse>
       </Navbar>
     </div>
   );
