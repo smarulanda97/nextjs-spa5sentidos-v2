@@ -15,7 +15,7 @@ const LinkComponent: React.FC<LinkComponentProps> = ({
   text,
   color,
   href = '#',
-  target = '_SELF',
+  target = '_self',
   className = '',
 }): React.ReactElement => {
   return (

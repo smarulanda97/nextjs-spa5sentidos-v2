@@ -25,6 +25,9 @@ export const GET_APP_CONFIG = gql`
           provider_metadata
         }
       }
+      app {
+        elfsight_token
+      }
     }
   }
 `;

@@ -1,13 +1,7 @@
 import { useQuery } from '@apollo/client';
-import { AppConFig, AppConfigQueryData } from '@types-app/index';
+import { ConFig, AppConfigQueryData } from '@types-app/index';
 import { GET_APP_CONFIG } from '@context/AppConfig/AppConfigContext.queries';
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 
 type Props = {
   children: JSX.Element;
@@ -16,7 +10,7 @@ type Props = {
 /**
  * Define a default values for context
  */
-const appConfigDefaultValues: AppConFig = {
+const appConfigDefaultValues: ConFig = {
   system: {
     email: '',
     phone: '',
@@ -27,12 +21,12 @@ const appConfigDefaultValues: AppConFig = {
   },
 };
 
-const AppConfigContext = createContext<AppConFig>(appConfigDefaultValues);
+const AppConfigContext = createContext<ConFig>(appConfigDefaultValues);
 
 /**
  * Create custom useAppConfig hook
  */
-export function useAppConfig(): AppConFig {
+export function useAppConfig(): ConFig {
   const context = useContext(AppConfigContext);
 
   if (!context) {

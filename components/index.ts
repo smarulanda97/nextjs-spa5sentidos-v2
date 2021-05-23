@@ -3,6 +3,7 @@ export { default as Header } from './Header/Header';
 export { default as Layout } from './Layout/Layout';
 export { default as Link } from './Common/Link/Link';
 export { default as Navigation } from './Navigation/Navigation';
+export { default as InstagramFeed } from './InstagramFeed/InstagramFeed';
 export { default as ServicesHome } from './Services/ServicesHome/ServicesHome';
 export { default as ServicesList } from './Services/ServicesList/ServicesList';
 export { default as NavigationItem } from './Navigation/NavigationItem/NavigationItem';

@@ -23,9 +23,15 @@ type SystemConfig = {
   favicon: StrapiImage | null;
 };
 
-export type AppConFig = {
+type AppConfig = {
+  elfsight_token: string;
+  __typename?: string;
+};
+
+export type ConFig = {
   __typename?: string;
   system: SystemConfig;
+  app: AppConfig;
 };
 
 export type AppConfigQueryData = {

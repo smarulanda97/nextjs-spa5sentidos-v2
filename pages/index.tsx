@@ -1,14 +1,18 @@
-import { App, ServicesHome } from '@components/index';
-import { GET_SERVICES_HOME, GET_LAYOUT_DATA } from '@components/queries';
+import React from 'react';
 import { GetServerSidePropsContext, NextPage } from 'next';
+import { App, InstagramFeed, ServicesHome } from '@components/index';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
+import { GET_SERVICES_HOME, GET_LAYOUT_DATA } from '@components/queries';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GET_APP_CONFIG } from '@context/AppConfig/AppConfigContext.queries';
 
 const Home: NextPage = () => {
   return (
     <App layout={true}>
-      <ServicesHome />
+      <React.Fragment>
+        <ServicesHome />
+        <InstagramFeed />
+      </React.Fragment>
     </App>
   );
 };

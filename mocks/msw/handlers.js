@@ -27,6 +27,9 @@ export const handlers = [
               provider_metadata: null,
             },
           },
+          app: {
+            elfsight_token: 'elfsight-app-cbdcfb04-79f1-478c-b662-23542ada80d4',
+          },
         },
       })
     );
