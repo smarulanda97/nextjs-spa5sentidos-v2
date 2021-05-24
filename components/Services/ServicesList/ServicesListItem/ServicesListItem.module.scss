@@ -3,10 +3,18 @@
 .service {
   text-align: center;
 
+  @include respond-below(sm) {
+    margin-top: $margin-base;
+    padding-top: $padding-base;
+  }
+
   h3 {
-    min-height: 4rem;
     letter-spacing: 1px;
     font-size: $font-size-base * 1.35;
+
+    @include respond-above(sm) {
+      min-height: 4rem;
+    }
   }
 
   p {

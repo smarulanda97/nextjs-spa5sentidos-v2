@@ -9,6 +9,7 @@ import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 const InstagramFeed: React.FC = () => {
   const { app } = useAppConfig();
   const { t } = useTranslation('common');
+
   const handleLoadScript = () => {
     const interval = setInterval(() => {
       const buttonFreeWidget = document.querySelector('.eapps-link');
@@ -37,7 +38,7 @@ const InstagramFeed: React.FC = () => {
         </Row>
         <Link
           target={'_blank'}
-          text={'follow_us'}
+          text={t('follow_us')}
           className={'my-5'}
           color={ButtonColors.primary}
         />
