@@ -38,6 +38,7 @@ export type AppConfigQueryData = {
   config: {
     id: string;
     system: SystemConfig;
+    app: AppConfig;
   };
 };
 

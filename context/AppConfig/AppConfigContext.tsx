@@ -19,6 +19,9 @@ const appConfigDefaultValues: ConFig = {
     logo: null,
     favicon: null,
   },
+  app: {
+    elfsight_token: '',
+  },
 };
 
 const AppConfigContext = createContext<ConFig>(appConfigDefaultValues);
