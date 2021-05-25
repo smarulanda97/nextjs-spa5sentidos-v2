@@ -10,6 +10,7 @@
   "learn_more": "Leer más",
   "other_services": "Otros servicios",
   "popular_services": "Servicios Populares",
+  "powered_by": "Desarrollado por {{ author }}",
   "services": "Servicios",
   "spanish": "Español",
   "see_more": "Ver más"

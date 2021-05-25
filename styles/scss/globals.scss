@@ -61,24 +61,48 @@ body {
     padding: 0;
   }
 
-  .header {
+  header {
+    .brand {
+      @include respond-below(sm) {
+        max-width: 200px;
+      }
+    }
+
     .social-menu {
-      a {
-        width: 37px !important;
-        height: 37px !important;
+      @include respond-below(sm) {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .nav-link {
+
+        @include respond-below(sm) {
+          margin: 0 $margin-base * .7;
+        }
+        img {
+          width: 32px;
+        }
       }
     }
   }
 
-  .footer {
+  footer {
     .social-menu {
-      margin: 1rem 0;
+      justify-content: center;
 
-      a {
-        width: 42px !important;
-        height: 42px !important;
+
+      .nav-link {
+        display: block;
+        border-radius: 50%;
+        text-align: center;
+        margin: 0 $margin-base * .7;
+        padding: $padding-base * .2 !important;
+        border: dashed 2px theme-color('secondary');
+
+        img {
+          width: 35px;
+        }
       }
     }
   }
-
 }

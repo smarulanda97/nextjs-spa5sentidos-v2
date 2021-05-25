@@ -1,8 +1,8 @@
-import { Layout } from '@components/index';
+import { Footer, Layout } from '@components/index';
 import { render, within } from '@utils/testUtils';
 
 describe('Layout component', () => {
-  test('Render main navigation', async () => {
+  test('Render main navigation and social in header', async () => {
     const { getByRole, findByTestId, getByTestId } = render(<Layout />);
 
     /** Render nav container */
@@ -20,6 +20,25 @@ describe('Layout component', () => {
     expect(socialMenu).toBeInTheDocument();
 
     const socialMenuIcons = within(socialMenu).getAllByRole('img');
-    expect(socialMenuIcons.length).toBeGreaterThanOrEqual(2);
+    expect(socialMenuIcons).toHaveLength(2);
+  });
+
+  test('Render social navigation in footer', async () => {
+    const { findByTestId } = render(<Layout />);
+
+    const socialMenu = await findByTestId('social-menu-footer');
+    expect(socialMenu).toBeInTheDocument();
+
+    const socialMenuIcons = within(socialMenu).getAllByRole('img');
+    expect(socialMenuIcons).toHaveLength(2);
+
+    const socialLinks = within(socialMenu).getAllByRole('button');
+    expect(socialLinks).toHaveLength(2);
+  });
+
+  test('Render copyright', () => {
+    const { getByText } = render(<Layout />);
+    expect(getByText(/all_rights_reserved/gi)).toBeInTheDocument();
+    expect(getByText(/powered_by/gi)).toBeInTheDocument();
   });
 });
