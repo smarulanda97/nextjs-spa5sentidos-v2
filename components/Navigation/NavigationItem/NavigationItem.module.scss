@@ -5,7 +5,8 @@
   transition: 0.5s all;
   text-transform: uppercase;
   font-size: $font-size-base * .95;
-  color: text-color('dark') !important;
+  color: text-color('white') !important;
+  text-shadow: 1px 1px #000;
 
   @include respond-above(lg) {
     padding: $padding-base * 1.625 $padding-base * 1.25;
@@ -25,10 +26,6 @@
 
 .navLinkIcon {
   font-size: 0;
-
-  img {
-    width: $font-size-base * 2;
-  }
 
   &:hover {
     color: #fff;

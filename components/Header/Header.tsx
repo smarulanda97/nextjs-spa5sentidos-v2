@@ -17,8 +17,8 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 
   return (
     <div className={styles.header}>
-      <Navbar expand={'lg'}>
-        <div className={styles.brand}>
+      <Navbar expand={'lg'} className={'py-lg-0'}>
+        <div className={`brand ${styles.brand}`}>
           {logo && (
             <Link href={'/'}>
               <a className={'d-block'}>
