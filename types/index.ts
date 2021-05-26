@@ -20,6 +20,7 @@ type SystemConfig = {
   site_name: string;
   __typename?: string;
   logo: StrapiImage | null;
+  logo_footer: StrapiImage | null;
   favicon: StrapiImage | null;
 };
 

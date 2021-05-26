@@ -18,6 +18,7 @@ const appConfigDefaultValues: ConFig = {
     site_name: '',
     logo: null,
     favicon: null,
+    logo_footer: null,
   },
   app: {
     elfsight_token: '',

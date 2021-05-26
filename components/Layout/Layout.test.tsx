@@ -1,5 +1,5 @@
-import { Footer, Layout } from '@components/index';
-import { render, within } from '@utils/testUtils';
+import { Layout } from '@components/index';
+import { render, within, screen } from '@utils/testUtils';
 
 describe('Layout component', () => {
   test('Render main navigation and social in header', async () => {
@@ -34,6 +34,18 @@ describe('Layout component', () => {
 
     const socialLinks = within(socialMenu).getAllByRole('button');
     expect(socialLinks).toHaveLength(2);
+  });
+
+  test('Render logo in footer', async () => {
+    const { findByRole } = render(<Layout />);
+
+    const footer = await findByRole('contentinfo');
+    expect(footer).toBeInTheDocument();
+
+    const logo = within(footer).getByRole('img', {
+      name: /spa 5 sentidos logo/i,
+    });
+    expect(logo).toBeInTheDocument();
   });
 
   test('Render copyright', () => {

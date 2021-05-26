@@ -18,6 +18,14 @@ export const handlers = [
               alternativeText: 'Spa 5 Sentidos logo',
               provider_metadata: null,
             },
+            logo_footer: {
+              url: '/uploads/logo_footer_c7e33bbcf4.png',
+              name: 'logo_footer.png',
+              width: 250,
+              height: 60,
+              alternativeText: 'Spa 5 Sentidos logo',
+              provider_metadata: null,
+            },
             favicon: {
               url: '/uploads/favicon_f4c102cac2.ico',
               name: 'favicon.ico',

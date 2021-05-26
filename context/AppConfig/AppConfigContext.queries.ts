@@ -16,6 +16,14 @@ export const GET_APP_CONFIG = gql`
           alternativeText
           provider_metadata
         }
+        logo_footer {
+          url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
+        }
         favicon {
           url
           name
