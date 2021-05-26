@@ -1,0 +1,37 @@
+@import 'styles/scss/mixins', 'styles/scss/variables', 'styles/scss/functions';
+
+.blockBase {
+  margin-top: $margin-base * 20;
+  margin-bottom: $margin-base * 5;
+
+  @include respond-below(sm) {
+    margin-bottom: $margin-base * 4;
+  }
+}
+
+.video {
+  text-align: center;
+  margin-top: -15rem;
+
+  iframe {
+    width: 800px;
+    height: 466px;
+    max-width: 100%;
+    border: 16px solid #fff;
+    box-shadow: 0 2px 13px 2px rgb(0 0 0 / 33%)
+  }
+}
+
+.content {
+  padding-top: $padding-base * 1;
+  padding-bottom: $padding-base * 5;
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
+  color: text-color('white');
+
+  h2, h3 {
+    margin-top: $margin-base * 1.5;
+    margin-bottom: $margin-base * 1.5;
+  }
+}

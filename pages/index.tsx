@@ -1,16 +1,26 @@
 import React from 'react';
 import { GetServerSidePropsContext, NextPage } from 'next';
-import { App, InstagramFeed, ServicesHome } from '@components/index';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
-import { GET_SERVICES_HOME, GET_LAYOUT_DATA } from '@components/queries';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GET_APP_CONFIG } from '@context/AppConfig/AppConfigContext.queries';
+import {
+  App,
+  VideoBlock,
+  InstagramFeed,
+  ServicesHome,
+} from '@components/index';
+import {
+  GET_SERVICES_HOME,
+  GET_LAYOUT_DATA,
+  GET_VIDEO_BLOCK_DATA,
+} from '@components/queries';
 
 const Home: NextPage = () => {
   return (
     <App layout={true}>
       <React.Fragment>
         <ServicesHome />
+        <VideoBlock />
         <InstagramFeed />
       </React.Fragment>
     </App>
@@ -35,6 +45,10 @@ export const getServerSideProps: any = async ({
     apolloClient.query({
       variables,
       query: GET_SERVICES_HOME,
+    }),
+    apolloClient.query({
+      variables,
+      query: GET_VIDEO_BLOCK_DATA,
     }),
   ]);
 

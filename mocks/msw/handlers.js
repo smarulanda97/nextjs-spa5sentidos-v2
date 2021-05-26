@@ -34,6 +34,33 @@ export const handlers = [
       })
     );
   }),
+  graphql.query('GetVideoBlockData', (req, res, ctx) => {
+    return res(
+      ctx.data({
+        videoBlock: [
+          {
+            id: '2',
+            title: 'Spa Overview',
+            machine_name: 'block-overview',
+            video_id: 'MFROybUazN4',
+            body:
+              '*Lorem ipsum ed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.*',
+            images: {
+              desktop: {
+                url: '/uploads/backround_block_overview_cd75fa1c81.jpg',
+                name: 'backround_block_overview.jpg',
+                width: 1680,
+                height: 800,
+                alternativeText: '',
+                provider_metadata: null,
+              },
+              mobile: null,
+            },
+          },
+        ],
+      })
+    );
+  }),
   graphql.query('GetLayoutData', (req, res, ctx) => {
     return res(
       ctx.data({

@@ -1,7 +1,10 @@
 export { default as App } from './App/App';
 export { default as Header } from './Header/Header';
+export { default as Footer } from './Footer/Footer';
 export { default as Layout } from './Layout/Layout';
 export { default as Link } from './Common/Link/Link';
+export { default as BlockBase } from './BlockBase/BlockBase';
+export { default as VideoBlock } from './VideoBlock/VideoBlock';
 export { default as Navigation } from './Navigation/Navigation';
 export { default as InstagramFeed } from './InstagramFeed/InstagramFeed';
 export { default as ServicesHome } from './Services/ServicesHome/ServicesHome';
