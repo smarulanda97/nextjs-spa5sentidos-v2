@@ -26,12 +26,12 @@ const ServicesHome: FC = (): ReactElement => {
         <ServicesList loading={loading} data={data} error={error} />
         <Row>
           <Col className={'text-center pt-4'}>
-            <Link
-              href={'/services'}
-              color={ButtonColors.primary}
-              text={t('other_services')}
-              className={'w-sm-100'}
-            />
+            {/*<Link*/}
+            {/*  href={'/services'}*/}
+            {/*  color={ButtonColors.primary}*/}
+            {/*  text={t('other_services')}*/}
+            {/*  className={'w-sm-100'}*/}
+            {/*/>*/}
           </Col>
         </Row>
       </Container>

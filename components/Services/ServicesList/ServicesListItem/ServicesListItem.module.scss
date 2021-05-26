@@ -20,6 +20,7 @@
   p {
     text-align: left;
   }
+
 }
 
 .serviceButtons {
@@ -29,6 +30,11 @@
   justify-content: space-around;
   margin-top: 1rem;
 
+  @include respond-below(sm) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
   a {
     width: 72%;
     margin-bottom: $margin-base * .625;
@@ -37,7 +43,7 @@
       width: 50%
     }
     @include respond-below(sm) {
-      width: 55%;
+      width: 42%;
     }
   }
 }
