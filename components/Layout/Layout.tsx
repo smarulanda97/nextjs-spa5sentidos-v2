@@ -54,7 +54,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
         {renderHeader()}
         {data && !loading && data.sliders && <Slider sliders={data.sliders} />}
       </header>
-      <main data-testid={'layout-main-container'}>{children}</main>
+      <main data-testid={'layout-main-container'} id={'main-content'}>
+        {children}
+      </main>
       {/**
        *
        * Rendering the following components
