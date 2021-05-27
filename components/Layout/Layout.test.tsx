@@ -1,7 +1,7 @@
 import { Layout } from '@components/index';
 import { render, within, screen } from '@utils/testUtils';
 
-describe('Layout component', () => {
+describe('<LayoutComponent />', () => {
   test('Render main navigation and social in header', async () => {
     const { getByRole, findByTestId, getByTestId } = render(<Layout />);
 
@@ -21,6 +21,26 @@ describe('Layout component', () => {
 
     const socialMenuIcons = within(socialMenu).getAllByRole('img');
     expect(socialMenuIcons).toHaveLength(2);
+  });
+
+  test('Render <SliderComponent />', async () => {
+    const { findByTestId, getAllByRole } = render(<Layout />);
+
+    // Render slider container
+    const slider = await findByTestId('slider-container');
+    expect(slider).toBeInTheDocument();
+
+    // Render each slider item
+    const sliderItems = within(slider).getAllByTestId('slider-item');
+    expect(sliderItems.length).toBeGreaterThanOrEqual(1);
+
+    // Check the image and title of each slider items
+    expect(getAllByRole('heading').length).toBeGreaterThanOrEqual(
+      sliderItems.length
+    );
+    expect(getAllByRole('img').length).toBeGreaterThanOrEqual(
+      sliderItems.length
+    );
   });
 
   test('Render social navigation in footer', async () => {

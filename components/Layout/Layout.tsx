@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useTranslation } from 'next-i18next';
 import { GET_LAYOUT_DATA } from '@components/queries';
-import { Footer, Header, Navigation } from '@components/index';
+import { Footer, Header, Navigation, Slider } from '@components/index';
 
 type LayoutProps = {
   children?: JSX.Element;
@@ -38,6 +38,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
             )}
           </React.Fragment>
         </Header>
+        {data && !loading && data.sliders && <Slider sliders={data.sliders} />}
       </header>
       <main id={'main-content'}>{children}</main>
       <Footer>

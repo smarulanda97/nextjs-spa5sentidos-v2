@@ -38,5 +38,28 @@ export const GET_LAYOUT_DATA = gql`
         }
       }
     }
+    sliders(locale: $locale) {
+      id
+      title
+      subtitle
+      images {
+        desktop {
+          url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
+        }
+        mobile {
+          url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
+        }
+      }
+    }
   }
 `;

@@ -141,6 +141,31 @@ export const handlers = [
             ],
           },
         ],
+        sliders: [
+          {
+            id: '2',
+            title: 'Spa 5 Sentidos - Home service in Mellin ',
+            subtitle: 'Wellbeing for your body and mind',
+            images: {
+              desktop: {
+                url: '/uploads/banner_spa_5_sentidos_desktop_798a38688e.jpg',
+                name: 'banner_spa_5_sentidos_desktop.jpg',
+                width: 1493,
+                height: 800,
+                alternativeText: '',
+                provider_metadata: null,
+              },
+              mobile: {
+                url: '/uploads/banner_spa_5_sentidos_mobile_d83958c0f0.jpg',
+                name: 'banner_spa_5_sentidos_mobile.jpg',
+                width: 500,
+                height: 526,
+                alternativeText: '',
+                provider_metadata: null,
+              },
+            },
+          },
+        ],
       })
     );
   }),
