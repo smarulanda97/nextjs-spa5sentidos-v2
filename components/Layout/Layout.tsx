@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
-import { useTranslation } from 'next-i18next';
 import { GET_DATA_LAYOUT_COMPONENT } from '@queries/index';
 import { Footer, Header, Navigation, Slider } from '@components/index';
+import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 
 type LayoutProps = {
   children?: JSX.Element;
@@ -12,7 +12,9 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = (props) => {
   const { children } = props;
   const { locale } = useRouter();
-  const { t } = useTranslation('common');
+  const {
+    system: { logo_footer },
+  } = useAppConfig();
   const { loading, data } = useQuery(GET_DATA_LAYOUT_COMPONENT, {
     variables: { locale },
   });
@@ -41,26 +43,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
         {data && !loading && data.sliders && <Slider sliders={data.sliders} />}
       </header>
       <main id={'main-content'}>{children}</main>
-      <Footer>
-        <React.Fragment>
-          {data && !loading && data.socialMenu && (
-            <Navigation
-              menu={data.socialMenu[0]}
-              testId={'social-menu-footer'}
-              className={'social-menu my-4'}
-            />
-          )}
-          <p className={'text-center'}>
-            <span>© Spa 5 Sentidos. &nbsp;</span>
-            <span>{t('all_rights_reserved')}. &nbsp;</span>
-            <span>{t('powered_by', { author: 'smarulanda97' })}.</span>
-          </p>
-        </React.Fragment>
-      </Footer>
+
+      {data && data.socialMenu && logo_footer && (
+        <Footer logoFooter={logo_footer} socialMenu={data.socialMenu[0]} />
+      )}
     </>
   );
 };
 
-const LayoutComponent = React.memo(Layout);
-
-export default LayoutComponent;
+export default React.memo(Layout);

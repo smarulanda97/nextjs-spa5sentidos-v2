@@ -58,3 +58,9 @@ export type Menu = {
   machine_name: string;
   items: MenuItem[];
 };
+
+export type NavigationProps = {
+  menu: Menu;
+  testId: string;
+  className?: string;
+};
