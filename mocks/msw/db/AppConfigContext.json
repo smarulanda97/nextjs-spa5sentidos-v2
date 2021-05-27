@@ -1,0 +1,37 @@
+{
+  "config": {
+    "system": {
+      "site_name": "Spa 5 Sentidos",
+      "email": "leidymejia17@gmail.com",
+      "phone_number": "+57 301 4808380",
+      "address": "Cra 90 # 43-57",
+      "logo": {
+        "url": "/uploads/logo_b896676e1c.png",
+        "name": "logo.png",
+        "width": 250,
+        "height": 60,
+        "alternativeText": "Spa 5 Sentidos logo",
+        "provider_metadata": null
+      },
+      "logo_footer": {
+        "url": "/uploads/logo_footer_c7e33bbcf4.png",
+        "name": "logo_footer.png",
+        "width": 250,
+        "height": 60,
+        "alternativeText": "Spa 5 Sentidos logo",
+        "provider_metadata": null
+      },
+      "favicon": {
+        "url": "/uploads/favicon_f4c102cac2.ico",
+        "name": "favicon.ico",
+        "width": null,
+        "height": null,
+        "alternativeText": "",
+        "provider_metadata": null
+      }
+    },
+    "app": {
+      "elfsight_token": "elfsight-app-cbdcfb04-79f1-478c-b662-23542ada80d4"
+    }
+  }
+}
