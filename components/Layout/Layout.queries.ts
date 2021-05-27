@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-export const GET_LAYOUT_DATA = gql`
-  query GetLayoutData($locale: String) {
+export const GET_DATA_LAYOUT_COMPONENT = gql`
+  query GET_DATA_LAYOUT_COMPONENT($locale: String) {
     mainMenu: menus(
       limit: 1
       locale: $locale

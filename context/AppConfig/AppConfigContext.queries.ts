@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-export const GET_APP_CONFIG = gql`
-  query GetAppConfig {
+export const GET_DATA_APP_CONFIG_CONTEXT = gql`
+  query GET_DATA_APP_CONFIG_CONTEXT {
     config {
       system {
         site_name

@@ -1,7 +1,7 @@
 import { graphql } from 'msw';
 
 export const handlers = [
-  graphql.query('GetAppConfig', (req, res, ctx) => {
+  graphql.query('GET_DATA_APP_CONFIG_CONTEXT', (req, res, ctx) => {
     return res(
       ctx.data({
         config: {
@@ -42,7 +42,7 @@ export const handlers = [
       })
     );
   }),
-  graphql.query('GetVideoBlockData', (req, res, ctx) => {
+  graphql.query('GET_DATA_VIDEO_BLOCK_COMPONENT', (req, res, ctx) => {
     return res(
       ctx.data({
         videoBlock: [
@@ -69,7 +69,7 @@ export const handlers = [
       })
     );
   }),
-  graphql.query('GetLayoutData', (req, res, ctx) => {
+  graphql.query('GET_DATA_LAYOUT_COMPONENT', (req, res, ctx) => {
     return res(
       ctx.data({
         mainMenu: [
@@ -169,7 +169,7 @@ export const handlers = [
       })
     );
   }),
-  graphql.query('GetServicesHomes', (req, res, ctx) => {
+  graphql.query('GET_DATA_SERVICES_HOME_COMPONENT', (req, res, ctx) => {
     return res(
       ctx.data({
         services: [

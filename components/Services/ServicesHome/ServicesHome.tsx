@@ -6,12 +6,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 import { ButtonColors } from '@types-app/index';
 import { Link, ServicesList } from '@components/index';
-import { GET_SERVICES_HOME } from '@components/queries';
+import { GET_DATA_SERVICES_HOME_COMPONENT } from '@components/queries';
 
 const ServicesHome: FC = (): ReactElement => {
   const { locale } = useRouter();
   const { t } = useTranslation('common');
-  const { loading, error, data } = useQuery(GET_SERVICES_HOME, {
+  const { loading, error, data } = useQuery(GET_DATA_SERVICES_HOME_COMPONENT, {
     variables: { locale },
   });
 

@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { ConFig, AppConfigQueryData } from '@types-app/index';
-import { GET_APP_CONFIG } from '@context/AppConfig/AppConfigContext.queries';
 import React, { createContext, useContext, useMemo } from 'react';
+import { GET_DATA_APP_CONFIG_CONTEXT } from '@context/AppConfig/AppConfigContext.queries';
 
 type Props = {
   children: JSX.Element;
@@ -44,7 +44,7 @@ export function useAppConfig(): ConFig {
  * Create AppConfigProvider
  */
 export const AppConfigProvider: React.FC<Props> = ({ children }) => {
-  const { data } = useQuery<AppConfigQueryData>(GET_APP_CONFIG);
+  const { data } = useQuery<AppConfigQueryData>(GET_DATA_APP_CONFIG_CONTEXT);
 
   const value = useMemo(() => {
     if (!data) {

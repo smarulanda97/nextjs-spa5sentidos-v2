@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-export const GET_VIDEO_BLOCK_DATA = gql`
-  query GetVideoBlockData($locale: String) {
+export const GET_DATA_VIDEO_BLOCK_COMPONENT = gql`
+  query GET_DATA_VIDEO_BLOCK_COMPONENT($locale: String) {
     videoBlock: blocks(
       limit: 1
       locale: $locale

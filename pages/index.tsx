@@ -2,7 +2,7 @@ import React from 'react';
 import { GetServerSidePropsContext, NextPage } from 'next';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { GET_APP_CONFIG } from '@context/AppConfig/AppConfigContext.queries';
+import { GET_DATA_APP_CONFIG_CONTEXT } from '@context/AppConfig/AppConfigContext.queries';
 import {
   App,
   VideoBlock,
@@ -10,9 +10,9 @@ import {
   ServicesHome,
 } from '@components/index';
 import {
-  GET_SERVICES_HOME,
-  GET_LAYOUT_DATA,
-  GET_VIDEO_BLOCK_DATA,
+  GET_DATA_LAYOUT_COMPONENT,
+  GET_DATA_SERVICES_HOME_COMPONENT,
+  GET_DATA_VIDEO_BLOCK_COMPONENT,
 } from '@components/queries';
 
 const Home: NextPage = () => {
@@ -36,19 +36,19 @@ export const getServerSideProps: any = async ({
   await Promise.all([
     apolloClient.query({
       variables,
-      query: GET_APP_CONFIG,
+      query: GET_DATA_APP_CONFIG_CONTEXT,
     }),
     apolloClient.query({
       variables,
-      query: GET_LAYOUT_DATA,
+      query: GET_DATA_LAYOUT_COMPONENT,
     }),
     apolloClient.query({
       variables,
-      query: GET_SERVICES_HOME,
+      query: GET_DATA_SERVICES_HOME_COMPONENT,
     }),
     apolloClient.query({
       variables,
-      query: GET_VIDEO_BLOCK_DATA,
+      query: GET_DATA_VIDEO_BLOCK_COMPONENT,
     }),
   ]);
 

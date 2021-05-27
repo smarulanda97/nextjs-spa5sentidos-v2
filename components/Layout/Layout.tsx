@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useTranslation } from 'next-i18next';
-import { GET_LAYOUT_DATA } from '@components/queries';
+import { GET_DATA_LAYOUT_COMPONENT } from '@components/queries';
 import { Footer, Header, Navigation, Slider } from '@components/index';
 
 type LayoutProps = {
@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const { children } = props;
   const { locale } = useRouter();
   const { t } = useTranslation('common');
-  const { loading, data } = useQuery(GET_LAYOUT_DATA, {
+  const { loading, data } = useQuery(GET_DATA_LAYOUT_COMPONENT, {
     variables: { locale },
   });
 
