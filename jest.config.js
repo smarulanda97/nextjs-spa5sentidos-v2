@@ -27,6 +27,7 @@ module.exports = {
     '^@styles/(.*)': '<rootDir>/styles/$1',
     '^@context/(.*)': '<rootDir>/context/$1',
     '^@components/(.*)': '<rootDir>/components/$1',
+    '^@queries/(.*)': '<rootDir>/queries/$1',
     '^@mocks/(.*)': '<rootDir>/mocks/$1',
     '^@types-app/(.*)': '<rootDir>/types/$1',
     /**

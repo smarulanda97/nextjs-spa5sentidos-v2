@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
+import { GET_DATA_APP_CONFIG_CONTEXT } from '@queries/index';
 import { ConFig, AppConfigQueryData } from '@types-app/index';
 import React, { createContext, useContext, useMemo } from 'react';
-import { GET_DATA_APP_CONFIG_CONTEXT } from '@context/AppConfig/AppConfigContext.queries';
 
 type Props = {
   children: JSX.Element;

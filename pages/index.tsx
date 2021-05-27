@@ -2,7 +2,6 @@ import React from 'react';
 import { GetServerSidePropsContext, NextPage } from 'next';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { GET_DATA_APP_CONFIG_CONTEXT } from '@context/AppConfig/AppConfigContext.queries';
 import {
   App,
   VideoBlock,
@@ -13,7 +12,8 @@ import {
   GET_DATA_LAYOUT_COMPONENT,
   GET_DATA_SERVICES_HOME_COMPONENT,
   GET_DATA_VIDEO_BLOCK_COMPONENT,
-} from '@components/queries';
+  GET_DATA_APP_CONFIG_CONTEXT,
+} from '@queries/index';
 
 const Home: NextPage = () => {
   return (

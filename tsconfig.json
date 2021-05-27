@@ -17,6 +17,9 @@
       "@context/*": [
         "context/*"
       ],
+      "@queries/*": [
+        "queries/*"
+      ],
       "@utils/*": [
         "utils/*"
       ],

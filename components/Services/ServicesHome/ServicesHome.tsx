@@ -2,11 +2,10 @@ import { useRouter } from 'next/router';
 import { FC, ReactElement } from 'react';
 import { useQuery } from '@apollo/client';
 import { useTranslation } from 'next-i18next';
-import { Col, Container, Row } from 'react-bootstrap';
-
 import { ButtonColors } from '@types-app/index';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Link, ServicesList } from '@components/index';
-import { GET_DATA_SERVICES_HOME_COMPONENT } from '@components/queries';
+import { GET_DATA_SERVICES_HOME_COMPONENT } from '@queries/index';
 
 const ServicesHome: FC = (): ReactElement => {
   const { locale } = useRouter();

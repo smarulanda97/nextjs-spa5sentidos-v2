@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { useTranslation } from 'next-i18next';
-import { GET_DATA_LAYOUT_COMPONENT } from '@components/queries';
+import { GET_DATA_LAYOUT_COMPONENT } from '@queries/index';
 import { Footer, Header, Navigation, Slider } from '@components/index';
 
 type LayoutProps = {
