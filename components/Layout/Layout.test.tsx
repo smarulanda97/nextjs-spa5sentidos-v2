@@ -1,12 +1,12 @@
 import { Layout } from '@components/index';
-import { render, within, screen } from '@utils/testUtils';
+import { render, within } from '@utils/testUtils';
 
 describe('<LayoutComponent />', () => {
   test('Render main navigation and social in header', async () => {
-    const { getByRole, findByTestId, getByTestId } = render(<Layout />);
+    const { findByRole, findByTestId, getByTestId } = render(<Layout />);
 
     /** Render nav container */
-    const navbar = getByRole('navigation');
+    const navbar = await findByRole('navigation');
     expect(navbar).toBeInTheDocument();
 
     /** Render main menu and social menu */
