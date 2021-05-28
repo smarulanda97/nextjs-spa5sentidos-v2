@@ -1,23 +1,11 @@
 import Link from 'next/link';
 import styles, { linkComponent } from './Link.module.scss';
 
-import { ButtonColors } from '@types-app/index';
+import { LinkProps } from '@types-app/index';
 
-export type LinkComponentProps = {
-  text: string;
-  href?: string;
-  target?: string;
-  className?: string;
-  color: ButtonColors;
-};
+const LinkComponent: React.FC<LinkProps> = (props) => {
+  const { text, color, href = '#', target = '_self', className = '' } = props;
 
-const LinkComponent: React.FC<LinkComponentProps> = ({
-  text,
-  color,
-  href = '#',
-  target = '_self',
-  className = '',
-}): React.ReactElement => {
   return (
     <Link href={href}>
       <a

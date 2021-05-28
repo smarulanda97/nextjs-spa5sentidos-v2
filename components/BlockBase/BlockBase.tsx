@@ -2,19 +2,8 @@ import React from 'react';
 import YouTube from 'react-youtube';
 import { asset } from '@utils/imageUtils';
 import styles from './BlockBase.module.scss';
-import { StrapiImage } from '@types-app/index';
+import { BlockBaseProps } from '@types-app/index';
 import { Col, Container, Row } from 'react-bootstrap';
-
-type BlockBaseProps = {
-  title: string;
-  video_id?: any;
-  link?: string;
-  body?: string;
-  images?: {
-    desktop?: StrapiImage;
-    mobile?: StrapiImage;
-  };
-};
 
 class BlockBase extends React.Component<BlockBaseProps> {
   videoOptions = {};
@@ -22,7 +11,7 @@ class BlockBase extends React.Component<BlockBaseProps> {
    *
    */
   backgroundProperties = () => {
-    return !this.props.images
+    return !this.props?.images
       ? {}
       : {
           backgroundSize: 'cover',
@@ -44,10 +33,10 @@ class BlockBase extends React.Component<BlockBaseProps> {
       >
         <Row>
           <Col className={'position-relative'}>
-            {this.props.video_id && (
+            {this.props.videoId && (
               <div className={styles.video} data-testid="youtube-video">
                 <YouTube
-                  videoId={this.props.video_id}
+                  videoId={this.props.videoId}
                   opts={{ playerVars: { rel: 0 } }}
                 />
               </div>

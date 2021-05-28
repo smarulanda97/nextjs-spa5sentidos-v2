@@ -3,13 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Nav } from 'react-bootstrap';
 import { asset } from '@utils/imageUtils';
-import { MenuItem } from '@types-app/index';
 import styles from './NavigationItem.module.scss';
 import { isAbsoluteUrl } from '@utils/urlUtils';
-
-type NavigationItemProps = {
-  item: MenuItem;
-};
+import { NavigationItemProps } from '@types-app/index';
 
 const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
   return (

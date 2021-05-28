@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
+import { ConFigContext } from '@types-app/index';
 import { GET_DATA_APP_CONFIG_CONTEXT } from '@queries/index';
-import { ConFig, AppConfigQueryData } from '@types-app/index';
 import React, { createContext, useContext, useMemo } from 'react';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 /**
  * Define a default values for context
  */
-const appConfigDefaultValues: ConFig = {
+const appConfigDefaultValues: ConFigContext = {
   system: {
     email: '',
     phone: '',
@@ -25,12 +25,12 @@ const appConfigDefaultValues: ConFig = {
   },
 };
 
-const AppConfigContext = createContext<ConFig>(appConfigDefaultValues);
+const AppConfigContext = createContext<ConFigContext>(appConfigDefaultValues);
 
 /**
  * Create custom useAppConfig hook
  */
-export function useAppConfig(): ConFig {
+export function useAppConfig(): ConFigContext {
   const context = useContext(AppConfigContext);
 
   if (!context) {
@@ -44,7 +44,7 @@ export function useAppConfig(): ConFig {
  * Create AppConfigProvider
  */
 export const AppConfigProvider: React.FC<Props> = ({ children }) => {
-  const { data } = useQuery<AppConfigQueryData>(GET_DATA_APP_CONFIG_CONTEXT);
+  const { data } = useQuery<any>(GET_DATA_APP_CONFIG_CONTEXT);
 
   const value = useMemo(() => {
     if (!data) {

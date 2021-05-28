@@ -3,16 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { asset } from '@utils/imageUtils';
 import styles from './Footer.module.scss';
-import { useTranslation } from 'next-i18next';
+import { FooterProps } from '@types-app/index';
 import { Navigation } from '@components/index';
-import { Menu, StrapiImage } from '@types-app/index';
+import { useTranslation } from 'next-i18next';
 import { Container, Row, Col } from 'react-bootstrap';
-
-type FooterProps = {
-  socialMenu: Menu;
-  logoFooter: StrapiImage;
-  children?: JSX.Element | JSX.Element[];
-};
 
 const Footer: React.FC<FooterProps> = (props) => {
   const { t } = useTranslation('common');
