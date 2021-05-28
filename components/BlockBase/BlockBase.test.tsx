@@ -1,12 +1,12 @@
 import { render } from '@utils/testUtils';
-import { BlockBase } from '@components/index';
 import { asset } from '@utils/imageUtils';
+import { BlockBase } from '@components/index';
 
 describe('BlockBase component', () => {
   test('Render background, video, title, and body when pass all props', () => {
     const props = {
       title: 'Spa overview',
-      video_id: 'MFROybUazN4',
+      videoId: 'MFROybUazN4',
       body: `<p>sed do eiusmod tempor incididunt ut labore et</p>`,
       images: {
         desktop: {
