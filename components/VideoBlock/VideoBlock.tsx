@@ -16,10 +16,10 @@ const VideoBlock: React.FC = () => {
       return;
     }
 
-    const blockData = data.videoBlock[0];
+    const { video_id: videoId, ...blockData } = data.videoBlock[0];
     const blockProps: BlockBaseProps = {
       ...blockData,
-      videoId: blockData.video_id,
+      videoId,
     };
 
     return <BlockBase {...blockProps} />;
