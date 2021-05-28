@@ -1,10 +1,6 @@
 import React from 'react';
 import { Layout } from '@components/index';
-
-interface AppProps {
-  layout: boolean;
-  children?: JSX.Element;
-}
+import { AppProps } from '@types-app/index';
 
 class App extends React.Component<AppProps> {
   render() {
@@ -18,6 +14,4 @@ class App extends React.Component<AppProps> {
   }
 }
 
-const AppComponent = React.memo(App);
-
-export default AppComponent;
+export default React.memo(App);

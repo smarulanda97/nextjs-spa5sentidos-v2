@@ -5,13 +5,7 @@ import { Navbar } from 'react-bootstrap';
 import { asset } from '@utils/imageUtils';
 import styles from './Header.module.scss';
 import { Navigation } from '@components/index';
-import { NavigationProps, StrapiImage } from '@types-app/index';
-
-type HeaderProps = {
-  logo: StrapiImage;
-  mainMenu: NavigationProps | any;
-  socialMenu: NavigationProps | any;
-};
+import { HeaderProps } from '@types-app/index';
 
 const Header: React.FC<HeaderProps> = (props) => {
   const { logo, mainMenu, socialMenu } = props;
@@ -39,16 +33,16 @@ const Header: React.FC<HeaderProps> = (props) => {
             id={'basic-navbar-nav'}
             data-testid={'navbar-collapse'}
           >
-            <Navigation
-              testId={'main-menu'}
-              menu={mainMenu}
-              className={'ml-auto text-center mt-lg-0 mt-3'}
-            />
-            <Navigation
-              testId={'social-menu'}
-              menu={socialMenu}
-              className={'social-menu ml-auto mt-lg-0 mt-3'}
-            />
+            {/*<Navigation*/}
+            {/*  testId={'main-menu'}*/}
+            {/*  menu={mainMenu}*/}
+            {/*  className={'ml-auto text-center mt-lg-0 mt-3'}*/}
+            {/*/>*/}
+            {/*<Navigation*/}
+            {/*  testId={'social-menu'}*/}
+            {/*  menu={socialMenu}*/}
+            {/*  className={'social-menu ml-auto mt-lg-0 mt-3'}*/}
+            {/*/>*/}
           </Navbar.Collapse>
         </Navbar>
       </div>

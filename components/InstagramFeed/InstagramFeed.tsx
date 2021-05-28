@@ -1,9 +1,9 @@
 import React from 'react';
 import Script from 'react-load-script';
 import { Link } from '@components/index';
-import { Container, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 import { ButtonColors } from '@types-app/index';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 
 const InstagramFeed: React.FC = () => {

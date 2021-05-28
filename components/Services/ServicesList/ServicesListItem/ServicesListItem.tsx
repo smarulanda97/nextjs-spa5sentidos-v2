@@ -1,8 +1,7 @@
 import { memo } from 'react';
 import Image from 'next/image';
-import { Col } from 'react-bootstrap';
-
 import { asset } from '@utils/index';
+import { Col } from 'react-bootstrap';
 import { Link } from '@components/index';
 import { useTranslation } from 'next-i18next';
 import { ButtonColors } from '@types-app/index';
