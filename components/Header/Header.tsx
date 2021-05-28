@@ -8,7 +8,35 @@ import { Navigation } from '@components/index';
 import { HeaderProps } from '@types-app/index';
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const { logo, mainMenu, socialMenu } = props;
+  const { logo } = props;
+
+  const renderMainNavigation = () => {
+    if (!props?.mainMenu) {
+      return null;
+    }
+
+    return (
+      <Navigation
+        testId={'main-menu'}
+        menu={props.mainMenu}
+        className={'ml-auto text-center mt-lg-0 mt-3'}
+      />
+    );
+  };
+
+  const renderSocialMenu = () => {
+    if (!props.socialMenu) {
+      return null;
+    }
+
+    return (
+      <Navigation
+        testId={'social-menu'}
+        menu={props.socialMenu}
+        className={'social-menu ml-auto mt-lg-0 mt-3'}
+      />
+    );
+  };
 
   return (
     <header>
@@ -33,16 +61,18 @@ const Header: React.FC<HeaderProps> = (props) => {
             id={'basic-navbar-nav'}
             data-testid={'navbar-collapse'}
           >
-            {/*<Navigation*/}
-            {/*  testId={'main-menu'}*/}
-            {/*  menu={mainMenu}*/}
-            {/*  className={'ml-auto text-center mt-lg-0 mt-3'}*/}
-            {/*/>*/}
-            {/*<Navigation*/}
-            {/*  testId={'social-menu'}*/}
-            {/*  menu={socialMenu}*/}
-            {/*  className={'social-menu ml-auto mt-lg-0 mt-3'}*/}
-            {/*/>*/}
+            {/*
+             *
+             * Rendering main navigation menu
+             *
+             */}
+            {renderMainNavigation()}
+            {/*
+             *
+             * Rendering social menu
+             *
+             */}
+            {renderSocialMenu()}
           </Navbar.Collapse>
         </Navbar>
       </div>

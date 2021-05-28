@@ -7,8 +7,8 @@ type AppProps = {
 
 type HeaderProps = {
   logo: StrapiImage;
-  mainMenu?: NavigationProps;
-  socialMenu?: NavigationProps;
+  mainMenu?: Menu;
+  socialMenu?: Menu;
 };
 
 type NavigationProps = {
