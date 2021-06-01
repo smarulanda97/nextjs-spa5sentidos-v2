@@ -1,9 +1,18 @@
 import { Layout } from '@components/index';
-import { render, within } from '@utils/testUtils';
+import userEvent from '@testing-library/user-event';
+import { render, within, waitFor } from '@utils/testUtils';
 
 describe('<LayoutComponent />', () => {
-  test('Render main navigation and social in header', async () => {
+  test('Render the logo, main navigation menu, and social menu in the header', async () => {
     const { findByRole, findByTestId, getByTestId } = render(<Layout />);
+
+    const headerContainer = getByTestId('layout-header-container');
+    expect(headerContainer).toBeInTheDocument();
+
+    const logo = await within(headerContainer).findByAltText(
+      /spa 5 sentidos logo/i
+    );
+    expect(logo).toBeInTheDocument();
 
     /** Render nav container */
     const navbar = await findByRole('navigation');
@@ -23,7 +32,36 @@ describe('<LayoutComponent />', () => {
     expect(socialMenuIcons).toHaveLength(2);
   });
 
-  test('Render <SliderComponent />', async () => {
+  test('Toggle mobile menu when user click on the toggle button', async () => {
+    const { getByRole, getByTestId } = await render(<Layout />);
+
+    /** Check by default collapse navbar is closed */
+    const buttonToggleMenu = getByRole('button', {
+      name: /toggle navigation/i,
+    });
+    expect(buttonToggleMenu).toBeInTheDocument();
+    expect(buttonToggleMenu).toHaveClass('collapsed');
+
+    const collapseNavbar = getByTestId('navbar-collapse');
+    expect(collapseNavbar).toBeInTheDocument();
+    expect(collapseNavbar).not.toHaveClass('show');
+
+    /** Open mobile menu */
+    userEvent.click(buttonToggleMenu);
+    await waitFor(() => {
+      expect(buttonToggleMenu).not.toHaveClass('collapsed');
+      expect(collapseNavbar).toHaveClass('show');
+    });
+
+    /** Close mobile menu */
+    userEvent.click(buttonToggleMenu);
+    await waitFor(() => {
+      expect(buttonToggleMenu).toHaveClass('collapsed');
+      expect(collapseNavbar).not.toHaveClass('show');
+    });
+  });
+
+  test('Render the <SliderComponent />', async () => {
     const { findByTestId, getAllByRole } = render(<Layout />);
 
     // Render slider container
@@ -43,7 +81,7 @@ describe('<LayoutComponent />', () => {
     );
   });
 
-  test('Render social navigation in footer', async () => {
+  test('Render the social navigation in the footer', async () => {
     const { findByTestId } = render(<Layout />);
 
     const socialMenu = await findByTestId('social-menu-footer');
@@ -56,8 +94,8 @@ describe('<LayoutComponent />', () => {
     expect(socialLinks).toHaveLength(2);
   });
 
-  test('Render logo in footer', async () => {
-    const { findByRole } = render(<Layout />);
+  test('Render the logo and the copyright in the footer', async () => {
+    const { findByRole, getByText } = render(<Layout />);
 
     const footer = await findByRole('contentinfo');
     expect(footer).toBeInTheDocument();
@@ -66,10 +104,7 @@ describe('<LayoutComponent />', () => {
       name: /spa 5 sentidos logo/i,
     });
     expect(logo).toBeInTheDocument();
-  });
 
-  test('Render copyright', () => {
-    const { getByText } = render(<Layout />);
     expect(getByText(/all_rights_reserved/gi)).toBeInTheDocument();
     expect(getByText(/powered_by/gi)).toBeInTheDocument();
   });
