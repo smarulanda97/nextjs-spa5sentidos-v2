@@ -1,0 +1,77 @@
+@import 'styles/scss/mixins', 'styles/scss/variables';
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  position: relative !important;
+  min-height: 31rem;
+  max-height: 31rem;
+
+  @include respond-between(sm, md) {
+    min-height: 31rem;
+    max-height: 31rem;
+  }
+
+  @include respond-between(lg, xl) {
+    min-height: 35rem;
+    max-height: 35rem;
+  }
+
+  @include respond-above(xl) {
+    min-height: 39rem;
+    max-height: 39rem;
+  }
+}
+
+.caption {
+  left:0;
+  bottom: 10%;
+  right: inherit;
+
+  text-align: left;
+  backdrop-filter: blur(8px);
+  background: rgb(0, 0, 0, 0.2);
+  padding: 1rem 2rem 1rem 2rem;
+
+  @include respond-below(sm) {
+    text-align: center
+  }
+
+  @include respond-below(sm) {
+    bottom: 0;
+  }
+
+  h1, h2 {
+    color: text-color('white');
+    font-size: $font-size-base * 4;
+    font-family: $font-family-montez;
+    text-shadow: 1px 2px 2px text-color('dark');
+
+    @include respond-below(sm) {
+      font-size: $font-size-base * 2;
+    }
+
+    @include respond-between(sm, xl) {
+      font-size: $font-size-base * 3;
+    }
+  }
+
+  p {
+    text-align: right;
+    color: text-color('white');
+    font-size: $font-size-base * 1.5;
+    font-family: $font-family-open-sans;
+    text-shadow: 1px 1px 1px text-color('dark');
+
+    @include respond-below(sm) {
+      display: none;
+    }
+
+    @include respond-above(xl) {
+      font-size: $font-size-base * 1.7;
+    }
+  }
+}

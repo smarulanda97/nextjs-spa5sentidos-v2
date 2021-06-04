@@ -3,6 +3,7 @@ import Script from 'react-load-script';
 import { Link } from '@components/index';
 import { useTranslation } from 'next-i18next';
 import { ButtonColors } from '@types-app/index';
+import styles from './InstagramFeed.module.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 
@@ -22,8 +23,8 @@ const InstagramFeed: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Container fluid={'xl'} as={'section'} className={'mt-5 text-center'}>
-        <h2 className="text-capitalize font-weight-bold title mb-sm-5 mb-4">
+      <Container fluid={'xl'} as={'section'} className={styles.container}>
+        <h2 className="font-weight-bold title mb-sm-5 mb-4">
           {t('follow_us_on_instagram')}
         </h2>
         <Row>

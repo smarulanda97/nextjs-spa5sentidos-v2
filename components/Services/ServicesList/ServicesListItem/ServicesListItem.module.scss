@@ -1,20 +1,14 @@
 @import 'styles/scss/variables', 'styles/scss/mixins';
 
-.service {
+.container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @include respond-below(sm) {
     margin-top: $margin-base;
     padding-top: $padding-base;
-  }
-
-  h3 {
-    letter-spacing: 1px;
-    font-size: $font-size-base * 1.35;
-
-    @include respond-above(sm) {
-      min-height: 4rem;
-    }
   }
 
   p {
@@ -23,7 +17,23 @@
 
 }
 
-.serviceButtons {
+.description {
+  h3 {
+    text-align: center;
+    margin: 1.5rem auto;
+    letter-spacing: 1px;
+    color: text-color('dark');
+    text-transform: capitalize;
+    font-size: $font-size-base * 1.35;
+
+    @include respond-between(md, xl) {
+      margin: 1rem auto;
+      min-height: 3.5rem;
+    }
+  }
+}
+
+.buttons {
   display: flex;
   align-items: center;
   flex-direction: column;

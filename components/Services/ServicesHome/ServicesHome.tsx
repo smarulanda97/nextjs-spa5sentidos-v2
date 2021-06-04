@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { FC, ReactElement } from 'react';
 import { useQuery } from '@apollo/client';
+import { Container } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
-import { ButtonColors } from '@types-app/index';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Link, ServicesList } from '@components/index';
+import styles from './ServicesHome.module.scss';
+import { ServicesList } from '@components/index';
 import { GET_DATA_SERVICES_HOME_COMPONENT } from '@queries/index';
 
 const ServicesHome: FC = (): ReactElement => {
@@ -15,7 +15,7 @@ const ServicesHome: FC = (): ReactElement => {
   });
 
   return (
-    <section className="my-5">
+    <section className={styles.container}>
       <Container>
         <h2
           className={`text-capitalize font-weight-bold text-center title mb-sm-5 mb-4`}
@@ -23,16 +23,6 @@ const ServicesHome: FC = (): ReactElement => {
           {t('popular_services')}
         </h2>
         <ServicesList loading={loading} data={data} error={error} />
-        <Row>
-          <Col className={'text-center pt-4'}>
-            {/*<Link*/}
-            {/*  href={'/services'}*/}
-            {/*  color={ButtonColors.primary}*/}
-            {/*  text={t('other_services')}*/}
-            {/*  className={'w-sm-100'}*/}
-            {/*/>*/}
-          </Col>
-        </Row>
       </Container>
     </section>
   );

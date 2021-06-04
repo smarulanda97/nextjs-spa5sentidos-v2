@@ -12,29 +12,27 @@ const ServicesListItem = ({ service }) => {
   const { t } = useTranslation('common');
 
   return (
-    <Col sm={6} lg={3} className={styles.service}>
-      <Image
-        quality={85}
-        width={thumbnail.width}
-        height={thumbnail.height}
-        src={asset(thumbnail.url)}
-        alt={`${service.title} service`}
-      />
+    <Col sm={6} lg={3} className={styles.container}>
       <div>
-        <h3
-          className="text-capitalize text-dark mt-3 mb-2"
-          data-testid={'service-title'}
-        >
-          {service.title}
-        </h3>
-        <p>
-          {service.summary.slice(0, 180)}
-          {service.summary.length > 180 && ' ...'}
-        </p>
-        <div className={styles.serviceButtons}>
-          <Link text={t('book_massage')} color={ButtonColors.primary} />
-          <Link text={t('learn_more')} color={ButtonColors.secondary} />
+        <Image
+          quality={85}
+          width={thumbnail.width}
+          height={thumbnail.height}
+          src={asset(thumbnail.url)}
+          layout={'responsive'}
+          alt={`${service.title} service`}
+        />
+        <div className={styles.description}>
+          <h3 data-testid={'service-title'}>{service.title}</h3>
+          <p>
+            {service.summary.slice(0, 180)}
+            {service.summary.length > 180 && ' ...'}
+          </p>
         </div>
+      </div>
+      <div className={styles.buttons}>
+        <Link text={t('book_massage')} color={ButtonColors.primary} />
+        <Link text={t('learn_more')} color={ButtonColors.secondary} />
       </div>
     </Col>
   );
