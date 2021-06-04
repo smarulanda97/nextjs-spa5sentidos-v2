@@ -3,6 +3,7 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@mocks/next/index';
+import '@mocks/react-device-detect/index';
 import { server } from '@mocks/msw/server';
 import '@testing-library/jest-dom/extend-expect';
 
