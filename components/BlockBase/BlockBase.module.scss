@@ -9,9 +9,18 @@
   }
 }
 
+.image {
+  z-index: 0;
+}
+
 .video {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
   text-align: center;
-  margin-top: -15rem;
+  margin-top: -17rem;
 
   iframe {
     width: 800px;
@@ -23,15 +32,16 @@
 }
 
 .content {
-  padding-top: $padding-base * 1;
-  padding-bottom: $padding-base * 5;
+  z-index: 1;
+  position: relative;
+  padding-top: $padding-base * 15;
+  padding-bottom: $padding-base * 6;
   margin: 0 auto;
   max-width: 960px;
   text-align: center;
   color: text-color('white');
 
   h2, h3 {
-    margin-top: $margin-base * 1.5;
     margin-bottom: $margin-base * 1.5;
   }
 }

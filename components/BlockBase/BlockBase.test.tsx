@@ -1,6 +1,6 @@
-import { render } from '@utils/testUtils';
-import { asset } from '@utils/imageUtils';
+import { render, screen } from '@utils/testUtils';
 import { BlockBase } from '@components/index';
+import { within } from '@testing-library/react';
 
 describe('BlockBase component', () => {
   test('Render background, video, title, and body when pass all props', () => {
@@ -21,18 +21,16 @@ describe('BlockBase component', () => {
 
     const { getByRole, getByTestId } = render(<BlockBase {...props} />);
 
-    // Render container background
-    const container = getByTestId('block-base');
+    // Render container of block
+    const container = getByTestId('block-base-container');
     expect(container).toBeInTheDocument();
-    expect(container).toHaveStyle(`
-      background-image: url(${asset(props.images.desktop.url)});
-      background-size: cover;
-      background-repeat: no-repeat;
-    `);
+
+    // Render background
+    expect(within(container).getByRole('img')).toBeInTheDocument();
 
     // Title, video and body is rendered
     expect(getByRole('heading', { name: /spa overview/i })).toBeInTheDocument();
-    expect(getByTestId('youtube-video')).toBeInTheDocument();
+    expect(getByTestId('youtube-video-container')).toBeInTheDocument();
     expect(getByRole('paragraph')).toBeInTheDocument();
   });
 
@@ -43,7 +41,7 @@ describe('BlockBase component', () => {
 
     const { queryByRole, queryByTestId } = render(<BlockBase {...props} />);
 
-    expect(queryByTestId('youtube-video')).not.toBeInTheDocument();
+    expect(queryByTestId('youtube-video-container')).not.toBeInTheDocument();
     expect(queryByRole('paragraph')).not.toBeInTheDocument();
   });
 });
