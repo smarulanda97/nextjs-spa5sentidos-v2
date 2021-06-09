@@ -27,7 +27,7 @@
 }
 
 .caption {
-  left:0;
+  left: 0;
   bottom: 10%;
   right: inherit;
 
@@ -37,14 +37,16 @@
   padding: 1rem 2rem 1rem 2rem;
 
   @include respond-below(sm) {
-    text-align: center
+    text-align: center;
+    background: rgb(0, 0, 0, 0.05);
   }
 
   @include respond-below(sm) {
     bottom: 0;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     color: text-color('white');
     font-size: $font-size-base * 4;
     font-family: $font-family-montez;

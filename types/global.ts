@@ -24,9 +24,14 @@ type StrapiImage = {
   provider_metadata?: string;
 };
 
+type ResponsiveImages = {
+  mobile: StrapiImage;
+  desktop: StrapiImage;
+}
+
 export enum ButtonColors {
   primary = 'primary',
   secondary = 'secondary',
 }
 
-export type { Menu, MenuItem, StrapiImage };
+export type { Menu, MenuItem, StrapiImage, ResponsiveImages };

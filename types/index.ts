@@ -11,7 +11,7 @@ import {
   BlockBaseProps,
 } from './components';
 import { ConFigContext } from './contexts';
-import { Menu, MenuItem, StrapiImage } from './global';
+import { Menu, MenuItem, StrapiImage, ResponsiveImages } from './global';
 
 export { ButtonColors } from './global';
 
@@ -39,4 +39,4 @@ export type { ConFigContext };
 /**
  * Export all global types
  */
-export type { Menu, MenuItem, StrapiImage };
+export type { Menu, MenuItem, StrapiImage, ResponsiveImages };

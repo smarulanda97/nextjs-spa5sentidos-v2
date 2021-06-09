@@ -1,8 +1,9 @@
+import { asset } from '@utils/imageUtils';
 import { Layout } from '@components/index';
 import userEvent from '@testing-library/user-event';
-import { render, within, waitFor } from '@utils/testUtils';
+import { render, within, waitFor, ReactDeviceDetect } from '@utils/testUtils';
 
-describe('<LayoutComponent />', () => {
+describe('Layout component', () => {
   test('Render the logo, main navigation menu, and social menu in the header', async () => {
     const { findByRole, findByTestId, getByTestId } = render(<Layout />);
 
@@ -61,23 +62,43 @@ describe('<LayoutComponent />', () => {
     });
   });
 
-  test('Render the <SliderComponent />', async () => {
-    const { findByTestId, getAllByRole } = render(<Layout />);
+  test('Render the slider with an image for desktop', async () => {
+    ReactDeviceDetect.isMobileOnly = false;
+
+    const { findByTestId } = render(<Layout />);
 
     // Render slider container
     const slider = await findByTestId('slider-container');
     expect(slider).toBeInTheDocument();
 
     // Render each slider item
-    const sliderItems = within(slider).getAllByTestId('slider-item');
-    expect(sliderItems.length).toBeGreaterThanOrEqual(1);
+    const sliderItems = within(slider).getByTestId('slider-item');
+    expect(sliderItems).toBeInTheDocument();
 
     // Check the image and title of each slider items
-    expect(getAllByRole('heading').length).toBeGreaterThanOrEqual(
-      sliderItems.length
+    expect(within(slider).getByRole('heading')).toBeInTheDocument();
+
+    // Render desktop image
+    const sliderImage = within(slider).getByRole('img');
+    expect(sliderImage).toBeInTheDocument();
+    expect(sliderImage.getAttribute('src')).toEqual(
+      asset('/uploads/banner_spa_5_sentidos_desktop_798a38688e.jpg')
     );
-    expect(getAllByRole('img').length).toBeGreaterThanOrEqual(
-      sliderItems.length
+  });
+
+  test('Render the slider with an image for mobile', async () => {
+    ReactDeviceDetect.isMobileOnly = true;
+
+    const { findByTestId } = render(<Layout />);
+
+    const slider = await findByTestId('slider-container');
+    expect(slider).toBeInTheDocument();
+
+    // Render mobile image
+    const sliderImage = within(slider).getByRole('img');
+    expect(sliderImage).toBeInTheDocument();
+    expect(sliderImage.getAttribute('src')).toEqual(
+      asset('/uploads/banner_spa_5_sentidos_mobile_d83958c0f0.jpg')
     );
   });
 
