@@ -81,6 +81,13 @@ body {
       }
     }
 
+    .main-menu {
+      .nav-item {
+        padding-left: $padding-base / 2;
+        padding-right: $padding-base / 2;
+      }
+    }
+
     .social-menu {
       @include respond-below(sm) {
         flex-direction: row;

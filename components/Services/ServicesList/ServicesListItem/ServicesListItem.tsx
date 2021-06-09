@@ -43,7 +43,7 @@ const ServicesListItem = ({ service }) => {
             phoneNumber
           )}&text=${t('im_interested_in', { massage: service.title })}`}
         />
-        <Link text={t('learn_more')} color={ButtonColors.secondary} />
+        {/*<Link text={t('learn_more')} color={ButtonColors.secondary} />*/}
       </div>
     </Col>
   );

@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <Navigation
         testId={'main-menu'}
         menu={props.mainMenu}
-        className={'ml-auto text-center mt-lg-0 mt-3'}
+        className={'ml-auto text-center mt-lg-0 mt-3 main-menu'}
       />
     );
   };
