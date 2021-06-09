@@ -1,2 +1,3 @@
-export const service: string;
-export const serviceButtons: string;
+export const buttons: string;
+export const container: string;
+export const description: string;

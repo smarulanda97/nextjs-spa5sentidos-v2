@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = (props) => {
   const { children, logoFooter, socialMenu } = props;
 
   return (
-    <footer className={`${styles.footer} pt-5 pb-4`}>
+    <footer className={styles.footer}>
       <Container>
         <Row>
           <Col>

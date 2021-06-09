@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #FFF;
+  background: #fff;
   font-family: $font-family-open-sans !important;
 
   a {
@@ -15,14 +15,16 @@ body {
       text-decoration: none;
     }
 
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       outline: none;
       text-decoration: none;
     }
   }
 
   input {
-    [type="button"], [type="submit"] {
+    [type='button'],
+    [type='submit'] {
       transition: 0.5s all;
     }
   }
@@ -31,13 +33,23 @@ body {
     margin: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0;
     padding: 0;
     font-family: $font-family-paytone-one;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     &.title {
       color: $primary;
       font-size: 42px;
@@ -56,7 +68,8 @@ body {
     font-family: $font-family-open-sans;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 0;
     padding: 0;
   }
@@ -75,9 +88,8 @@ body {
       }
 
       .nav-link {
-
         @include respond-below(sm) {
-          margin: 0 $margin-base * .7;
+          margin: 0 $margin-base * 0.7;
         }
         img {
           width: 32px;
@@ -90,13 +102,12 @@ body {
     .social-menu {
       justify-content: center;
 
-
       .nav-link {
         display: block;
         border-radius: 50%;
         text-align: center;
-        margin: 0 $margin-base * .7;
-        padding: $padding-base * .2 !important;
+        margin: 0 $margin-base * 0.7;
+        padding: $padding-base * 0.2 !important;
         border: dashed 2px theme-color('secondary');
 
         img {

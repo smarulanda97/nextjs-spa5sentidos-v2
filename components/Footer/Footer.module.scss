@@ -1,11 +1,22 @@
-@import 'styles/scss/variables', 'styles/scss/functions';
+@import 'styles/scss/variables', 'styles/scss/functions', 'styles/scss/mixins';
 
 .footer {
   text-align: center;
+  margin: $margin-base;
+  padding: ($padding-base * 1.5) $padding-base;
+
+  border: solid 0.2rem theme-color('secondary');
+  border-left: none;
+  border-right: none;
 
   p {
     letter-spacing: 0;
     font-size: $font-size-base;
     font-weight: 500;
+
+    span:last-child {
+      font-weight: 600;
+      display: block;
+    }
   }
 }
