@@ -6,6 +6,7 @@ type SystemConfig = {
   address: string;
   site_name: string;
   __typename?: string;
+  phone_number: string;
   logo: StrapiImage | null;
   favicon: StrapiImage | null;
   logo_footer: StrapiImage | null;

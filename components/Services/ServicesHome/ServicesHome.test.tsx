@@ -2,7 +2,7 @@ import { ServicesHome } from '@components/index';
 import { render, screen } from '@utils/testUtils';
 
 describe('Home page - Services list', () => {
-  test('1. Render block title', () => {
+  test('Render the block title', () => {
     render(<ServicesHome />);
 
     const blockTitle = screen.getByRole('heading', {
@@ -11,7 +11,7 @@ describe('Home page - Services list', () => {
     expect(blockTitle).toBeInTheDocument();
   });
 
-  test('2. Render list of two featured services with own services', async () => {
+  test('Render the list of two featured services with own services', async () => {
     render(<ServicesHome />);
 
     const servicesImages = await screen.findAllByRole('img');
@@ -31,5 +31,29 @@ describe('Home page - Services list', () => {
     /** Render links */
     const linksLearnMore = screen.getAllByText(/(learn_more|book_massage)/i);
     expect(linksLearnMore).toHaveLength(8);
+  });
+
+  test('Each book button has the attribute data-href with a link to Whatsapp', async () => {
+    const { findAllByText } = render(<ServicesHome />);
+
+    const bookButtons = await findAllByText(/book_massage/i);
+    const targets: string[] = bookButtons.map((element) =>
+      element.getAttribute('target')
+    );
+
+    // Each element redirect the user to whatsapp in new window
+    expect(targets).toEqual(['_blank', '_blank', '_blank', '_blank']);
+
+    const extractDomainRegex = /^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)/i;
+    const hrefs: string[] = bookButtons.map((element) => {
+      const href = element.getAttribute('data-href');
+      return extractDomainRegex.exec(href)[1];
+    });
+    expect(hrefs).toEqual([
+      'api.whatsapp.com',
+      'api.whatsapp.com',
+      'api.whatsapp.com',
+      'api.whatsapp.com',
+    ]);
   });
 });

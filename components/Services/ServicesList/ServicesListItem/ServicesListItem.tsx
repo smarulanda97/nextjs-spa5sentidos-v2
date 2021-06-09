@@ -1,15 +1,19 @@
 import { memo } from 'react';
 import Image from 'next/image';
-import { asset } from '@utils/index';
 import { Col } from 'react-bootstrap';
 import { Link } from '@components/index';
 import { useTranslation } from 'next-i18next';
 import { ButtonColors } from '@types-app/index';
+import { asset, trimAllSpaces } from '@utils/index';
 import styles from './ServicesListItem.module.scss';
+import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 
 const ServicesListItem = ({ service }) => {
   const { thumbnail } = service.images;
   const { t } = useTranslation('common');
+  const {
+    system: { phone_number: phoneNumber },
+  } = useAppConfig();
 
   return (
     <Col sm={6} lg={3} className={styles.container}>
@@ -31,7 +35,14 @@ const ServicesListItem = ({ service }) => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <Link text={t('book_massage')} color={ButtonColors.primary} />
+        <Link
+          target={'_blank'}
+          text={t('book_massage')}
+          color={ButtonColors.primary}
+          href={`https://api.whatsapp.com/send?phone=${trimAllSpaces(
+            phoneNumber
+          )}&text=${t('im_interested_in', { massage: service.title })}`}
+        />
         <Link text={t('learn_more')} color={ButtonColors.secondary} />
       </div>
     </Col>
