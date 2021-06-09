@@ -11,6 +11,7 @@ const LinkComponent: React.FC<LinkProps> = (props) => {
       <a
         className={`btn btn-sm ${linkComponent} ${styles[color]} ${className}`}
         target={target}
+        data-href={href}
       >
         {text}
       </a>
