@@ -1,5 +1,15 @@
-export const mockNextI18Next = jest.requireMock('next-i18next');
-
 jest.mock('next-i18next', () => ({
-  withTranslation: () => (Component) => <Component />,
+  // this mock makes sure any components using the translate HoC receive the t function as a prop
+  withTranslation: () => (Component) => {
+    Component.defaultProps = { ...Component.defaultProps, t: () => '' };
+    return Component;
+  },
+  useTranslation: () => {
+    return {
+      t: (str) => str,
+      i18n: {
+        changeLanguage: () => new Promise(() => {}),
+      },
+    };
+  },
 }));

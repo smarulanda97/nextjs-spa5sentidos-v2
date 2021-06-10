@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
  * Importing manual mocking
  */
 import '@mocks/next';
+import '@mocks/next-i18next';
 import '@mocks/react-device-detect';
 import { server } from '@mocks/msw/server';
 
