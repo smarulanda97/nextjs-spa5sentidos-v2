@@ -1,7 +1,7 @@
 import { App } from '@components/index';
 import { render, screen } from '@lib/jest/testUtils';
 
-describe('App component', () => {
+describe('[Component] App', () => {
   test('Render layout component when layout property is set to true', () => {
     render(<App layout={true} />);
 

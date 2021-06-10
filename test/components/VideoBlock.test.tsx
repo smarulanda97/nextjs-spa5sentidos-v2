@@ -1,7 +1,7 @@
-import { render } from '@utils/testUtils';
+import { render } from '@lib/jest/testUtils';
 import { VideoBlock } from '@components/index';
 
-describe('VideoBlock component', function () {
+describe('[Component] VideoBlock', function () {
   test('Render video, title and description', async () => {
     const { findByRole, getByTestId, getByRole } = render(<VideoBlock />);
 

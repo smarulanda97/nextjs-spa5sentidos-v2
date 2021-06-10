@@ -1,6 +1,6 @@
 import { asset } from '@utils/imageUtils';
 import { Slider } from '@components/index';
-import { render, ReactDeviceDetect, within } from '@lib/jest/testUtils';
+import { render, ReactDeviceDetect } from '@lib/jest/testUtils';
 
 const sliders = [
   {

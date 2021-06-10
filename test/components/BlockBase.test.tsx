@@ -2,7 +2,7 @@ import { render } from '@lib/jest/testUtils';
 import { BlockBase } from '@components/index';
 import { within } from '@testing-library/react';
 
-describe('BlockBase component', () => {
+describe('[Component] BlockBase', () => {
   test('Render background, video, title, and body when pass all props', () => {
     const props = {
       title: 'Spa overview',

@@ -1,4 +1,4 @@
-import { render } from '@utils/testUtils';
+import { render } from '@lib/jest/testUtils';
 import { NavigationItem } from '@components/index';
 
 const menuItemHome = {
@@ -20,7 +20,7 @@ const menuItemWhatsApp = {
   },
 };
 
-describe('NavigationItem component', () => {
+describe('[Component] NavigationItem', () => {
   test('Render text link when the item does not have an icon', () => {
     const { queryByText, queryByRole } = render(
       <NavigationItem item={menuItemHome} />
