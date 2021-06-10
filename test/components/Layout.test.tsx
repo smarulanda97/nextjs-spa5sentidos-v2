@@ -1,12 +1,6 @@
-import { asset } from '@utils/imageUtils';
 import { Layout } from '@components/index';
 import userEvent from '@testing-library/user-event';
-import {
-  render,
-  within,
-  waitFor,
-  ReactDeviceDetect,
-} from '@lib/jest/testUtils';
+import { render, within, waitFor } from '@lib/jest/testUtils';
 
 describe('Layout component', () => {
   test('Render the logo, main navigation menu, and social menu in the header', async () => {
@@ -65,46 +59,6 @@ describe('Layout component', () => {
       expect(buttonToggleMenu).toHaveClass('collapsed');
       expect(collapseNavbar).not.toHaveClass('show');
     });
-  });
-
-  test('Render the slider with an image for desktop', async () => {
-    ReactDeviceDetect.isMobileOnly = false;
-
-    const { findByTestId } = render(<Layout />);
-
-    // Render slider container
-    const slider = await findByTestId('slider-container');
-    expect(slider).toBeInTheDocument();
-
-    // Render each slider item
-    const sliderItems = within(slider).getByTestId('slider-item');
-    expect(sliderItems).toBeInTheDocument();
-
-    // Check the image and title of each slider items
-    expect(within(slider).getByRole('heading')).toBeInTheDocument();
-
-    // Render desktop image
-    const sliderImage = within(slider).getByRole('img');
-    expect(sliderImage).toBeInTheDocument();
-    expect(sliderImage.getAttribute('src')).toEqual(
-      asset('/uploads/banner_spa_5_sentidos_desktop_798a38688e.jpg')
-    );
-  });
-
-  test('Render the slider with an image for mobile', async () => {
-    ReactDeviceDetect.isMobileOnly = true;
-
-    const { findByTestId } = render(<Layout />);
-
-    const slider = await findByTestId('slider-container');
-    expect(slider).toBeInTheDocument();
-
-    // Render mobile image
-    const sliderImage = within(slider).getByRole('img');
-    expect(sliderImage).toBeInTheDocument();
-    expect(sliderImage.getAttribute('src')).toEqual(
-      asset('/uploads/banner_spa_5_sentidos_mobile_d83958c0f0.jpg')
-    );
   });
 
   test('Render the social navigation in the footer', async () => {
