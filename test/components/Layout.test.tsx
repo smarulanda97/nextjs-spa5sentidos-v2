@@ -1,7 +1,12 @@
 import { asset } from '@utils/imageUtils';
 import { Layout } from '@components/index';
 import userEvent from '@testing-library/user-event';
-import { render, within, waitFor, ReactDeviceDetect } from '@utils/testUtils';
+import {
+  render,
+  within,
+  waitFor,
+  ReactDeviceDetect,
+} from '@lib/jest/testUtils';
 
 describe('Layout component', () => {
   test('Render the logo, main navigation menu, and social menu in the header', async () => {

@@ -1,8 +1,8 @@
-module.exports = {
-  process() {
+export default {
+  process(): string {
     return 'module.exports = {};';
   },
-  getCacheKey() {
+  getCacheKey(): string {
     return 'cssTransform';
   },
 };

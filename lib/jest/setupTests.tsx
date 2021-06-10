@@ -1,11 +1,12 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@mocks/next/index';
-import '@mocks/react-device-detect/index';
-import { server } from '@mocks/msw/server';
 import '@testing-library/jest-dom/extend-expect';
+/**
+ *
+ *
+ * Importing manual mocking
+ */
+import '@mocks/next';
+import '@mocks/react-device-detect';
+import { server } from '@mocks/msw/server';
 
 beforeAll(() => {
   server.listen();

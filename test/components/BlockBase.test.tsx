@@ -1,4 +1,4 @@
-import { render, screen } from '@utils/testUtils';
+import { render } from '@lib/jest/testUtils';
 import { BlockBase } from '@components/index';
 import { within } from '@testing-library/react';
 

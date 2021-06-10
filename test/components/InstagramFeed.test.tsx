@@ -1,4 +1,4 @@
-import { render } from '@utils/testUtils';
+import { render } from '@lib/jest/testUtils';
 import { InstagramFeed } from '@components/index';
 
 describe('InstagramFeed component', () => {

@@ -36,5 +36,5 @@ export function render(
   return defaultRender(ui, { wrapper, ...options });
 }
 
-export * from '@mocks/react-device-detect/index';
+export * from '@mocks/react-device-detect';
 export * from '@testing-library/react';

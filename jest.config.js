@@ -7,10 +7,6 @@ module.exports = {
   globalSetup: '<rootDir>/lib/jest/setupEnv.ts',
   setupFilesAfterEnv: ['<rootDir>/lib/jest/setupTests.tsx'],
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
-  transform: {
-    '^.+\\.css$': '<rootDir>/mocks/file/cssTransform.js',
-    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
-  },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$',
     '^.+\\.module\\.(css|sass|scss)$',
@@ -29,11 +25,16 @@ module.exports = {
     '^@components/(.*)': '<rootDir>/components/$1',
     '^@queries/(.*)': '<rootDir>/queries/$1',
     '^@mocks/(.*)': '<rootDir>/mocks/$1',
+    '^@test/(.*)': '<rootDir>/test/$1',
     '^@types-app/(.*)': '<rootDir>/types/$1',
     /**
      * Mocks
      */
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/mocks/file/fileMock.js',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/mocks/fileMock.ts',
+  },
+  transform: {
+    '^.+\\.css$': '<rootDir>/mocks/cssTransform.ts',
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
 };

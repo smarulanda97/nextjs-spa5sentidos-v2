@@ -1,5 +1,5 @@
 import { ServicesHome } from '@components/index';
-import { render, screen } from '@utils/testUtils';
+import { render, screen } from '@lib/jest/testUtils';
 
 describe('Home page - Services list', () => {
   test('Render the block title', () => {
