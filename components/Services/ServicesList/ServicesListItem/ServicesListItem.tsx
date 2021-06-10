@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import Image from 'next/image';
 import { Col } from 'react-bootstrap';
 import { Link } from '@components/index';
@@ -8,7 +8,7 @@ import { asset, trimAllSpaces } from '@utils/index';
 import styles from './ServicesListItem.module.scss';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 
-const ServicesListItem = ({ service }) => {
+const ServicesListItem: React.FC<any> = ({ service }) => {
   const { thumbnail } = service.images;
   const { t } = useTranslation('common');
   const {
@@ -28,7 +28,7 @@ const ServicesListItem = ({ service }) => {
         />
         <div className={styles.description}>
           <h3 data-testid={'service-title'}>{service.title}</h3>
-          <p>
+          <p role={'paragraph'}>
             {service.summary.slice(0, 180)}
             {service.summary.length > 180 && ' ...'}
           </p>
@@ -43,7 +43,7 @@ const ServicesListItem = ({ service }) => {
             phoneNumber
           )}&text=${t('im_interested_in', { massage: service.title })}`}
         />
-        {/*<Link text={t('learn_more')} color={ButtonColors.secondary} />*/}
+        <Link text={t('learn_more')} color={ButtonColors.secondary} />
       </div>
     </Col>
   );
