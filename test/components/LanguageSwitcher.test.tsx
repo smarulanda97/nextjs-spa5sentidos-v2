@@ -1,5 +1,5 @@
-import { render, screen } from '@lib/jest/testUtils';
-import { waitFor, within } from '@testing-library/react';
+import { render } from '@lib/jest/testUtils';
+import { waitFor } from '@testing-library/react';
 import { LanguageSwitcher } from '@components/index';
 import userEvent from '@testing-library/user-event';
 
@@ -9,11 +9,7 @@ describe('[Component] LanguageSwitcher', () => {
 
     const i18nContainer = getByTestId('language-switcher-container');
     expect(i18nContainer).toBeInTheDocument();
-    // expect(i18nContainer).toHaveStyle({
-    //   position: 'fixed',
-    //   bottom: '10%',
-    //   right: '5%',
-    // });
+    expect(i18nContainer).toHaveClass('sticky');
     const i18nButton = getByRole('button', { name: /change_language/i });
 
     expect(i18nButton).toBeInTheDocument();

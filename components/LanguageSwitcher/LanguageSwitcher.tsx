@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'next/router';
 import { withTranslation } from 'next-i18next';
+import styles from './LanguageSwitcher.module.scss';
 import { Dropdown, ButtonGroup } from 'react-bootstrap';
 import { EnglishFlag, SpanishFlag } from '@components/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,24 +23,23 @@ class LanguageSwitcher extends React.Component<any> {
 
     return (
       <Dropdown
-        as={ButtonGroup}
         drop={'left'}
+        as={ButtonGroup}
+        className={styles.sticky}
         data-testid={'language-switcher-container'}
       >
         <Dropdown.Toggle id="dropdown-language">
-          <>
-            <span>{t('change_language')}</span>
-            <FontAwesomeIcon icon={faGlobeAmericas} />
-          </>
+          <span>{t('change_language')}</span>
+          <FontAwesomeIcon icon={faGlobeAmericas} />
         </Dropdown.Toggle>
-        <Dropdown.Menu>
+        <Dropdown.Menu className={styles.languageMenu}>
           <Dropdown.Item as="button" onClick={() => this.changeLanguage('es')}>
-            <span>{t('spanish')}</span>
             <SpanishFlag height={`24px`} width={`auto`} />
+            <span>{t('spanish')}</span>
           </Dropdown.Item>
           <Dropdown.Item as="button" onClick={() => this.changeLanguage('en')}>
-            <span>{t('english')}</span>
             <EnglishFlag height={`24px`} width={`auto`} />
+            <span>{t('english')}</span>
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
@@ -48,5 +48,3 @@ class LanguageSwitcher extends React.Component<any> {
 }
 
 export default withTranslation()(withRouter(LanguageSwitcher));
-
-export { LanguageSwitcher as PureLanguageSwitcher };
