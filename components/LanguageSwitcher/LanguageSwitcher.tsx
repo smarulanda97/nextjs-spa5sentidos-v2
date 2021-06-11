@@ -1,19 +1,21 @@
 import React from 'react';
-import { withRouter } from 'next/router';
 import { withTranslation } from 'next-i18next';
 import styles from './LanguageSwitcher.module.scss';
+import { withRouter, NextRouter } from 'next/router';
 import { Dropdown, ButtonGroup } from 'react-bootstrap';
 import { EnglishFlag, SpanishFlag } from '@components/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 
-// interface WithRouterProps {
-//   router: NextRouter;
-// }
-//
-// type WithTranslationProps = WithRouterProps;
+interface WithRouterProps {
+  router: NextRouter;
+}
 
-class LanguageSwitcher extends React.Component<any> {
+interface WithTranslationProps extends WithRouterProps {
+  t(key: string, options?: any): string;
+}
+
+class LanguageSwitcher extends React.Component<WithTranslationProps> {
   changeLanguage(lang: string): void {
     this.props.router.push('/', '/', { locale: lang });
   }
