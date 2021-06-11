@@ -1,9 +1,12 @@
 {
   "all_rights_reserved": "Todos los derechos reservados",
   "book_massage": "Pide tu cita",
+  "change_language": "Cambiar el idioma del sitio",
   "contact_us": "Contáctanos",
   "development_by": "Desarrollado por",
   "english": "English",
+  "flag_language_english": "Bandera idioma Inglés",
+  "flag_language_spanish": "Bandera idioma Español",
   "follow_us": "Síguenos",
   "follow_us_on_instagram": "Síguenos en Instagram",
   "im_interested_in": "Hola, estoy interesado(a) en el servicio \"{{ massage }}\"",

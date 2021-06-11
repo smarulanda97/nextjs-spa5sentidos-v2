@@ -1,9 +1,12 @@
 {
   "all_rights_reserved": "All rights reserved",
   "book_massage": "Book",
+  "change_language": "Change site's language",
   "contact_us": "Contact us",
   "development_by": "Development by",
   "english": "English",
+  "flag_language_english": "English language flag",
+  "flag_language_spanish": "Spanish language flag",
   "follow_us": "Follow us",
   "follow_us_on_instagram": "Follow us on Instagram",
   "im_interested_in": "Hi, I'm interested in the service \"{{ massage }}\"",
@@ -13,6 +16,6 @@
   "popular_services": "Popular services",
   "powered_by": "Powered by {{ author }}",
   "services": "Services",
-  "spanish": "Spanish",
+  "spanish": "Español",
   "see_more": "Show more"
 }
