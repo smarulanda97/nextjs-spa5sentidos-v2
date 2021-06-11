@@ -10,7 +10,6 @@ export { default as Navigation } from './Navigation/Navigation';
 export { default as InstagramFeed } from './InstagramFeed/InstagramFeed';
 export { default as ServicesHome } from './Services/ServicesHome/ServicesHome';
 export { default as ServicesList } from './Services/ServicesList/ServicesList';
-export { PureLanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 export { default as NavigationItem } from './Navigation/NavigationItem/NavigationItem';
 export { default as ServicesListItem } from './Services/ServicesList/ServicesListItem/ServicesListItem';

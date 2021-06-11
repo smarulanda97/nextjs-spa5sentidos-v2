@@ -18,6 +18,7 @@ const appConfigDefaultValues: ConFigContext = {
     site_name: '',
     logo: null,
     favicon: null,
+    phone_number: '',
     logo_footer: null,
   },
   app: {
