@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { LayoutProps } from '@types-app/index';
-import { Footer, Header, Slider } from '@components/index';
 import { GET_DATA_LAYOUT_COMPONENT } from '@queries/index';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
+import { Footer, Header, Slider, LanguageSwitcher } from '@components/index';
 
 const Layout: React.FC<LayoutProps> = (props) => {
   const { children } = props;
@@ -54,6 +54,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <main data-testid={'layout-main-container'} id={'main-content'}>
         {children}
       </main>
+      <LanguageSwitcher />
       {/**
        *
        * Rendering the following components

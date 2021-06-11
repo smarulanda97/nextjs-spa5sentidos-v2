@@ -2,7 +2,7 @@ import { Menu, ButtonColors, StrapiImage, MenuItem } from './global';
 
 type AppProps = {
   layout: boolean;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 };
 
 type HeaderProps = {
@@ -64,6 +64,11 @@ type BlockBaseProps = {
   };
 };
 
+type SvgProps = {
+  width: string;
+  height: string;
+};
+
 export type {
   AppProps,
   HeaderProps,
@@ -75,4 +80,5 @@ export type {
   LinkProps,
   FooterProps,
   BlockBaseProps,
+  SvgProps,
 };

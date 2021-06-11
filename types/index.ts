@@ -9,6 +9,7 @@ import {
   LinkProps,
   FooterProps,
   BlockBaseProps,
+  SvgProps,
 } from './components';
 import { ConFigContext } from './contexts';
 import { Menu, MenuItem, StrapiImage, ResponsiveImages } from './global';
@@ -29,6 +30,7 @@ export type {
   LinkProps,
   FooterProps,
   BlockBaseProps,
+  SvgProps,
 };
 
 /**
