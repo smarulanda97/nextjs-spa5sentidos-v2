@@ -5,10 +5,7 @@ import styles from './EmbedVideo.module.scss';
 import { useTranslation } from 'next-i18next';
 import { PlayButton } from '@components/index';
 import { Button, Modal } from 'react-bootstrap';
-
-type EmbedVideoProps = {
-  videoId: string;
-};
+import { EmbedVideoProps } from '@types-app/components';
 
 const EmbedVideo: React.FC<EmbedVideoProps> = (props) => {
   const { videoId } = props;

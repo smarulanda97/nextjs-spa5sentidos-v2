@@ -69,6 +69,10 @@ type SvgProps = {
   height: string;
 };
 
+type EmbedVideoProps = {
+  videoId: string;
+};
+
 export type {
   AppProps,
   HeaderProps,
@@ -81,4 +85,5 @@ export type {
   FooterProps,
   BlockBaseProps,
   SvgProps,
+  EmbedVideoProps,
 };

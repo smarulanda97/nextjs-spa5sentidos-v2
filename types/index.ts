@@ -10,6 +10,7 @@ export type {
   FooterProps,
   BlockBaseProps,
   SvgProps,
+  EmbedVideoProps,
 } from './components';
 
 export type { ConFigContext } from './contexts';
