@@ -5,7 +5,7 @@ import { withRouter, NextRouter } from 'next/router';
 import { Dropdown, ButtonGroup } from 'react-bootstrap';
 import { EnglishFlag, SpanishFlag } from '@components/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
+import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 
 interface WithRouterProps {
   router: NextRouter;
@@ -32,7 +32,7 @@ class LanguageSwitcher extends React.Component<WithTranslationProps> {
       >
         <Dropdown.Toggle id="dropdown-language">
           <span>{t('change_language')}</span>
-          <FontAwesomeIcon icon={faGlobeAmericas} />
+          <FontAwesomeIcon icon={faLanguage} />
         </Dropdown.Toggle>
         <Dropdown.Menu className={styles.languageMenu}>
           <Dropdown.Item as="button" onClick={() => this.changeLanguage('es')}>
