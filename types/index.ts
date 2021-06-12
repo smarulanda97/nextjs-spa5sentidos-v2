@@ -1,24 +1,3 @@
-import {
-  AppProps,
-  HeaderProps,
-  NavigationProps,
-  NavigationItemProps,
-  SliderProps,
-  SliderItemProps,
-  LayoutProps,
-  LinkProps,
-  FooterProps,
-  BlockBaseProps,
-  SvgProps,
-} from './components';
-import { ConFigContext } from './contexts';
-import { Menu, MenuItem, StrapiImage, ResponsiveImages } from './global';
-
-export { ButtonColors } from './global';
-
-/**
- * Export all components props
- */
 export type {
   AppProps,
   HeaderProps,
@@ -31,14 +10,9 @@ export type {
   FooterProps,
   BlockBaseProps,
   SvgProps,
-};
+} from './components';
 
-/**
- * Export all context types
- */
-export type { ConFigContext };
+export type { ConFigContext } from './contexts';
+export type { Menu, MenuItem, StrapiImage, ResponsiveImages } from './global';
 
-/**
- * Export all global types
- */
-export type { Menu, MenuItem, StrapiImage, ResponsiveImages };
+export { ButtonColors } from './global';

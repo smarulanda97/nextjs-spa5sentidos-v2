@@ -14,7 +14,7 @@ describe('[Component] BlockBase', () => {
           height: 300,
           url: '/uploads/backround_block_overview_cd75fa1c81.jpg',
           name: 'lorem ipsum',
-          alternativeText: '',
+          alternativeText: 'Background spa overview',
         },
       },
     };
@@ -26,11 +26,13 @@ describe('[Component] BlockBase', () => {
     expect(container).toBeInTheDocument();
 
     // Render background
-    expect(within(container).getByRole('img')).toBeInTheDocument();
+    expect(
+      within(container).getByRole('img', { name: /background/i })
+    ).toBeInTheDocument();
 
     // Title, video and body is rendered
     expect(getByRole('heading', { name: /spa overview/i })).toBeInTheDocument();
-    expect(getByTestId('youtube-video-container')).toBeInTheDocument();
+    expect(getByTestId('embed-video-container')).toBeInTheDocument();
     expect(getByRole('paragraph')).toBeInTheDocument();
   });
 
@@ -41,7 +43,7 @@ describe('[Component] BlockBase', () => {
 
     const { queryByRole, queryByTestId } = render(<BlockBase {...props} />);
 
-    expect(queryByTestId('youtube-video-container')).not.toBeInTheDocument();
+    expect(queryByTestId('embed-video-container')).not.toBeInTheDocument();
     expect(queryByRole('paragraph')).not.toBeInTheDocument();
   });
 });

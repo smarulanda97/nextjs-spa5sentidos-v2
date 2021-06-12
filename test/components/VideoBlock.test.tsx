@@ -7,7 +7,7 @@ describe('[Component] VideoBlock', function () {
 
     const title = await findByRole('heading', { name: /spa overview/i });
     expect(title).toBeInTheDocument();
-    expect(getByTestId('youtube-video-container')).toBeInTheDocument();
+    expect(getByTestId('embed-video-container')).toBeInTheDocument();
     expect(getByRole('paragraph')).toBeInTheDocument();
   });
 });

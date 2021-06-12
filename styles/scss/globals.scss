@@ -6,6 +6,10 @@ body {
   background: #fff;
   font-family: $font-family-open-sans !important;
 
+  #app {
+    overflow-x: hidden;
+  }
+
   a {
     transition: 0.5s all;
     text-decoration: none;

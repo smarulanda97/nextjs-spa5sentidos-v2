@@ -1,0 +1,87 @@
+@import 'styles/scss/mixins', 'styles/scss/variables', 'styles/scss/functions';
+
+.frame {
+  top: -55%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  position: absolute;
+
+  margin: 0 auto;
+  max-width: 720px;
+  background: theme-color('white');
+  border: 16px solid theme-color('white');
+  box-shadow: 0 2px 13px 2px rgb(0 0 0 / 33%);
+
+  @include respond-below(md) {
+    margin: 0 $margin-base;
+    padding: 0 $padding-base;
+  }
+}
+
+.thumbnail {
+  min-height: 390px;
+  max-width: 720px;
+  max-height: 466px;
+
+  @include respond-below(sm) {
+    min-height: 199px;
+  }
+}
+
+.play {
+  z-index: 3;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover, &:focus, &:active, &:hover, &:active:focus {
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.modal {
+  padding: 0;
+  backdrop-filter: blur(2rem);
+}
+
+.modalDialog {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.modalHeader {
+  border: none;
+
+  button {
+    font-size: 3rem;
+  }
+}
+
+.modalContent {
+  background: transparent;
+  border: none;
+}
+
+.container {
+  position: relative;
+}
+
+.video {
+  display: block;
+  margin: 0 auto;
+  border-radius: 1.5rem;
+
+  @include respond-below(md) {
+    width: 100%;
+  }
+}
