@@ -16,7 +16,7 @@ jest.mock('next/link', () => ({ children }) => children);
 jest.mock('next-i18next', () => ({
   useTranslation: () => {
     return {
-      t: (str) => str,
+      t: (str: string): string => str,
     };
   },
 }));
