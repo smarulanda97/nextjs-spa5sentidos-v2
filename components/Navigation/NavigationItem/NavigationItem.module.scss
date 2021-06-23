@@ -5,8 +5,8 @@
   transition: 0.5s all;
   text-transform: uppercase;
   font-size: $font-size-base * .95;
-  color: text-color('white') !important;
-  text-shadow: 1px 1px #000;
+  color: text-color('dark') !important;
+  //text-shadow: 1px 1px #000;
 
   @include respond-above(lg) {
     padding: $padding-base * 1.625 $padding-base * 1.25;
