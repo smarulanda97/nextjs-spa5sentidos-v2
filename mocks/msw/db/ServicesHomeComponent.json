@@ -5,6 +5,9 @@
       "title": "Facial Cleansing",
       "summary": "It is a method to pamper your skin; as well as preventing and treating the main signs of aging. This massage helps you relax your facial muscles and show off a smooth, fresh and shiny skin.",
       "slug": "facial-cleansing",
+      "price": 20,
+      "discount": 0,
+      "home_service_included": false,
       "images": {
         "thumbnail": {
           "url": "/uploads/facial_4b4ed17ca5.jpg",
@@ -21,6 +24,9 @@
       "title": "Suction cups",
       "summary": "When using the suction cups, they stick to the body, they are of different sizes and the suction brings blood to the surface of the skin. This is why the marks that look like bruises.\\n\\nThe treatment is said to improve blood circulation, thereby speeding up healing, reducing pain, relieving muscle discomfort, detoxifying the body, and draining toxins.",
       "slug": "suction-cups",
+      "price": 120000,
+      "price": 15,
+      "home_service_included": true,
       "images": {
         "thumbnail": {
           "url": "/uploads/ventosas_e996b63215.jpg",
@@ -37,6 +43,9 @@
       "title": "Volcanic rocks",
       "summary": "Chocolate therapy combines traditional therapeutic massage with the application of hot stones to the skin, to facilitate the flow of vital energy and relieve physical pain.",
       "slug": "volcanic-rocks",
+      "price": 38,
+      "discount": 0,
+      "home_service_included": true,
       "images": {
         "thumbnail": {
           "url": "/uploads/piedras_e480a7949f.jpg",
@@ -53,6 +62,9 @@
       "title": "Relaxing massage",
       "summary": "Relaxing massage is a therapy for your body and mind, it helps to eliminate muscle tension and acts on different systems such as circulatory, muscular, lymphatic, nervous, among others",
       "slug": "relaxing-massage",
+      "price": 25,
+      "discount": 0,
+      "home_service_included": false,
       "images": {
         "thumbnail": {
           "url": "/uploads/relajante_0bdc85cbc9.jpg",

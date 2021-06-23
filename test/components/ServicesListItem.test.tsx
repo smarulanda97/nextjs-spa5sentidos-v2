@@ -51,4 +51,77 @@ describe('[Component] ServiceListItem', function () {
     );
     expect(domainLink[1]).toEqual('api.whatsapp.com');
   });
+
+  test('Render each element for a massage with discount and home service included', () => {
+    const serviceWithDiscount = {
+      ...service,
+      price: 40,
+      discount: 10,
+    }
+
+    const { getByText, getAllByTestId } = render(<ServicesListItem service={{ ...serviceWithDiscount }} />)
+
+    const oldPrice = getByText(/^\$40\sUSD/i);
+    expect(oldPrice).toBeInTheDocument();
+    
+    const newPrice = getByText(/^\$36\sUSD/i); 
+    expect(newPrice).toBeInTheDocument(); 
+
+    expect(getAllByTestId('service-list-item-price')).toHaveLength(2)
+  })
+
+  test('Render only the current price when the massage doesn\'t have a discount', () => {
+    const serviceWithoutDiscount = {
+      ...service,
+      price: 40,
+      discount: 0,
+    }
+
+    const { getByText, getAllByTestId } = render(<ServicesListItem service={{ ...serviceWithoutDiscount }} />)
+
+    const oldPrice = getByText(/^\$40\sUSD/i);
+    expect(oldPrice).toBeInTheDocument();
+    
+    const newPrice = getByText(/^\$36\sUSD/i); 
+    expect(newPrice).toBeInTheDocument(); 
+
+    expect(getAllByTestId('service-list-item-price')).toHaveLength(1)
+  })
+
+  test('Display a message when the home service service is included with a massage', () => {
+    const serviceWithoutDiscount = {
+      ...service,
+      price: 40,
+      discount: 0,
+      home_service_inluded: true
+    }
+    
+    const { getByText } = render(<ServicesListItem service={{ ...serviceWithoutDiscount }} />)
+  
+    // When the home service is included
+    const serviceIncluded = getByText(/included_home_service/);
+    const serviceNotInclued = getByText(/not_included_home_service/);
+    
+    expect(serviceIncluded).toBeInTheDocument()
+    expect(serviceNotInclued).not.toBeInTheDocument();
+  })
+
+   test('Hide the message when the home service service is not included with a massage', () => {
+    const serviceWithoutDiscount = {
+      ...service,
+      price: 40,
+      discount: 0,
+      home_service_inluded: false
+    }
+    
+    const { getByText } = render(<ServicesListItem service={{ ...serviceWithoutDiscount }} />)
+  
+    // When the home service is included
+    const serviceIncluded = getByText(/included_home_service/);
+    const serviceNotInclued = getByText(/not_included_home_service/);
+    
+    expect(serviceIncluded).not.toBeInTheDocument()
+    expect(serviceNotInclued).not.toBeInTheDocument();
+  })
+
 });
