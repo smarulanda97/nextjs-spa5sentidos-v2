@@ -27,11 +27,21 @@ type StrapiImage = {
 type ResponsiveImages = {
   mobile: StrapiImage;
   desktop: StrapiImage;
-}
+};
 
 export enum ButtonColors {
   primary = 'primary',
   secondary = 'secondary',
+}
+
+export enum Locale {
+  Colombia = 'es-CO',
+  Global = 'en-US',
+}
+
+export enum Currency {
+  Colombia = 'COP',
+  Global = 'USD',
 }
 
 export type { Menu, MenuItem, StrapiImage, ResponsiveImages };

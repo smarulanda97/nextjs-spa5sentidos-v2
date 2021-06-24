@@ -16,4 +16,4 @@ export type {
 export type { ConFigContext } from './contexts';
 export type { Menu, MenuItem, StrapiImage, ResponsiveImages } from './global';
 
-export { ButtonColors } from './global';
+export { ButtonColors, Locale, Currency } from './global';
