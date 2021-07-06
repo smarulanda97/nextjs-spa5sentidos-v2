@@ -20,6 +20,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
               width={item.icon.width}
               height={item.icon.height}
               src={asset(item.icon.url)}
+              alt={`${item.title}`}
             />
           )}
           {!item.icon && <span>{item.title}</span>}
