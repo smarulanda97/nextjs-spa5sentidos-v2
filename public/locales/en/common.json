@@ -17,5 +17,6 @@
   "powered_by": "Powered by {{ author }}",
   "services": "Services",
   "spanish": "Español",
-  "see_more": "Show more"
+  "see_more": "Show more",
+  "with_discount": "{{ discount }}% Off"
 }

@@ -17,5 +17,6 @@
   "powered_by": "Desarrollado por {{ author }}",
   "services": "Servicios",
   "spanish": "Español",
-  "see_more": "Ver más"
+  "see_more": "Ver más",
+  "with_discount": "{{ discount }}% Dcto"
 }
