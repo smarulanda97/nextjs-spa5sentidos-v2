@@ -1,0 +1,30 @@
+@import 'styles/scss/variables', 'styles/scss/mixins';
+
+.container {
+  padding-top: $padding-base;
+  font-size: 1.15rem;
+}
+
+.price {
+  margin-top: $margin-base;
+  font-weight: bold;
+  color: text-color('info');
+  position: relative;
+}
+
+.withDiscount {
+  color: text-color('secondary');
+
+  &::before {
+    top: 50%;
+    content: '';
+    width: 100%;
+    height: .15rem;
+    position: absolute;
+    background: theme-color('secondary');
+  }
+}
+
+.bestPrice {
+  @extend .price;
+}

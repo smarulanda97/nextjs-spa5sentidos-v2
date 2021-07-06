@@ -1,14 +1,16 @@
-import React, { memo } from 'react';
 import Image from 'next/image';
+import React, { memo } from 'react';
 import { Col } from 'react-bootstrap';
-import { Link } from '@components/index';
 import { useTranslation } from 'next-i18next';
-import { ButtonColors } from '@types-app/index';
 import { asset, trimAllSpaces } from '@utils/index';
-import styles from './ServicesListItem.module.scss';
+import { Link, Offer, Price } from '@components/index';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
+import { ButtonColors, ServicesListItemProps } from '@types-app/index';
 
-const ServicesListItem: React.FC<any> = ({ service }) => {
+import styles from './ServicesListItem.module.scss';
+
+const ServicesListItem: React.FC<ServicesListItemProps> = ({ service }) => {
+  const { price, discount } = service;
   const { thumbnail } = service.images;
   const { t } = useTranslation('common');
   const {
@@ -20,19 +22,23 @@ const ServicesListItem: React.FC<any> = ({ service }) => {
       <div>
         <Image
           quality={85}
+          layout={'responsive'}
           width={thumbnail.width}
           height={thumbnail.height}
           src={asset(thumbnail.url)}
-          layout={'responsive'}
           alt={`${service.title} service`}
         />
         <div className={styles.description}>
-          <h3 data-testid={'service-title'}>{service.title}</h3>
+          <h3 data-testid={'service-title'}>
+            {service.title}
+            <Offer discount={discount} />
+          </h3>
           <p role={'paragraph'}>
             {service.summary.slice(0, 180)}
             {service.summary.length > 180 && ' ...'}
           </p>
         </div>
+        <Price price={price} discount={discount} />
       </div>
       <div className={styles.buttons}>
         <Link

@@ -12,6 +12,9 @@ export const GET_DATA_SERVICES_HOME_COMPONENT = gql`
       title
       summary
       slug
+      price
+      discount
+      home_service_included
       images {
         thumbnail {
           url

@@ -1,4 +1,4 @@
-import { Menu, ButtonColors, StrapiImage, MenuItem } from './global';
+import { Menu, ButtonColors, StrapiImage, MenuItem, Service } from './global';
 
 type AppProps = {
   layout: boolean;
@@ -73,6 +73,19 @@ type EmbedVideoProps = {
   videoId: string;
 };
 
+type ServicesListItemProps = {
+  service: Service;
+};
+
+type PriceProps = {
+  price: number;
+  discount: number;
+};
+
+type OfferProps = {
+  discount: number;
+};
+
 export type {
   AppProps,
   HeaderProps,
@@ -86,4 +99,7 @@ export type {
   BlockBaseProps,
   SvgProps,
   EmbedVideoProps,
+  ServicesListItemProps,
+  PriceProps,
+  OfferProps,
 };

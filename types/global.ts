@@ -29,6 +29,19 @@ type ResponsiveImages = {
   desktop: StrapiImage;
 };
 
+type Service = {
+  id: string;
+  title: string;
+  summary: string;
+  slug: string;
+  price: number;
+  discount: number;
+  home_service_included: boolean;
+  images: {
+    thumbnail: StrapiImage
+  }
+}
+
 export enum ButtonColors {
   primary = 'primary',
   secondary = 'secondary',
@@ -44,4 +57,4 @@ export enum Currency {
   Global = 'USD',
 }
 
-export type { Menu, MenuItem, StrapiImage, ResponsiveImages };
+export type { Menu, MenuItem, StrapiImage, ResponsiveImages, Service };

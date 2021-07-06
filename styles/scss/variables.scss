@@ -4,11 +4,13 @@ $dark: #212529;
 
 $primary: #1bdacc;
 $secondary: #b5b5b5;
+$info: #fc3d6a;
 
 $theme-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
+  'info': $info,
   "white-transparent": rgb(255, 255, 255, .55),
   "primary-transparent": rgb(27, 218, 204, .75),
   "secondary-transparent": rgb(181, 181, 181, .2),
@@ -19,6 +21,7 @@ $text-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
+  'info': $info,
 );
 
 $hovers: (

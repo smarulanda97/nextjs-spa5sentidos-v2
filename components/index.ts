@@ -4,6 +4,8 @@ export { default as Footer } from './Footer/Footer';
 export { default as Layout } from './Layout/Layout';
 export { default as Slider } from './Slider/Slider';
 export { default as Link } from './Common/Link/Link';
+export { default as Price } from './Common/Price/Price';
+export { default as Offer } from './Common/Offer/Offer';
 export { default as BlockBase } from './BlockBase/BlockBase';
 export { default as VideoBlock } from './VideoBlock/VideoBlock';
 export { default as EmbedVideo } from './EmbedVideo/EmbedVideo';
