@@ -2,6 +2,9 @@ import { Menu, ButtonColors, StrapiImage, MenuItem, Service } from './global';
 
 type AppProps = {
   layout: boolean;
+  url: {
+    origin: string;
+  };
   children?: JSX.Element | JSX.Element[];
 };
 

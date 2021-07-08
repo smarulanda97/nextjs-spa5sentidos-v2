@@ -7,15 +7,28 @@ export { default as Link } from './Common/Link/Link';
 export { default as Price } from './Common/Price/Price';
 export { default as Offer } from './Common/Offer/Offer';
 export { default as BlockBase } from './BlockBase/BlockBase';
-export { default as VideoBlock } from './VideoBlock/VideoBlock';
 export { default as EmbedVideo } from './EmbedVideo/EmbedVideo';
 export { default as Navigation } from './Navigation/Navigation';
 export { default as PlayButton } from './Common/Svg/PlayButton';
 export { default as SpanishFlag } from './Common/Svg/SpanishFlag';
 export { default as EnglishFlag } from './Common/Svg/EnglishFlag';
-export { default as InstagramFeed } from './InstagramFeed/InstagramFeed';
-export { default as ServicesHome } from './Services/ServicesHome/ServicesHome';
 export { default as ServicesList } from './Services/ServicesList/ServicesList';
 export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 export { default as NavigationItem } from './Navigation/NavigationItem/NavigationItem';
 export { default as ServicesListItem } from './Services/ServicesList/ServicesListItem/ServicesListItem';
+/**
+ *
+ * Mapping available components to be rendered from a page
+ *
+ */
+import VideoBlock from './VideoBlock/VideoBlock';
+import Unrendered from './Common/Unrendered/Unredered';
+import InstagramFeed from './InstagramFeed/InstagramFeed';
+import ServicesHome from './Services/ServicesHome/ServicesHome';
+
+export const ComponentsList = {
+  instagramFeed: InstagramFeed,
+  servicesHome: ServicesHome,
+  videoHome: VideoBlock,
+  unrendered: Unrendered,
+};

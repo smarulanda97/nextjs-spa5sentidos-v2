@@ -1,57 +1,30 @@
 import React from 'react';
+import { App } from '@components/index';
+import absoluteUrl from 'next-absolute-url';
+import { PageProps } from '@types-app/index';
 import { GetServerSidePropsContext, NextPage } from 'next';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
+import { queriesForPage, renderPageComponents } from '@utils/pageUtils';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import {
-  App,
-  VideoBlock,
-  InstagramFeed,
-  ServicesHome,
-} from '@components/index';
-import {
-  GET_DATA_LAYOUT_COMPONENT,
-  GET_DATA_SERVICES_HOME_COMPONENT,
-  GET_DATA_VIDEO_BLOCK_COMPONENT,
-  GET_DATA_APP_CONFIG_CONTEXT,
-} from '@queries/index';
 
-const Home: NextPage = () => {
+const Home: NextPage<PageProps> = (props) => {
   return (
-    <App layout={true}>
-      <ServicesHome />
-      <VideoBlock />
-      <InstagramFeed />
+    <App layout={true} url={props.url}>
+      {renderPageComponents('indexPage')}
     </App>
   );
 };
 
 export const getServerSideProps: any = async ({
+  req,
   locale,
 }: GetServerSidePropsContext) => {
   const apolloClient = initializeApollo();
-  const variables = { locale };
-
-  await Promise.all([
-    apolloClient.query({
-      variables,
-      query: GET_DATA_APP_CONFIG_CONTEXT,
-    }),
-    apolloClient.query({
-      variables,
-      query: GET_DATA_LAYOUT_COMPONENT,
-    }),
-    apolloClient.query({
-      variables,
-      query: GET_DATA_SERVICES_HOME_COMPONENT,
-    }),
-    apolloClient.query({
-      variables,
-      query: GET_DATA_VIDEO_BLOCK_COMPONENT,
-    }),
-  ]);
+  await queriesForPage('indexPage', apolloClient, locale);
 
   return addApolloState(apolloClient, {
     props: {
+      url: absoluteUrl(req),
       ...(await serverSideTranslations(locale, ['common'])),
     },
   });

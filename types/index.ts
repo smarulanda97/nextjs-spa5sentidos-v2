@@ -25,4 +25,6 @@ export type {
   Service,
 } from './global';
 
+export type { PageProps } from './pages';
+
 export { ButtonColors, Locale, Currency } from './global';
