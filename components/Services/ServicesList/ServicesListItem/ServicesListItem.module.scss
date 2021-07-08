@@ -25,6 +25,7 @@
     color: text-color('dark');
     text-transform: capitalize;
     font-size: $font-size-base * 1.35;
+    min-height: $font-size-base * 2.5;
 
     @include respond-between(md, xl) {
       margin: 1rem auto;
@@ -38,7 +39,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: 1rem;
+  margin-top: $margin-base * .5;
 
   @include respond-below(sm) {
     flex-direction: row;

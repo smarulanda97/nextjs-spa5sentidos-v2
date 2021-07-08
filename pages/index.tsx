@@ -18,11 +18,9 @@ import {
 const Home: NextPage = () => {
   return (
     <App layout={true}>
-      <React.Fragment>
-        <ServicesHome />
-        <VideoBlock />
-        <InstagramFeed />
-      </React.Fragment>
+      <ServicesHome />
+      <VideoBlock />
+      <InstagramFeed />
     </App>
   );
 };

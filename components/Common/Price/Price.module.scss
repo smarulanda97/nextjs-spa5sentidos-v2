@@ -1,8 +1,12 @@
 @import 'styles/scss/variables', 'styles/scss/mixins';
 
 .container {
-  padding-top: $padding-base;
   font-size: 1.15rem;
+
+  @include respond-below(sm) {
+    padding-top: $padding-base * .5;
+    padding-bottom: $padding-base * .5;
+  }
 }
 
 .price {

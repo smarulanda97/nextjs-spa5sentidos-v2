@@ -34,12 +34,12 @@ const ServicesListItem: React.FC<ServicesListItemProps> = ({ service }) => {
             <Offer discount={discount} />
           </h3>
           <p role={'paragraph'}>
-            {service.summary.slice(0, 180)}
-            {service.summary.length > 180 && ' ...'}
+            {service.summary.slice(0, 150)}
+            {service.summary.length > 150 && ' ...'}
           </p>
         </div>
-        <Price price={price} discount={discount} />
       </div>
+      <Price price={price} discount={discount} />
       <div className={styles.buttons}>
         <Link
           target={'_blank'}

@@ -32,17 +32,18 @@
   right: inherit;
 
   text-align: left;
-  backdrop-filter: blur(8px);
-  background: rgb(0, 0, 0, 0.2);
+  //backdrop-filter: blur(8px);
+  //background: rgb(0, 0, 0, 0.2);
   padding: 1rem 2rem 1rem 2rem;
 
   @include respond-below(sm) {
+    background: none;
     text-align: center;
-    background: rgb(0, 0, 0, 0.05);
+    backdrop-filter: none;
   }
 
   @include respond-below(sm) {
-    bottom: 0;
+    bottom: 5%;
   }
 
   h1,
@@ -53,7 +54,7 @@
     text-shadow: 1px 2px 2px text-color('dark');
 
     @include respond-below(sm) {
-      font-size: $font-size-base * 2;
+      font-size: $font-size-base * 2.4;
     }
 
     @include respond-between(sm, xl) {

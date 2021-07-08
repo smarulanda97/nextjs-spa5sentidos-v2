@@ -59,6 +59,10 @@ body {
       font-size: 42px;
       letter-spacing: 3px;
       font-family: $font-family-montez;
+
+      @include respond-below(sm) {
+        font-size: $font-size-base * 2;
+      }
     }
   }
 
@@ -83,6 +87,10 @@ body {
       @include respond-below(sm) {
         max-width: 200px;
       }
+    }
+
+    .navbar-collapse {
+      justify-content: flex-end;
     }
 
     .main-menu {
