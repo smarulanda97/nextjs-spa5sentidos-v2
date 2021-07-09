@@ -1,15 +1,15 @@
 import { App } from '@components/index';
 import absoluteUrl from 'next-absolute-url';
 import { PageProps } from '@types-app/index';
+import { queriesForPage, renderPageComponents } from '@utils/index';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
-import { queriesForPage, renderPageComponents } from '@utils/pageUtils';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { GetServerSidePropsContext, GetServerSideProps, NextPage } from 'next';
+import { NextPage, GetServerSideProps, GetServerSidePropsContext } from 'next';
 
-const Home: NextPage<PageProps> = (props) => {
+const Services: NextPage<PageProps> = (props) => {
   return (
-    <App layout={true} url={props.url}>
-      {renderPageComponents('indexPage')}
+    <App url={props.url} layout={true}>
+      {renderPageComponents('servicesPage')}
     </App>
   );
 };
@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   locale,
 }: GetServerSidePropsContext) => {
   const apolloClient = initializeApollo();
-  await queriesForPage('indexPage', apolloClient, locale);
+  await queriesForPage('servicesPage', apolloClient, locale);
 
   return addApolloState(apolloClient, {
     props: {
@@ -29,4 +29,4 @@ export const getServerSideProps: GetServerSideProps = async ({
   });
 };
 
-export default Home;
+export default Services;

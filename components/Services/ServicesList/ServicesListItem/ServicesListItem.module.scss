@@ -11,10 +11,13 @@
     padding-top: $padding-base;
   }
 
+  @include respond-above(sm) {
+    margin-top: $margin-base * 2;
+  }
+
   p {
     text-align: left;
   }
-
 }
 
 .description {
@@ -39,7 +42,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-  margin-top: $margin-base * .5;
+  margin-top: $margin-base * 0.5;
 
   @include respond-below(sm) {
     flex-direction: row;
@@ -48,10 +51,10 @@
 
   a {
     width: 72%;
-    margin-bottom: $margin-base * .625;
+    margin-bottom: $margin-base * 0.625;
 
     @include respond-below(lg) {
-      width: 50%
+      width: 50%;
     }
     @include respond-below(sm) {
       width: 45%;

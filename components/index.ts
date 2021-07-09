@@ -28,10 +28,12 @@ import VideoBlockComponent from './VideoBlock/VideoBlock';
 import UnrenderedComponent from './Common/Unrendered/Unredered';
 import InstagramFeedComponent from './InstagramFeed/InstagramFeed';
 import ServicesHomeComponent from './Services/ServicesHome/ServicesHome';
+import ServicesAll from './Services/ServicesAll/ServicesAll';
 
 export const ComponentsList = {
   instagramFeed: InstagramFeedComponent,
   servicesHome: ServicesHomeComponent,
   videoHome: VideoBlockComponent,
   unrendered: UnrenderedComponent,
+  servicesAll: ServicesAll,
 };

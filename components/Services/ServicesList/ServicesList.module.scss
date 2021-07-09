@@ -1,0 +1,9 @@
+@import 'styles/scss/variables', 'styles/scss/mixins';
+
+.container {
+  justify-content: start;
+
+  @include respond-below(sm) {
+    justify-content: center;
+  }
+}
