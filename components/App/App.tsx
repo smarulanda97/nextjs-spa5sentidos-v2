@@ -19,7 +19,7 @@ class App extends React.Component<WithRouterProps> {
       openGraph: {
         type: 'website',
         title: 'Spa 5 Sentidos',
-        url: url.origin + router.pathname,
+        url: url.origin + router.asPath,
         defaultTitle: 'Spa 5 Sentidos - Servicio a domicilio de masajes',
       },
     };
