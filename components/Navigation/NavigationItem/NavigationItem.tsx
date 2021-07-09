@@ -12,7 +12,9 @@ const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
     <Nav.Item key={item.id}>
       <Link href={item.link} passHref>
         <Nav.Link
-          {...(isAbsoluteUrl(item.link) ? { target: '_blank' } : {})}
+          {...(isAbsoluteUrl(item.link)
+            ? { target: '_blank', rel: 'noopener noreferrer' }
+            : {})}
           className={item.icon ? styles.navLinkIcon : styles.navLinkText}
         >
           {item.icon && (
