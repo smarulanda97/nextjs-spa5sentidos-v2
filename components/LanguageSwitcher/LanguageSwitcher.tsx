@@ -17,7 +17,8 @@ interface WithTranslationProps extends WithRouterProps {
 
 class LanguageSwitcher extends React.Component<WithTranslationProps> {
   changeLanguage(lang: string): void {
-    this.props.router.push('/', '/', { locale: lang });
+    const { pathname, asPath } = this.props.router;
+    this.props.router.push(pathname, asPath, { locale: lang });
   }
 
   render(): JSX.Element {
