@@ -30,7 +30,10 @@ class LanguageSwitcher extends React.Component<WithTranslationProps> {
         className={styles.sticky}
         data-testid={'language-switcher-container'}
       >
-        <Dropdown.Toggle id="dropdown-language">
+        <Dropdown.Toggle
+          id="dropdown-language"
+          aria-label={t('change_language')}
+        >
           <span>{t('change_language')}</span>
           <FontAwesomeIcon icon={faLanguage} />
         </Dropdown.Toggle>

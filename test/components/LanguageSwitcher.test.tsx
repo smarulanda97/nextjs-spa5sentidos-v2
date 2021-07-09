@@ -19,7 +19,7 @@ describe('[Component] LanguageSwitcher', () => {
   test('Open and close language selector, when the user click on sticky icon', async () => {
     const { getByRole } = render(<LanguageSwitcher />);
 
-    const buttonI18n = getByRole('button');
+    const buttonI18n = getByRole('button', { name: /change_language/ });
     expect(buttonI18n).toBeInTheDocument();
 
     userEvent.click(buttonI18n);
