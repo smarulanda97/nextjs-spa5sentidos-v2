@@ -5,4 +5,17 @@ module.exports = {
   images: {
     domains: ['localhost', 'img.youtube.com'],
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/servicios',
+        destination: '/services',
+      },
+      {
+        source: '/masajes',
+        destination: '/services',
+      },
+    ];
+  },
 };
