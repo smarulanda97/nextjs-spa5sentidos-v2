@@ -1,5 +1,5 @@
 import React from 'react';
-import Script from 'react-load-script';
+import Script from 'next/script';
 import { Link } from '@components/index';
 import { useTranslation } from 'next-i18next';
 import { ButtonColors } from '@types-app/index';
@@ -46,7 +46,8 @@ const InstagramFeed: React.FC = () => {
       </Container>
       <Script
         onLoad={handleLoadScript}
-        url={'//apps.elfsight.com/p/platform.js'}
+        strategy={'lazyOnload'}
+        src={'//apps.elfsight.com/p/platform.js'}
       />
     </React.Fragment>
   );
