@@ -5,7 +5,4 @@ module.exports = {
   images: {
     domains: ['localhost', 'img.youtube.com'],
   },
-  future: {
-    webpack5: true,
-  },
 };
