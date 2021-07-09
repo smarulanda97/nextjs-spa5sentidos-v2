@@ -25,7 +25,14 @@ const Slider: React.FC<SliderProps> = (props) => {
 
     const image = isMobileOnly ? images.mobile : images.desktop;
 
-    return <Image quality={100} layout={'fill'} src={asset(image.url)} />;
+    return (
+      <Image
+        quality={100}
+        layout={'fill'}
+        src={asset(image.url)}
+        alt={image.alternativeText}
+      />
+    );
   }
 
   return (
