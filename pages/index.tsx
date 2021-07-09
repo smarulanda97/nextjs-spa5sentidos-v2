@@ -2,10 +2,10 @@ import React from 'react';
 import { App } from '@components/index';
 import absoluteUrl from 'next-absolute-url';
 import { PageProps } from '@types-app/index';
-import { GetServerSidePropsContext, NextPage } from 'next';
 import { addApolloState, initializeApollo } from '@lib/apollo/client';
 import { queriesForPage, renderPageComponents } from '@utils/pageUtils';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetServerSidePropsContext, GetServerSideProps, NextPage } from 'next';
 
 const Home: NextPage<PageProps> = (props) => {
   return (
@@ -15,7 +15,7 @@ const Home: NextPage<PageProps> = (props) => {
   );
 };
 
-export const getServerSideProps: any = async ({
+export const getServerSideProps: GetServerSideProps = async ({
   req,
   locale,
 }: GetServerSidePropsContext) => {

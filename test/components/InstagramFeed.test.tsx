@@ -2,7 +2,7 @@ import { render } from '@lib/jest/testUtils';
 import { InstagramFeed } from '@components/index';
 
 describe('[Component] InstagramFeed', () => {
-  test.only('Render the container for ig feed iframe and block title', async () => {
+  test('Render the container for ig feed iframe and block title', async () => {
     const { findByRole, findByTestId, getByText } = render(<InstagramFeed />);
 
     // Check than the block title is rendered

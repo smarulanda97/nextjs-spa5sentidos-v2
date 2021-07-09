@@ -52,6 +52,4 @@ const InstagramFeed: React.FC = () => {
   );
 };
 
-const InstagramFeedComponent = React.memo(InstagramFeed);
-
-export default InstagramFeedComponent;
+export default InstagramFeed;

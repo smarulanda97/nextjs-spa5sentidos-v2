@@ -16,19 +16,22 @@ export { default as ServicesList } from './Services/ServicesList/ServicesList';
 export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher';
 export { default as NavigationItem } from './Navigation/NavigationItem/NavigationItem';
 export { default as ServicesListItem } from './Services/ServicesList/ServicesListItem/ServicesListItem';
+export { default as InstagramFeed } from './InstagramFeed/InstagramFeed';
+export { default as VideoBlock } from './VideoBlock/VideoBlock';
+export { default as ServicesHome } from './Services/ServicesHome/ServicesHome';
 /**
  *
  * Mapping available components to be rendered from a page
  *
  */
-import VideoBlock from './VideoBlock/VideoBlock';
-import Unrendered from './Common/Unrendered/Unredered';
-import InstagramFeed from './InstagramFeed/InstagramFeed';
-import ServicesHome from './Services/ServicesHome/ServicesHome';
+import VideoBlockComponent from './VideoBlock/VideoBlock';
+import UnrenderedComponent from './Common/Unrendered/Unredered';
+import InstagramFeedComponent from './InstagramFeed/InstagramFeed';
+import ServicesHomeComponent from './Services/ServicesHome/ServicesHome';
 
 export const ComponentsList = {
-  instagramFeed: InstagramFeed,
-  servicesHome: ServicesHome,
-  videoHome: VideoBlock,
-  unrendered: Unrendered,
+  instagramFeed: InstagramFeedComponent,
+  servicesHome: ServicesHomeComponent,
+  videoHome: VideoBlockComponent,
+  unrendered: UnrenderedComponent,
 };
