@@ -5,9 +5,15 @@ import { Navbar } from 'react-bootstrap';
 import { asset } from '@utils/imageUtils';
 import styles from './Header.module.scss';
 import { Navigation } from '@components/index';
-import { HeaderProps } from '@types-app/index';
+import { StrapiImage, Menu } from '@types-app/index';
 
-const Header: React.FC<HeaderProps> = (props) => {
+type Props = {
+  logo: StrapiImage;
+  mainMenu?: Menu;
+  socialMenu?: Menu;
+};
+
+const Header: React.FC<Props> = (props) => {
   const { logo } = props;
 
   const renderMainNavigation = () => {

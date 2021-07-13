@@ -4,12 +4,16 @@ import { Col } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 import { asset, trimAllSpaces } from '@utils/index';
 import { Link, Offer, Price } from '@components/index';
+import { ButtonColors, Service } from '@types-app/index';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
-import { ButtonColors, ServicesListItemProps } from '@types-app/index';
 
 import styles from './ServicesListItem.module.scss';
 
-const ServicesListItem: React.FC<ServicesListItemProps> = ({ service }) => {
+type Props = {
+  service: Service;
+};
+
+const ServicesListItem: React.FC<Props> = ({ service }) => {
   const { price, discount } = service;
   const { thumbnail } = service.images;
   const { t } = useTranslation('common');

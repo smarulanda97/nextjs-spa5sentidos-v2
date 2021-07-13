@@ -3,11 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Nav } from 'react-bootstrap';
 import { asset } from '@utils/imageUtils';
-import styles from './NavigationItem.module.scss';
+import { MenuItem } from '@types-app/index';
 import { isAbsoluteUrl } from '@utils/urlUtils';
-import { NavigationItemProps } from '@types-app/index';
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ item }) => {
+import styles from './NavigationItem.module.scss';
+
+type Props = {
+  item: MenuItem;
+};
+
+const NavigationItem: React.FC<Props> = ({ item }) => {
   return (
     <Nav.Item key={item.id}>
       <Link href={item.link} passHref>

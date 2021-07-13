@@ -2,11 +2,22 @@ import React from 'react';
 import Image from 'next/image';
 import { asset } from '@utils/imageUtils';
 import styles from './BlockBase.module.scss';
-import { BlockBaseProps } from '@types-app/index';
+import { StrapiImage } from '@types-app/index';
 import { Col, Container, Row } from 'react-bootstrap';
 import { EmbedVideo } from '@components/index';
 
-class BlockBase extends React.Component<BlockBaseProps> {
+export interface Props {
+  title: string;
+  link?: string;
+  body?: string;
+  videoId?: any;
+  images?: {
+    desktop?: StrapiImage;
+    mobile?: StrapiImage;
+  };
+}
+
+class BlockBase extends React.Component<Props> {
   videoOptions = {};
 
   render() {

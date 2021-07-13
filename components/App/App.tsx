@@ -1,10 +1,16 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
+import { Url } from '@types-app/index';
 import { Layout } from '@components/index';
-import { AppProps } from '@types-app/index';
 import { withRouter, NextRouter } from 'next/router';
 
-interface WithRouterProps extends AppProps {
+interface Props {
+  url: Url;
+  layout: boolean;
+  children?: JSX.Element | JSX.Element[];
+}
+
+interface WithRouterProps extends Props {
   router: NextRouter;
 }
 

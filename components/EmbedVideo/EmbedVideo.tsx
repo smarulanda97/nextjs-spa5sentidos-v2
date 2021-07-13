@@ -5,9 +5,12 @@ import styles from './EmbedVideo.module.scss';
 import { useTranslation } from 'next-i18next';
 import { PlayButton } from '@components/index';
 import { Button, Modal } from 'react-bootstrap';
-import { EmbedVideoProps } from '@types-app/components';
 
-const EmbedVideo: React.FC<EmbedVideoProps> = (props) => {
+type Props = {
+  videoId: string;
+};
+
+const EmbedVideo: React.FC<Props> = (props) => {
   const { videoId } = props;
   const { t } = useTranslation();
   const [play, setPlay] = useState(false);

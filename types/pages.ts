@@ -1,7 +1,7 @@
+import { Url } from '@types-app/global';
+
 interface PageProps {
-  url: {
-    origin: string;
-  };
+  url: Url;
 }
 
 export type { PageProps };

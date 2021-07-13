@@ -4,13 +4,23 @@ import styles from './Slider.module.scss';
 import { asset } from '@utils/imageUtils';
 import { isMobileOnly } from 'react-device-detect';
 import { Container, Carousel } from 'react-bootstrap';
-import {
-  SliderProps,
-  SliderItemProps,
-  ResponsiveImages,
-} from '@types-app/index';
+import { StrapiImage, ResponsiveImages } from '@types-app/index';
 
-const Slider: React.FC<SliderProps> = (props) => {
+type SliderItem = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  images: {
+    mobile: StrapiImage;
+    desktop: StrapiImage;
+  };
+};
+
+type Props = {
+  sliders: SliderItem[];
+};
+
+const Slider: React.FC<Props> = (props) => {
   const { sliders } = props;
 
   /**
@@ -43,7 +53,7 @@ const Slider: React.FC<SliderProps> = (props) => {
     >
       <Carousel indicators={false} controls={false}>
         {sliders.length &&
-          sliders.map((item: SliderItemProps) => (
+          sliders.map((item: SliderItem) => (
             <Carousel.Item
               key={item.id}
               data-testid={'slider-item'}

@@ -2,10 +2,14 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import styles from './Price.module.scss';
 import { Locale } from '@types-app/global';
-import { PriceProps } from '@types-app/components';
 import { applyDiscount, formatPrice } from '@utils/priceUtils';
 
-const Price: React.FC<PriceProps> = (props) => {
+type Props = {
+  price: number;
+  discount: number;
+};
+
+const Price: React.FC<Props> = (props) => {
   const { locale } = useRouter();
   const { price, discount } = props;
   const hasDiscount = discount > 0;

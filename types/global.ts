@@ -38,9 +38,18 @@ type Service = {
   discount: number;
   home_service_included: boolean;
   images: {
-    thumbnail: StrapiImage
-  }
-}
+    thumbnail: StrapiImage;
+  };
+};
+
+type Url = {
+  origin: string;
+};
+
+type Svg = {
+  width: string;
+  height: string;
+};
 
 export enum ButtonColors {
   primary = 'primary',
@@ -57,4 +66,12 @@ export enum Currency {
   Global = 'USD',
 }
 
-export type { Menu, MenuItem, StrapiImage, ResponsiveImages, Service };
+export type {
+  Menu,
+  MenuItem,
+  StrapiImage,
+  ResponsiveImages,
+  Service,
+  Url,
+  Svg,
+};

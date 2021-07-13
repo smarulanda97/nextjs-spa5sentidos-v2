@@ -1,7 +1,7 @@
 import React from 'react';
-import { SvgProps } from '@types-app/index';
+import { Svg } from '@types-app/index';
 
-const SpanishFlag: React.FC<SvgProps> = ({ width, height }) => (
+const SpanishFlag: React.FC<Svg> = ({ width, height }) => (
   <svg
     role={'img'}
     aria-labelledby={'flag_language_spanish'}

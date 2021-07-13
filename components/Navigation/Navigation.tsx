@@ -1,9 +1,15 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+import { Menu, MenuItem } from '@types-app/index';
 import { NavigationItem } from '@components/index';
-import { NavigationProps, MenuItem } from '@types-app/index';
 
-const Navigation: React.FC<NavigationProps> = (props) => {
+type Props = {
+  menu: Menu;
+  testId: string;
+  className?: string;
+};
+
+const Navigation: React.FC<Props> = (props) => {
   const { menu, testId, className = '' } = props;
 
   return (

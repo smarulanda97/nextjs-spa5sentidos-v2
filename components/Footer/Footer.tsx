@@ -2,13 +2,20 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { asset } from '@utils/imageUtils';
-import styles from './Footer.module.scss';
-import { FooterProps } from '@types-app/index';
-import { Navigation } from '@components/index';
 import { useTranslation } from 'next-i18next';
+import { Navigation } from '@components/index';
+import { StrapiImage, Menu } from '@types-app/index';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const Footer: React.FC<FooterProps> = (props) => {
+import styles from './Footer.module.scss';
+
+type Props = {
+  socialMenu: Menu;
+  logoFooter: StrapiImage;
+  children?: JSX.Element | JSX.Element[];
+};
+
+const Footer: React.FC<Props> = (props) => {
   const { t } = useTranslation('common');
   const { children, logoFooter, socialMenu } = props;
 

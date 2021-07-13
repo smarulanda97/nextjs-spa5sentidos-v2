@@ -2,8 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { BlockBase } from '@components/index';
-import { BlockBaseProps } from '@types-app/components';
 import { GET_DATA_VIDEO_BLOCK_COMPONENT } from '@queries/index';
+import { Props as BlockProps } from '@components/BlockBase/BlockBase';
 
 const VideoBlock: React.FC = () => {
   const { locale } = useRouter();
@@ -17,7 +17,7 @@ const VideoBlock: React.FC = () => {
     }
 
     const { video_id: videoId, ...blockData } = data.videoBlock[0];
-    const blockProps: BlockBaseProps = {
+    const blockProps: BlockProps = {
       ...blockData,
       videoId,
     };

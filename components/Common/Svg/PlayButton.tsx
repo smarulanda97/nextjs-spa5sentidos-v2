@@ -1,7 +1,7 @@
 import React from 'react';
-import { SvgProps } from '@types-app/index';
+import { Svg } from '@types-app/index';
 
-const PlayButton: React.FC<SvgProps> = ({ width, height }) => (
+const PlayButton: React.FC<Svg> = ({ width, height }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"

@@ -1,10 +1,10 @@
 import React from 'react';
 
-type UnrenderedProps = {
+type Props = {
   componentName: string;
 };
 
-const Unrendered: React.FC<UnrenderedProps> = ({ componentName }) => {
+const Unrendered: React.FC<Props> = ({ componentName }) => {
   return (
     <div className={'text-center py-1'}>
       The component {componentName} has not been created yet.

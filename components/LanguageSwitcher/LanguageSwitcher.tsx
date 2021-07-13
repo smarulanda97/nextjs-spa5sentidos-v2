@@ -1,17 +1,18 @@
 import React from 'react';
 import { withTranslation } from 'next-i18next';
-import styles from './LanguageSwitcher.module.scss';
 import { withRouter, NextRouter } from 'next/router';
 import { Dropdown, ButtonGroup } from 'react-bootstrap';
 import { EnglishFlag, SpanishFlag } from '@components/index';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface WithRouterProps {
+import styles from './LanguageSwitcher.module.scss';
+
+interface Props {
   router: NextRouter;
 }
 
-interface WithTranslationProps extends WithRouterProps {
+interface WithTranslationProps extends Props {
   t(key: string, options?: any): string;
 }
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
-import { OfferProps } from '@types-app/components';
 
 import styles from './Offer.module.scss';
 
-const Offer: React.FC<OfferProps> = (props) => {
+type Props = {
+  discount: number;
+};
+
+const Offer: React.FC<Props> = (props) => {
   const { discount } = props;
   const hasDiscount = discount > 0;
   const { t } = useTranslation('common');
