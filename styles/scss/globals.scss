@@ -95,8 +95,8 @@ body {
 
     .main-menu {
       .nav-item {
-        padding-left: $padding-base / 2;
-        padding-right: $padding-base / 2;
+        padding-left: $padding-base * .5;
+        padding-right: $padding-base * .5;
       }
     }
 
@@ -111,7 +111,7 @@ body {
           margin: 0 $margin-base * 0.7;
         }
         img {
-          width: 32px;
+          width: 32px !important;
         }
       }
     }
@@ -130,7 +130,7 @@ body {
         border: dashed 2px theme-color('secondary');
 
         img {
-          width: 35px;
+          width: 35px !important;
         }
       }
     }
