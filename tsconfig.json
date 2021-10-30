@@ -47,9 +47,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "allowJs": false,
-    "plugins": [{
-      "name": "typescript-plugin-css-modules"
-    }]
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",

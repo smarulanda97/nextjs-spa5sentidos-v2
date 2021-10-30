@@ -5,7 +5,7 @@ module.exports = {
   images: {
     domains: ['localhost', 'img.youtube.com'],
   },
-
+  swcMinify: true,
   async rewrites() {
     return [
       {
