@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app';
-import { useApollo } from '@lib/apollo/client';
+import { SSRProvider } from 'react-bootstrap';
 import { ApolloProvider } from '@apollo/client';
 import { appWithTranslation } from 'next-i18next';
+
+import { useApollo } from '@lib/apollo/client';
 import { AppConfigProvider } from '@context/AppConfig/AppConfigContext';
 
 import '@styles/scss/index.scss';
@@ -12,7 +14,9 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ApolloProvider client={apolloClient}>
       <AppConfigProvider>
-        <Component {...pageProps} />
+        <SSRProvider>
+          <Component {...pageProps} />
+        </SSRProvider>
       </AppConfigProvider>
     </ApolloProvider>
   );
