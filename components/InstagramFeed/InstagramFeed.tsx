@@ -16,9 +16,12 @@ const InstagramFeed: React.FC = () => {
       const buttonFreeWidget = document.querySelector('.eapps-link');
       if (buttonFreeWidget) {
         buttonFreeWidget.remove();
+        const window = document.querySelector('.eapps-instagram-feed > a');
+        window.removeAttribute('style');
+        window.innerHTML = '';
         clearInterval(interval);
       }
-    }, 1000);
+    }, 500);
   };
 
   return (
@@ -29,12 +32,10 @@ const InstagramFeed: React.FC = () => {
         </h2>
         <Row>
           <Col>
-            {app && app.elfsight_token ? (
-              <div
-                data-testid={'ig-feed-container'}
-                className={app.elfsight_token}
-              />
-            ) : null}
+            <div
+              data-testid={'ig-feed-container'}
+              className={`${app.elfsight_token ? app.elfsight_token : ''}`}
+            />
           </Col>
         </Row>
         <Link

@@ -1,5 +1,5 @@
 import { render } from '@lib/jest/testUtils';
-import { waitFor } from '@testing-library/react';
+import { waitFor, screen } from '@testing-library/react';
 import { LanguageSwitcher } from '@components/index';
 import userEvent from '@testing-library/user-event';
 
@@ -21,7 +21,6 @@ describe('[Component] LanguageSwitcher', () => {
 
     const buttonI18n = getByRole('button', { name: /change_language/ });
     expect(buttonI18n).toBeInTheDocument();
-
     userEvent.click(buttonI18n);
 
     await waitFor(() => {
@@ -33,13 +32,6 @@ describe('[Component] LanguageSwitcher', () => {
 
       expect(spanishButton).toBeVisible();
       expect(englishButton).toBeVisible();
-    });
-
-    userEvent.click(buttonI18n);
-
-    await waitFor(() => {
-      expect(getByRole('button', { name: 'spanish' })).not.toBeVisible();
-      expect(getByRole('button', { name: 'english' })).not.toBeVisible();
     });
   });
 

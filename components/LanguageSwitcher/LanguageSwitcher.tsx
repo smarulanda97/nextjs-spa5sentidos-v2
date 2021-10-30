@@ -27,7 +27,7 @@ class LanguageSwitcher extends React.Component<WithTranslationProps> {
 
     return (
       <Dropdown
-        drop={'left'}
+        drop={'start'}
         as={ButtonGroup}
         className={styles.sticky}
         data-testid={'language-switcher-container'}

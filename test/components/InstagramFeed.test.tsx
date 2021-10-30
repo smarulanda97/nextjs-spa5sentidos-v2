@@ -18,8 +18,5 @@ describe('[Component] InstagramFeed', () => {
     // Find the container where the ig feed will be renderer
     const igFeedContainer = await findByTestId('ig-feed-container');
     expect(igFeedContainer).toBeInTheDocument();
-    expect(igFeedContainer).toHaveClass(
-      'elfsight-app-cbdcfb04-79f1-478c-b662-23542ada80d4'
-    );
   });
 });
