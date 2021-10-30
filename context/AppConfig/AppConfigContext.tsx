@@ -1,10 +1,11 @@
+import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 import { ConFigContext } from '@types-app/index';
 import { GET_DATA_APP_CONFIG_CONTEXT } from '@queries/index';
 import React, { createContext, useContext, useMemo } from 'react';
 
 type Props = {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 };
 
 /**
@@ -24,9 +25,12 @@ const appConfigDefaultValues: ConFigContext = {
   app: {
     elfsight_token: '',
   },
+  metatags: [],
 };
 
-const AppConfigContext = createContext<ConFigContext>(appConfigDefaultValues);
+export const AppConfigContext = createContext<ConFigContext>(
+  appConfigDefaultValues
+);
 
 /**
  * Create custom useAppConfig hook
@@ -45,14 +49,20 @@ export function useAppConfig(): ConFigContext {
  * Create AppConfigProvider
  */
 export const AppConfigProvider: React.FC<Props> = ({ children }) => {
-  const { data } = useQuery<any>(GET_DATA_APP_CONFIG_CONTEXT);
+  const { locale, pathname } = useRouter();
+  const { data } = useQuery<any>(GET_DATA_APP_CONFIG_CONTEXT, {
+    variables: { locale: locale, pathname: pathname },
+  });
 
   const value = useMemo(() => {
     if (!data) {
       return appConfigDefaultValues;
     }
 
-    return { ...data.config };
+    const metatags =
+      data?.metatags && data.metatags.length ? data.metatags : [];
+
+    return { ...data.config, metatags };
   }, [data]);
 
   return (

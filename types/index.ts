@@ -5,6 +5,7 @@ export type {
   Menu,
   Service,
   MenuItem,
+  Metatags,
   StrapiImage,
   ResponsiveImages,
 } from './global';

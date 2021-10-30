@@ -51,6 +51,19 @@ type Svg = {
   height: string;
 };
 
+type Metatags = {
+  pathname: string;
+  basic_tags: {
+    [name: string]: string;
+  };
+  open_graph?: {
+    [name: string]: string;
+  };
+  twitter?: {
+    [name: string]: string;
+  };
+};
+
 export enum ButtonColors {
   primary = 'primary',
   secondary = 'secondary',
@@ -74,4 +87,5 @@ export type {
   Service,
   Url,
   Svg,
+  Metatags,
 };

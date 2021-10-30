@@ -1,4 +1,4 @@
-import { StrapiImage } from './global';
+import { StrapiImage, Metatags } from './global';
 
 type SystemConfig = {
   email: string;
@@ -20,6 +20,7 @@ type AppConfig = {
 type ConFigContext = {
   app: AppConfig;
   system: SystemConfig;
+  metatags: Metatags[];
 };
 
 export type { ConFigContext };

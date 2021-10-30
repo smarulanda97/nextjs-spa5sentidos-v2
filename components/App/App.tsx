@@ -1,8 +1,11 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 import { Url } from '@types-app/index';
+import { useRouter } from 'next/router';
+import { useQuery } from '@apollo/client';
 import { Layout } from '@components/index';
-import { withRouter, NextRouter } from 'next/router';
+import { MetatagsProcessor } from '@utils/index';
+import { GET_DATA_APP_COMPONENT } from '@queries/index';
 
 interface Props {
   url: Url;
@@ -10,35 +13,28 @@ interface Props {
   children?: JSX.Element | JSX.Element[];
 }
 
-interface WithRouterProps extends Props {
-  router: NextRouter;
-}
+const App: React.FC<Props> = (props) => {
+  const { locale, pathname } = useRouter();
+  const { layout, children } = props;
+  const { error, data, loading } = useQuery(GET_DATA_APP_COMPONENT, {
+    variables: {
+      locale,
+    },
+  });
 
-class App extends React.Component<WithRouterProps> {
-  render() {
-    const { layout, children, router, url } = this.props;
+  const metatags =
+    !error && !loading
+      ? new MetatagsProcessor(data.metatags, pathname).getObjectNextSEO()
+      : {};
 
-    const tags = {
-      title: 'Spa 5 Sentidos',
-      description: 'Spa 5 Sentidos es un Spa',
-      defaultTitle: 'Spa 5 Sentidos - Servicio a domicilio de masajes',
-      openGraph: {
-        type: 'website',
-        title: 'Spa 5 Sentidos',
-        url: url.origin + router.asPath,
-        defaultTitle: 'Spa 5 Sentidos - Servicio a domicilio de masajes',
-      },
-    };
+  return (
+    <React.Fragment>
+      {!error && !loading ? <NextSeo {...metatags} /> : null}
+      <div className={'app'} id={'app'}>
+        {layout ? <Layout>{children}</Layout> : children}
+      </div>
+    </React.Fragment>
+  );
+};
 
-    return (
-      <>
-        <NextSeo {...tags} />
-        <div className={'app'} id={'app'}>
-          {layout ? <Layout>{children}</Layout> : children}
-        </div>
-      </>
-    );
-  }
-}
-
-export default React.memo(withRouter(App));
+export default React.memo(App);
