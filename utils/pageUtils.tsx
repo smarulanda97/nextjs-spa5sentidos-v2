@@ -8,6 +8,7 @@ import {
   GET_DATA_VIDEO_BLOCK_COMPONENT,
   GET_DATA_APP_CONFIG_CONTEXT,
   GET_DATA_SERVICES_ALL_COMPONENT,
+  GET_DATA_APP_COMPONENT,
 } from '@queries/index';
 
 /**
@@ -16,6 +17,7 @@ import {
  * - GET_DATA_LAYOUT_COMPONENT = Query for menus data, footer, etc.
  */
 const globalPageQueries = [
+  GET_DATA_APP_COMPONENT,
   GET_DATA_LAYOUT_COMPONENT,
   GET_DATA_APP_CONFIG_CONTEXT,
 ];
@@ -40,9 +42,6 @@ const pageComponents: any = {
     },
     {
       component: 'videoHome',
-    },
-    {
-      component: 'instagramFeed',
     },
   ],
   servicesPage: [
