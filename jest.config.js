@@ -1,4 +1,6 @@
 module.exports = {
+  testEnvironment: 'jsdom',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
@@ -34,7 +36,6 @@ module.exports = {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/mocks/fileMock.ts',
   },
   transform: {
-    '^.+\\.css$': '<rootDir>/mocks/cssTransform.ts',
-    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',
   },
 };

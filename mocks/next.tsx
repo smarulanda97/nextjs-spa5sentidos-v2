@@ -8,7 +8,12 @@ jest.mock('next/image', () => ({ src, alt }) => <img src={src} alt={alt} />);
 /**
  * Mocking next/link
  */
-jest.mock('next/link', () => ({ children }) => children);
+jest.mock(
+  'next/link',
+  () =>
+    ({ children }) =>
+      children
+);
 
 /**
  * Mocking next-i18next
@@ -21,6 +26,24 @@ jest.mock('next-i18next', () => ({
   },
 }));
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      isPreview: false,
+      isReady: false,
+      isLocaleDomain: true,
+      locale: 'en',
+      basePath: '/',
+      pathname: '/',
+      route: '/',
+      asPath: '',
+      query: {},
+    };
+  },
+  withRouter(component) {
+    return component;
+  },
+}));
 /**
  * Mocking next/router
  */

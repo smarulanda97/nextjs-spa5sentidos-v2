@@ -25,7 +25,7 @@
       "summary": "When using the suction cups, they stick to the body, they are of different sizes and the suction brings blood to the surface of the skin. This is why the marks that look like bruises.\\n\\nThe treatment is said to improve blood circulation, thereby speeding up healing, reducing pain, relieving muscle discomfort, detoxifying the body, and draining toxins.",
       "slug": "suction-cups",
       "price": 120000,
-      "price": 15,
+      "discount": 15,
       "home_service_included": true,
       "images": {
         "thumbnail": {

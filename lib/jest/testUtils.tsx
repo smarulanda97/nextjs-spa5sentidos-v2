@@ -1,10 +1,10 @@
 import 'cross-fetch/polyfill';
+import React from 'react';
 import { NextRouter } from 'next/router';
 import { mockRouter } from '@mocks/next';
 import { createApolloClient } from '@lib/apollo/client';
 import { ApolloClient, ApolloProvider } from '@apollo/client';
 import { AppConfigProvider } from '@context/AppConfig/AppConfigContext';
-import { RouterContext } from 'next/dist/next-server/lib/router-context';
 import { render as defaultRender, RenderResult } from '@testing-library/react';
 
 type DefaultParams = Parameters<typeof defaultRender>;
@@ -16,6 +16,12 @@ type RenderOptions = DefaultParams[1] & { router?: Partial<NextRouter> };
  */
 const client: ApolloClient<any> = createApolloClient();
 
+export const RouterContext = React.createContext<NextRouter>(null as any);
+
+if (process.env.NODE_ENV !== 'production') {
+  RouterContext.displayName = 'RouterContext';
+}
+
 /**
  * Overriding default render method
  */
@@ -26,9 +32,7 @@ export function render(
   if (!wrapper) {
     wrapper = ({ children }: { children: React.ReactElement }) => (
       <RouterContext.Provider value={{ ...mockRouter, ...router }}>
-        <ApolloProvider client={client}>
-          <AppConfigProvider>{children}</AppConfigProvider>
-        </ApolloProvider>
+        <ApolloProvider client={client}>{children}</ApolloProvider>
       </RouterContext.Provider>
     );
   }
