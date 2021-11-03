@@ -1,0 +1,63 @@
+{
+  "linkTreeMenu": [
+    {
+      "id": "6",
+      "name": "link-tree",
+      "machine_name": "link-tree-en",
+      "items": [
+        {
+          "id": "17",
+          "title": "Website",
+          "link": "https://www.spa5sentidos.com",
+          "icon": {
+            "url": "/uploads/icon_website_linktree_97925f881b.svg",
+            "name": "icon-website-linktree.svg",
+            "width": 32,
+            "height": 32,
+            "alternativeText": "",
+            "provider_metadata": null
+          }
+        },
+        {
+          "id": "18",
+          "title": "WhatsApp",
+          "link": "https://api.whatsapp.com/send?phone=573014808380",
+          "icon": {
+            "url": "/uploads/icon_whatsapp_linktree_12262aa195.svg",
+            "name": "icon-whatsapp-linktree.svg",
+            "width": 512,
+            "height": 512,
+            "alternativeText": "",
+            "provider_metadata": null
+          }
+        },
+        {
+          "id": "19",
+          "title": "Facebook",
+          "link": "https://www.facebook.com/SPA5SENTIDOS/",
+          "icon": {
+            "url": "/uploads/icon_facebook_linktree_5d457aeb40.svg",
+            "name": "icon-facebook-linktree.svg",
+            "width": 100,
+            "height": 100,
+            "alternativeText": "",
+            "provider_metadata": null
+          }
+        },
+        {
+          "id": "20",
+          "title": "Instagram",
+          "link": "https://www.instagram.com/spa5sentidos_medellin/",
+          "icon": {
+            "url": "/uploads/icon_instagram_linktree_80b8b71ba6.svg",
+            "name": "icon-instagram-linktree.svg",
+            "width": 128,
+            "height": 128,
+            "alternativeText": "",
+            "provider_metadata": null
+          }
+        }
+      ]
+    }
+  ]
+}

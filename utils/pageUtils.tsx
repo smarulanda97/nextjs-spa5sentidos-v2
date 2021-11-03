@@ -49,6 +49,14 @@ const pageComponents: any = {
       component: 'servicesAll',
     },
   ],
+  socialPage: [
+    {
+      component: 'LinkTree',
+    },
+    {
+      component: 'languageSwitcher',
+    },
+  ],
 };
 
 type PageQueriesType = {
@@ -94,7 +102,7 @@ export function renderPageComponents(pageName: string): JSX.Element[] {
   }
 
   return components.map((block) => {
-    let component: any = ComponentsList['unrendered'];
+    let component: any = ComponentsList['unRendered'];
 
     if (typeof ComponentsList[block.component] !== 'undefined') {
       component = ComponentsList[block.component];

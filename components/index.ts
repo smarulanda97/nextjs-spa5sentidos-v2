@@ -19,21 +19,27 @@ export { default as ServicesListItem } from './Services/ServicesList/ServicesLis
 export { default as InstagramFeed } from './InstagramFeed/InstagramFeed';
 export { default as VideoBlock } from './VideoBlock/VideoBlock';
 export { default as ServicesHome } from './Services/ServicesHome/ServicesHome';
+export { default as SocialRedirect } from './LinkTree/LinkTree';
+
 /**
  *
  * Mapping available components to be rendered from a page
  *
  */
+import LinkTreeComponent from './LinkTree/LinkTree';
 import VideoBlockComponent from './VideoBlock/VideoBlock';
-import UnrenderedComponent from './Common/Unrendered/Unredered';
+import UnRenderedComponent from './Common/UnRendered/UnRedered';
 import InstagramFeedComponent from './InstagramFeed/InstagramFeed';
+import ServicesAllComponent from './Services/ServicesAll/ServicesAll';
 import ServicesHomeComponent from './Services/ServicesHome/ServicesHome';
-import ServicesAll from './Services/ServicesAll/ServicesAll';
+import LanguageSwitcherComponent from './LanguageSwitcher/LanguageSwitcher';
 
 export const ComponentsList = {
-  instagramFeed: InstagramFeedComponent,
-  servicesHome: ServicesHomeComponent,
+  LinkTree: LinkTreeComponent,
   videoHome: VideoBlockComponent,
-  unrendered: UnrenderedComponent,
-  servicesAll: ServicesAll,
+  unRendered: UnRenderedComponent,
+  servicesAll: ServicesAllComponent,
+  servicesHome: ServicesHomeComponent,
+  instagramFeed: InstagramFeedComponent,
+  languageSwitcher: LanguageSwitcherComponent,
 };

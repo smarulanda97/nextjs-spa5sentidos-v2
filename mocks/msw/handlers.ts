@@ -5,6 +5,7 @@ import { mainMenu as dbMainMenu } from './db/LayoutComponent.json';
 import { socialMenu as dbSocialMenu } from './db/LayoutComponent.json';
 import { services as dbServices } from './db/ServicesHomeComponent.json';
 import { videoBlock as dbVideoBlock } from './db/VideoBlockComponent.json';
+import { linkTreeMenu as dbLinkTree } from './db/LinkTreeComponent.json';
 
 export const handlers = [
   graphql.query(
@@ -45,6 +46,16 @@ export const handlers = [
       return res(
         ctx.data({
           services: dbServices,
+        })
+      );
+    }
+  ),
+  graphql.query(
+    'GET_DATA_LINK_TREE_COMPONENT',
+    (req: GraphQLRequest<any>, res: ResponseComposition<any>, ctx) => {
+      return res(
+        ctx.data({
+          linkTreeMenu: dbLinkTree,
         })
       );
     }

@@ -5,12 +5,14 @@ $dark: #212529;
 $primary: #1bdacc;
 $secondary: #b5b5b5;
 $info: #fc3d6a;
+$gray: #3d3b3c;
 
 $theme-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
   'info': $info,
+  'gray': $gray,
   "white-transparent": rgb(255, 255, 255, .55),
   "primary-transparent": rgb(27, 218, 204, .75),
   "secondary-transparent": rgb(181, 181, 181, .2),

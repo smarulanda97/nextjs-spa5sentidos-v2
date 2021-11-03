@@ -20,6 +20,7 @@ const NavigationItem: React.FC<Props> = ({ item }) => {
           {...(isAbsoluteUrl(item.link)
             ? { target: '_blank', rel: 'noopener noreferrer' }
             : {})}
+          title={item.title}
           className={item.icon ? styles.navLinkIcon : styles.navLinkText}
         >
           {item.icon && (
@@ -30,7 +31,9 @@ const NavigationItem: React.FC<Props> = ({ item }) => {
               alt={`${item.title}`}
             />
           )}
-          {!item.icon && <span>{item.title}</span>}
+          {item.title ? (
+            <span className={'nav-item-text'}>{item.title}</span>
+          ) : null}
         </Nav.Link>
       </Link>
     </Nav.Item>

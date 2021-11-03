@@ -101,6 +101,10 @@ body {
     }
 
     .social-menu {
+      .nav-item-text {
+        display: none;
+      }
+
       @include respond-below(sm) {
         flex-direction: row;
         justify-content: center;
@@ -120,6 +124,10 @@ body {
   footer {
     .social-menu {
       justify-content: center;
+
+      .nav-item-text {
+        display: none;
+      }
 
       .nav-link {
         display: block;

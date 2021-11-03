@@ -4,7 +4,7 @@ type Props = {
   componentName: string;
 };
 
-const Unrendered: React.FC<Props> = ({ componentName }) => {
+const UnRendered: React.FC<Props> = ({ componentName }) => {
   return (
     <div className={'text-center py-1'}>
       The component {componentName} has not been created yet.
@@ -12,4 +12,4 @@ const Unrendered: React.FC<Props> = ({ componentName }) => {
   );
 };
 
-export default Unrendered;
+export default UnRendered;
