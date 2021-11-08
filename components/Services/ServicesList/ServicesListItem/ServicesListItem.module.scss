@@ -50,7 +50,8 @@
   }
 
   a {
-    width: 72%;
+    width: 80%;
+    margin-top: $margin-base;
     margin-bottom: $margin-base * 0.625;
 
     @include respond-below(lg) {
@@ -58,6 +59,10 @@
     }
     @include respond-below(sm) {
       width: 45%;
+    }
+
+    &:last-child {
+      display: none;
     }
   }
 }
