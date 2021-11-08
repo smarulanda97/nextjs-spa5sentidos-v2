@@ -1,0 +1,84 @@
+@import 'styles/scss/mixins', 'styles/scss/variables';
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  position: relative !important;
+  min-height: 31rem;
+  max-height: 31rem;
+
+  @include respond-between(sm, md) {
+    min-height: 31rem;
+    max-height: 31rem;
+  }
+
+  @include respond-between(lg, xl) {
+    min-height: 35rem;
+    max-height: 35rem;
+  }
+
+  @include respond-between(xl, xxl) {
+    min-height: 39rem;
+    max-height: 39rem;
+  }
+
+  @include respond-above(xxl) {
+    min-height: 48rem;
+    max-height: 48rem;
+  }
+
+}
+
+.caption {
+  left: 0;
+  bottom: 10%;
+  right: inherit;
+
+  text-align: left;
+  padding: 1rem 2rem 1rem 2rem;
+
+  @include respond-below(sm) {
+    background: none;
+    text-align: center;
+    backdrop-filter: none;
+  }
+
+  @include respond-below(sm) {
+    bottom: 5%;
+  }
+
+  h1,
+  h2 {
+    color: text-color('white');
+    font-size: $font-size-base * 4;
+    font-family: $font-family-montez;
+    text-shadow: 1px 2px 2px text-color('dark');
+
+    @include respond-below(sm) {
+      font-size: $font-size-base * 2.4;
+    }
+
+    @include respond-between(sm, xl) {
+      font-size: $font-size-base * 3;
+    }
+  }
+
+  p {
+    text-align: right;
+    color: text-color('white');
+    font-size: $font-size-base * 1.5;
+    font-family: $font-family-open-sans;
+    text-shadow: 1px 1px 1px text-color('dark');
+
+    @include respond-below(sm) {
+      display: none;
+    }
+
+    @include respond-above(xl) {
+      font-size: $font-size-base * 1.7;
+    }
+  }
+}

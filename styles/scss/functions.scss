@@ -1,0 +1,13 @@
+@import 'styles/scss/variables';
+
+@function theme-color($key: 'primary') {
+  @return map-get($theme-colors, $key);
+}
+
+@function text-color($key: 'dark') {
+  @return map-get($text-colors, $key);
+}
+
+@function hover($key: 'main-menu-item') {
+  @return map-get($hovers, $key);
+}

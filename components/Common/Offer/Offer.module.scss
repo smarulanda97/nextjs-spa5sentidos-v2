@@ -1,0 +1,9 @@
+@import 'styles/scss/variables', 'styles/scss/mixins';
+
+.offer {
+  display: block;
+  color: text-color('info');
+  text-transform: uppercase;
+  padding-top: $padding-base * .3;
+  font-size: $font-size-base * .99;
+}

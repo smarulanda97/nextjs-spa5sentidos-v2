@@ -1,0 +1,74 @@
+@import 'styles/scss/variables', 'styles/scss/functions', 'styles/scss/mixins';
+
+.footer {
+  position: relative;
+  padding: $padding-base * 3 0;
+
+  &:before {
+    top: 0;
+    width: 20%;
+    height: 1px;
+    content: "";
+    display: block;
+    margin-left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    background: theme-color('gray-light-transparent');
+  }
+
+  :global {
+    h2 {
+      text-align: left;
+    }
+
+    p {
+      font-weight: 500;
+      text-align: left;
+      letter-spacing: 0;
+      font-size: $font-size-base;
+
+      @include respond-above(md) {
+        max-width: 90%;
+      }
+    }
+
+    .menu {
+      &-contact, &-opening {
+        .nav {
+          &-item {
+            margin: $margin-base * .2 0;
+          }
+
+          &-link, &-item {
+            padding: 0;
+          }
+
+          &-link, &-item-text {
+            text-align: left;
+            line-height: 1.9;
+            font-weight: normal;
+            text-transform: inherit;
+            color: text-color('gray-light');
+            font-size: $font-size-base;
+            font-family: $font-family-open-sans;
+          }
+        }
+      }
+
+      &-social {
+        justify-content: start;
+        .nav {
+          &-link {
+            img {
+              width: 35px !important;
+            }
+          }
+          &-item-text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
