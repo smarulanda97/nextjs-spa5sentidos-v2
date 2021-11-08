@@ -1,4 +1,4 @@
-@import 'styles/scss/variables';
+@import 'src/styles/scss/variables';
 
 @function theme-color($key: 'primary') {
   @return map-get($theme-colors, $key);
