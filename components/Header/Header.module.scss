@@ -7,14 +7,64 @@
   z-index: 1030;
   position: fixed;
   background-color: theme-color('primary-transparent');
-}
 
-.brand {
-  font-size: 0;
-  display: block;
-}
+  :global {
+    .brand {
+      &-desktop {
+        display: block;
+        @include respond-below(md) {
+          display: none;
+        }
+      }
+      &-mobile {
+        max-width: 200px;
+        @include respond-above(md) {
+          display: none;
+        }
+      }
+    }
 
-.navBottom {
-  padding: 0 $padding-base;
-  box-shadow: 1px 2px 2px 1px rgba(12, 12, 12, 0.11);
+    .navbar {
+      justify-content: center;
+
+      &-collapse {
+        max-width: 1320px;
+        justify-content: space-between;
+      }
+    }
+
+    .menu {
+      &-main {
+        .nav {
+          &-item {
+            padding-left: $padding-base * .5;
+            padding-right: $padding-base * .5;
+
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      &-social {
+        @include respond-below(sm) {
+          flex-direction: row;
+          justify-content: center;
+        }
+        .nav {
+          &-item-text {
+            display: none;
+          }
+          &-link {
+            @include respond-below(sm) {
+              margin: 0 $margin-base;
+            }
+            img {
+              width: 32px !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }

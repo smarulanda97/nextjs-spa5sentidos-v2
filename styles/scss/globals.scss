@@ -75,46 +75,4 @@ body {
     margin: 0;
     padding: 0;
   }
-
-  header {
-    .navbar {
-      justify-content: center;
-
-      &-collapse {
-        max-width: 1320px;
-        justify-content: space-between;
-      }
-    }
-
-    .main-menu {
-      .nav-item {
-        padding-left: $padding-base * .5;
-        padding-right: $padding-base * .5;
-
-        &:first-child {
-          margin-left: 0;
-        }
-      }
-    }
-
-    .social-menu {
-      .nav-item-text {
-        display: none;
-      }
-
-      @include respond-below(sm) {
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .nav-link {
-        @include respond-below(sm) {
-          margin: 0 $margin-base * 0.7;
-        }
-        img {
-          width: 32px !important;
-        }
-      }
-    }
-  }
 }
