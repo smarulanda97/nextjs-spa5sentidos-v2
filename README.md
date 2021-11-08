@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SPA5SENTIDOS
 
-## Getting Started
+Spa5Sentidos is my personal project. You can take pieces of this code how reference for your projects.
 
-First, run the development server:
+Feel free to contribute with this project, make corrections and teach your good development practices.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![Screenshot](./.readme-statics/screenshot-project.jpg)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## IMPORTANT
+[comment]: <> (- You can see the app in https://petgram.smarulanda97.vercel.app)
+- Required Node.js >= 14
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## LIBRARIES
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+* Next.JS
+* Apollo GraphQL client
+* Bootstrap
+* SASS
+* next-i18next
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[comment]: <> (## INSTALLATION PROCESS)
+[comment]: <> (* `cp .env.example .env` Create env vars file)
+[comment]: <> (* `npm install` Install project dependencies)
+[comment]: <> (* `npm run dev` Run development server and open http://localhost:8080)
+[comment]: <> (* `npm run build`  For build a production build)
 
-## Learn More
+## LICENCE
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MIT
