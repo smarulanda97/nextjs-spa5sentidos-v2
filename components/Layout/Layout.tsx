@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
+
 import { GET_DATA_LAYOUT_COMPONENT } from '@queries/index';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 import { Footer, Header, Slider, LanguageSwitcher } from '@components/index';
@@ -18,7 +19,8 @@ const Layout: React.FC<Props> = (props) => {
   });
 
   const renderHeader = () => {
-    if (!data?.mainMenu || !data?.socialMenu || !system?.logo) {
+    const { mainMenu, socialMenu } = data;
+    if (!mainMenu || !socialMenu || !system.logo) {
       return null;
     }
     return (
@@ -31,11 +33,27 @@ const Layout: React.FC<Props> = (props) => {
   };
 
   const renderFooter = () => {
-    if (!data?.socialMenu || !system?.logo_footer) {
+    const { logo_footer, description } = system;
+    const { socialMenu, openingMenu, contactMenu } = data;
+    if (
+      !socialMenu ||
+      !openingMenu ||
+      !contactMenu ||
+      !description ||
+      !logo_footer ||
+      !description
+    ) {
       return null;
     }
+
     return (
-      <Footer logoFooter={system.logo_footer} socialMenu={data.socialMenu[0]} />
+      <Footer
+        socialMenu={socialMenu[0]}
+        openingMenu={openingMenu[0]}
+        contactMenu={contactMenu[0]}
+        logoFooter={system.logo_footer}
+        description={system.description}
+      />
     );
   };
 

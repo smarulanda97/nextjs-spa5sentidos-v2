@@ -38,6 +38,50 @@ export const GET_DATA_LAYOUT_COMPONENT = gql`
         }
       }
     }
+    openingMenu: menus(
+      limit: 1
+      locale: $locale
+      where: { name: "opening-hours" }
+    ) {
+      id
+      name
+      machine_name
+      items {
+        id
+        title
+        link
+        icon {
+          url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
+        }
+      }
+    }
+    contactMenu: menus(
+      limit: 1
+      locale: $locale
+      where: { name: "contact-us" }
+    ) {
+      id
+      name
+      machine_name
+      items {
+        id
+        title
+        link
+        icon {
+          url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
+        }
+      }
+    }
     sliders(locale: $locale) {
       id
       title
