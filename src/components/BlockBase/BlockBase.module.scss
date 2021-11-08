@@ -1,0 +1,37 @@
+@import '../../styles/scss/mixins', '../../styles/scss/variables', '../../styles/scss/functions';
+
+.blockBase {
+  margin-top: $margin-base * 19;
+  margin-bottom: $margin-base * 5;
+
+  @include respond-below(sm) {
+    margin-top: $margin-base * 15;
+    margin-bottom: $margin-base * 4;
+  }
+}
+
+.image {
+  z-index: 0;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  padding-top: $padding-base * 14;
+  padding-bottom: $padding-base * 6;
+  padding-right: $padding-base;
+  padding-left: $padding-base;
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
+  color: text-color('white');
+
+  @include respond-below(sm) {
+    padding-top: $padding-base * 5;
+    padding-bottom: $padding-base * 3;
+  }
+
+  h2, h3 {
+    margin-bottom: $margin-base * 1.5;
+  }
+}
