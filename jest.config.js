@@ -6,8 +6,8 @@ module.exports = {
     '!**/*.d.ts',
     '!**/node_modules/**',
   ],
-  globalSetup: '<rootDir>/lib/jest/setupEnv.ts',
-  setupFilesAfterEnv: ['<rootDir>/lib/jest/setupTests.tsx'],
+  globalSetup: '<rootDir>/src/lib/jest/setupEnv.ts',
+  setupFilesAfterEnv: ['<rootDir>/src/lib/jest/setupTests.tsx'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   transformIgnorePatterns: [
     '/node_modules/',
@@ -33,7 +33,7 @@ module.exports = {
      * Mocks
      */
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/mocks/fileMock.ts',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/src/mocks/fileMock.ts',
   },
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
