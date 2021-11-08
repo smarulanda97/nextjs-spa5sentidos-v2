@@ -8,6 +8,7 @@ export const GET_DATA_APP_CONFIG_CONTEXT = gql`
         email
         phone_number
         address
+        description
         logo {
           url
           name

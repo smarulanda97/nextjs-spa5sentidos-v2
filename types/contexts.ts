@@ -5,6 +5,7 @@ type SystemConfig = {
   phone: string;
   address: string;
   site_name: string;
+  description: string;
   __typename?: string;
   phone_number: string;
   logo: StrapiImage | null;
