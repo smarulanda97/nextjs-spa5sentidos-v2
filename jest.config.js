@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
@@ -8,9 +8,9 @@ module.exports = {
   ],
   globalSetup: '<rootDir>/lib/jest/setupEnv.ts',
   setupFilesAfterEnv: ['<rootDir>/lib/jest/setupTests.tsx'],
-  testPathIgnorePatterns: ['/node_modules/', '/.next/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   transformIgnorePatterns: [
-    '[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$',
+    '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   moduleNameMapper: {
@@ -36,6 +36,6 @@ module.exports = {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/mocks/fileMock.ts',
   },
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
 };
