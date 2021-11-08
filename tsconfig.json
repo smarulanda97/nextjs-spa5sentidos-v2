@@ -3,31 +3,31 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": [
-        "lib/*"
+        "src/lib/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "src/styles/*"
       ],
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@mocks/*": [
-        "mocks/*"
+        "src/mocks/*"
       ],
       "@test/*": [
-        "test/*"
+        "src/test/*"
       ],
       "@context/*": [
-        "context/*"
+        "src/context/*"
       ],
       "@queries/*": [
-        "queries/*"
+        "src/queries/*"
       ],
       "@utils/*": [
-        "utils/*"
+        "src/utils/*"
       ],
       "@types-app/*": [
-        "types/*"
+        "src/types/*"
       ]
     },
     "target": "es5",
