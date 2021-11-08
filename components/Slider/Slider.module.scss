@@ -20,10 +20,16 @@
     max-height: 35rem;
   }
 
-  @include respond-above(xl) {
+  @include respond-between(xl, xxl) {
     min-height: 39rem;
     max-height: 39rem;
   }
+
+  @include respond-above(xxl) {
+    min-height: 48rem;
+    max-height: 48rem;
+  }
+
 }
 
 .caption {
@@ -32,8 +38,6 @@
   right: inherit;
 
   text-align: left;
-  //backdrop-filter: blur(8px);
-  //background: rgb(0, 0, 0, 0.2);
   padding: 1rem 2rem 1rem 2rem;
 
   @include respond-below(sm) {
