@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Nav } from 'react-bootstrap';
+
 import { asset } from '@utils/imageUtils';
 import { MenuItem } from '@types-app/index';
-import { isAbsoluteUrl } from '@utils/urlUtils';
+import { getLinkAttributes } from '@utils/index';
 
 import styles from './NavigationItem.module.scss';
 
@@ -13,29 +14,31 @@ type Props = {
 };
 
 const NavigationItem: React.FC<Props> = ({ item }) => {
+  const { title, link, id, icon } = item;
+
   return (
-    <Nav.Item key={item.id}>
-      <Link href={item.link} passHref>
-        <Nav.Link
-          {...(isAbsoluteUrl(item.link)
-            ? { target: '_blank', rel: 'noopener noreferrer' }
-            : {})}
-          title={item.title}
-          className={item.icon ? styles.navLinkIcon : styles.navLinkText}
-        >
-          {item.icon && (
-            <Image
-              width={item.icon.width}
-              height={item.icon.height}
-              src={asset(item.icon.url)}
-              alt={`${item.title}`}
-            />
-          )}
-          {item.title ? (
-            <span className={'nav-item-text'}>{item.title}</span>
-          ) : null}
-        </Nav.Link>
-      </Link>
+    <Nav.Item key={id}>
+      {link === '<nolink>' ? (
+        <span className={'nav-link'}>{title}</span>
+      ) : (
+        <Link href={link} passHref>
+          <Nav.Link
+            title={title}
+            {...getLinkAttributes(link)}
+            className={`${icon ? styles.navLinkIcon : styles.navLinkText} `}
+          >
+            {icon ? (
+              <Image
+                alt={`${title}`}
+                width={icon.width}
+                height={icon.height}
+                src={asset(icon.url)}
+              />
+            ) : null}
+            {title ? <span className={'nav-item-text'}>{title}</span> : null}
+          </Nav.Link>
+        </Link>
+      )}
     </Nav.Item>
   );
 };
