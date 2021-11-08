@@ -46,17 +46,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: $font-family-paytone-one;
-  }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
     &.title {
       color: $primary;
       font-size: 42px;
+      font-weight: bold;
       letter-spacing: 3px;
       font-family: $font-family-montez;
 
@@ -69,10 +63,10 @@ body {
   p {
     margin: 0;
     padding: 0;
-    color: #999;
     font-size: 15px;
     line-height: 1.9;
     letter-spacing: 1px;
+    color: text-color('gray-light');
     font-family: $font-family-open-sans;
   }
 
@@ -83,20 +77,23 @@ body {
   }
 
   header {
-    .brand {
-      @include respond-below(sm) {
-        max-width: 200px;
-      }
-    }
+    .navbar {
+      justify-content: center;
 
-    .navbar-collapse {
-      justify-content: flex-end;
+      &-collapse {
+        max-width: 1320px;
+        justify-content: space-between;
+      }
     }
 
     .main-menu {
       .nav-item {
         padding-left: $padding-base * .5;
         padding-right: $padding-base * .5;
+
+        &:first-child {
+          margin-left: 0;
+        }
       }
     }
 
@@ -116,29 +113,6 @@ body {
         }
         img {
           width: 32px !important;
-        }
-      }
-    }
-  }
-
-  footer {
-    .social-menu {
-      justify-content: center;
-
-      .nav-item-text {
-        display: none;
-      }
-
-      .nav-link {
-        display: block;
-        border-radius: 50%;
-        text-align: center;
-        margin: 0 $margin-base * 0.7;
-        padding: $padding-base * 0.2 !important;
-        border: dashed 2px theme-color('secondary');
-
-        img {
-          width: 35px !important;
         }
       }
     }
