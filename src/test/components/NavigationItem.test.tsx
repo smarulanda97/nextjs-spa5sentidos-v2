@@ -7,6 +7,12 @@ const menuItemHome = {
   link: '/',
 };
 
+const menuItemContact = {
+  id: '1',
+  title: 'contact us text',
+  link: '<nolink>',
+};
+
 const menuItemWhatsApp = {
   id: '1',
   title: 'Whatsapp',
@@ -54,5 +60,14 @@ describe('[Component] NavigationItem', () => {
 
     expect(instagramLInk).toBeInTheDocument();
     expect(instagramLInk).not.toHaveAttribute('target');
+  });
+
+  test('If the URL of menu item is equals to flag <nolink>, render single span with menu item title', () => {
+    const { queryByRole, queryByText } = render(
+      <NavigationItem item={menuItemContact} />
+    );
+
+    expect(queryByRole('button')).not.toBeInTheDocument();
+    expect(queryByText(/contact us text/i)).toBeInTheDocument();
   });
 });
