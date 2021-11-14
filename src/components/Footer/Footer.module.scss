@@ -22,14 +22,11 @@
     }
 
     p {
+      hyphens: auto;
       font-weight: 500;
       text-align: left;
       letter-spacing: 0;
-      font-size: $font-size-base;
-
-      @include respond-above(md) {
-        max-width: 90%;
-      }
+      font-size: $font-size-base * .95;
     }
 
     .menu {
