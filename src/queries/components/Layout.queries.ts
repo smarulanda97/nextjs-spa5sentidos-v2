@@ -82,6 +82,24 @@ export const GET_DATA_LAYOUT_COMPONENT = gql`
         }
       }
     }
+    footerMenu: menus(limit: 1, locale: $locale, where: { name: "footer" }) {
+      id
+      name
+      machine_name
+      items {
+        id
+        title
+        link
+        icon {
+          url
+          name
+          width
+          height
+          alternativeText
+          provider_metadata
+        }
+      }
+    }
     sliders(locale: $locale) {
       id
       title

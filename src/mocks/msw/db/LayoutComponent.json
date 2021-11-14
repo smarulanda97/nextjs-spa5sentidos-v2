@@ -122,6 +122,33 @@
       ]
     }
   ],
+  "footerMenu": [
+    {
+      "id": "12",
+      "name": "footer",
+      "machine_name": "footer-en",
+      "items": [
+        {
+          "id": "41",
+          "title": "Home",
+          "link": "/",
+          "icon": null
+        },
+        {
+          "id": "42",
+          "title": "Services",
+          "link": "/services",
+          "icon": null
+        },
+        {
+          "id": "43",
+          "title": "LinkTree",
+          "link": "/link-tree",
+          "icon": null
+        }
+      ]
+    }
+  ],
   "sliders": [
     {
       "id": "2",

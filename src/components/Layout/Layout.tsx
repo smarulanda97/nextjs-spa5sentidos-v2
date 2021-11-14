@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
 
+import { normalizeMenus } from '@utils/index';
 import { GET_DATA_LAYOUT_COMPONENT } from '@queries/index';
 import { useAppConfig } from '@context/AppConfig/AppConfigContext';
 import { Footer, Header, Slider, LanguageSwitcher } from '@components/index';
@@ -19,41 +20,26 @@ const Layout: React.FC<Props> = (props) => {
   });
 
   const renderHeader = () => {
-    const { mainMenu, socialMenu } = data || {};
-    if (!mainMenu || !socialMenu || !system.logo) {
-      return null;
-    }
+    const menus = normalizeMenus(['main', 'social'], data);
 
     return (
-      <Header
-        logo={system.logo}
-        mainMenu={data.mainMenu[0]}
-        socialMenu={data.socialMenu[0]}
-      />
+      // @ts-ignore
+      <Header {...menus} logo={system?.logo} />
     );
   };
 
   const renderFooter = () => {
-    const { logo_footer, description } = system;
-    const { socialMenu, openingMenu, contactMenu } = data || {};
-    if (
-      !socialMenu ||
-      !openingMenu ||
-      !contactMenu ||
-      !description ||
-      !logo_footer ||
-      !description
-    ) {
-      return null;
-    }
+    const menus = normalizeMenus(
+      ['social', 'opening', 'contact', 'footer'],
+      data
+    );
 
     return (
+      // @ts-ignore
       <Footer
-        socialMenu={socialMenu[0]}
-        openingMenu={openingMenu[0]}
-        contactMenu={contactMenu[0]}
-        logoFooter={system.logo_footer}
-        description={system.description}
+        {...menus}
+        logoFooter={system?.logo_footer}
+        description={system?.description || ''}
       />
     );
   };

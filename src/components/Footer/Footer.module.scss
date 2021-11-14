@@ -30,7 +30,7 @@
     }
 
     .menu {
-      &-contact, &-opening {
+      &-contact, &-opening, &-footer {
         .nav {
           &-item {
             margin: $margin-base * .2 0;
@@ -48,6 +48,14 @@
             color: text-color('gray-light');
             font-size: $font-size-base;
             font-family: $font-family-open-sans;
+          }
+        }
+      }
+
+      &-footer {
+        .nav {
+          &-item {
+            width: 100%;
           }
         }
       }

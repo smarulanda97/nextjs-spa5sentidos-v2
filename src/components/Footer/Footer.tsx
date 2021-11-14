@@ -12,6 +12,7 @@ import styles from './Footer.module.scss';
 
 type Props = {
   socialMenu: Menu;
+  footerMenu: Menu;
   contactMenu: Menu;
   openingMenu: Menu;
   description: string;
@@ -20,14 +21,20 @@ type Props = {
 
 const Footer: React.FC<Props> = (props) => {
   const { t } = useTranslation('common');
-  const { logoFooter, socialMenu, openingMenu, contactMenu, description } =
-    props;
+  const {
+    logoFooter,
+    socialMenu,
+    openingMenu,
+    contactMenu,
+    description,
+    footerMenu,
+  } = props;
 
   return (
     <footer className={styles.footer}>
       <Container>
         <Row>
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={4}>
             {/** Render footer logo */}
             {logoFooter && (
               <Link href={'/'}>
@@ -43,8 +50,15 @@ const Footer: React.FC<Props> = (props) => {
             )}
             <p>{description}</p>
           </Col>
-          <Col xs={12} md={6} lg={3}>
+          <Col xs={12} md={6} lg={2}>
             <h2>{t('important_links')}</h2>
+            {footerMenu && (
+              <Navigation
+                menu={footerMenu}
+                testId={'footer-menu-footer'}
+                className={'menu-footer my-4'}
+              />
+            )}
           </Col>
           <Col xs={12} md={6} lg={3}>
             <h2>{t('opening_hours')}</h2>
