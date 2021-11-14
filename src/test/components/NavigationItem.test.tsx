@@ -21,7 +21,7 @@ const menuItemWhatsApp = {
 };
 
 describe('[Component] NavigationItem', () => {
-  test('Render text link when the item does not have an icon', () => {
+  test('Render simple link when the item menu does not have an icon image', () => {
     const { queryByText, queryByRole } = render(
       <NavigationItem item={menuItemHome} />
     );
@@ -30,21 +30,22 @@ describe('[Component] NavigationItem', () => {
     expect(queryByRole('img')).not.toBeInTheDocument();
   });
 
-  test('Does not render text link when the item has an icon', () => {
+  test('When the item menu has icon image, render text and icon image', () => {
     const { queryByRole, queryByText } = render(
       <NavigationItem item={menuItemWhatsApp} />
     );
 
     expect(queryByRole('img')).toBeInTheDocument();
-    expect(queryByText(/whatsapp/i)).not.toBeInTheDocument();
+    expect(queryByText(/whatsapp/i)).toBeInTheDocument();
   });
 
-  test('If the URL of the link is absolute then add the attribute target and rel', () => {
+  test('If the URL of menu item is absolute add the attribute target and rel', () => {
     const { queryByRole } = render(<NavigationItem item={menuItemWhatsApp} />);
     const instagramLInk = queryByRole('button');
 
     expect(instagramLInk).toBeInTheDocument();
     expect(instagramLInk).toHaveAttribute('target', '_blank');
+    expect(instagramLInk).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
   test("If the URL of the link doesn't absolute then doesn't have the attribute target and rel", () => {
