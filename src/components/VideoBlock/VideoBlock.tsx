@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
+
 import { BlockBase } from '@components/index';
 import { GET_DATA_VIDEO_BLOCK_COMPONENT } from '@queries/index';
 import { Props as BlockProps } from '@components/BlockBase/BlockBase';
