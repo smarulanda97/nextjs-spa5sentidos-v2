@@ -19,10 +19,11 @@ const Layout: React.FC<Props> = (props) => {
   });
 
   const renderHeader = () => {
-    const { mainMenu, socialMenu } = data;
+    const { mainMenu, socialMenu } = data || {};
     if (!mainMenu || !socialMenu || !system.logo) {
       return null;
     }
+
     return (
       <Header
         logo={system.logo}
@@ -34,7 +35,7 @@ const Layout: React.FC<Props> = (props) => {
 
   const renderFooter = () => {
     const { logo_footer, description } = system;
-    const { socialMenu, openingMenu, contactMenu } = data;
+    const { socialMenu, openingMenu, contactMenu } = data || {};
     if (
       !socialMenu ||
       !openingMenu ||

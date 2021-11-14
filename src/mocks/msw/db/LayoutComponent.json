@@ -68,6 +68,60 @@
       ]
     }
   ],
+  "openingMenu": [
+    {
+      "id": "8",
+      "name": "opening-hours",
+      "machine_name": "opening-hours-en",
+      "items": [
+        {
+          "id": "28",
+          "title": "Monday to Friday:    09:00 - 20:00 hrs",
+          "link": "<nolink>",
+          "icon": null
+        },
+        {
+          "id": "29",
+          "title": "Saturday:    09:00 - 18:00 hrs",
+          "link": "<nolink>",
+          "icon": null
+        },
+        {
+          "id": "30",
+          "title": "Sunday:    09:00 - 18:00 hrs",
+          "link": "<nolink>",
+          "icon": null
+        }
+      ]
+    }
+  ],
+  "contactMenu": [
+    {
+      "id": "10",
+      "name": "contact-us",
+      "machine_name": "contact-us-en",
+      "items": [
+        {
+          "id": "34",
+          "title": "Medellín, Colombia",
+          "link": "<nolink>",
+          "icon": null
+        },
+        {
+          "id": "35",
+          "title": "leidymejia462@gmail.com",
+          "link": "mailto:leidymejia462@gmail.com",
+          "icon": null
+        },
+        {
+          "id": "36",
+          "title": "Phone: +57 301 480 8380",
+          "link": "tel:+573014808380",
+          "icon": null
+        }
+      ]
+    }
+  ],
   "sliders": [
     {
       "id": "2",

@@ -1,7 +1,7 @@
 import { App } from '@components/index';
 import { render, screen } from '@lib/jest/testUtils';
 
-describe('[Component] App', () => {
+describe.skip('[Component] App', () => {
   test('Render layout component when layout property is set to true', () => {
     const url = {
       origin: 'http://localhost:3000',
