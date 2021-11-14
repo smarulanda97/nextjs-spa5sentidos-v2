@@ -34,7 +34,7 @@ const Footer: React.FC<Props> = (props) => {
     <footer className={styles.footer}>
       <Container>
         <Row>
-          <Col xs={12} md={6} lg={4}>
+          <Col xs={12} md={6} lg={4} className={'logo-footer'}>
             {/** Render footer logo */}
             {logoFooter && (
               <Link href={'/'}>
@@ -90,7 +90,7 @@ const Footer: React.FC<Props> = (props) => {
         </Row>
         <Row>
           <Col>
-            <p className={'text-center'}>
+            <p className={'text-center copyright'}>
               <span>© Spa 5 Sentidos. &nbsp;</span>
               <span>{t('all_rights_reserved')}. &nbsp;</span>
             </p>

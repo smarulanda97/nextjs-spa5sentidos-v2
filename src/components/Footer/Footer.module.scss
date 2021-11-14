@@ -14,11 +14,25 @@
     position: absolute;
     transform: translateX(-50%);
     background: theme-color('gray-light-transparent');
+
+    @include respond-below(sm) {
+      width: 50%;
+    }
+  }
+
+  @include respond-below(sm) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: .5rem;
   }
 
   :global {
     h2 {
       text-align: left;
+
+      @include respond-below(sm) {
+        padding-top: .8rem;
+      }
     }
 
     p {
@@ -27,6 +41,20 @@
       text-align: left;
       letter-spacing: 0;
       font-size: $font-size-base * .95;
+    }
+
+    .logo {
+      &-footer {
+        text-align: center;
+      }
+    }
+
+    .copyright {
+      @include respond-below(sm) {
+        span {
+          display: block;
+        }
+      }
     }
 
     .menu {

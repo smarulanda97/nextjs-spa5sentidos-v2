@@ -15,14 +15,15 @@
         left: 50%;
         display: block;
         position: absolute;
-
         transform: translate(-50%, -50%);
+
         @include respond-below(md) {
           display: none;
         }
       }
       &-mobile {
-        max-width: 200px;
+        padding-top: .5rem;
+
         @include respond-above(md) {
           display: none;
         }
@@ -31,6 +32,10 @@
 
     .navbar {
       justify-content: center;
+
+      @include respond-below(sm) {
+        justify-content: space-between;
+      }
 
       &-collapse {
         max-width: 1320px;
