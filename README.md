@@ -4,7 +4,7 @@ Spa5Sentidos is my personal project. You can take pieces of this code how refere
 
 Feel free to contribute with this project, make corrections and teach your good development practices.
 
-![Screenshot](./.readme-statics/screenshot-project.jpg)
+![Screenshot](./.readme-statics/screenshot-project.png)
 
 ## IMPORTANT
 [comment]: <> (- You can see the app in https://petgram.smarulanda97.vercel.app)
