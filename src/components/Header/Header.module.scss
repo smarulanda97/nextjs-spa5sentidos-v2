@@ -17,14 +17,14 @@
         position: absolute;
         transform: translate(-50%, -50%);
 
-        @include respond-below(md) {
+        @include respond-below(lg) {
           display: none;
         }
       }
       &-mobile {
         padding-top: .5rem;
 
-        @include respond-above(md) {
+        @include respond-above(lg) {
           display: none;
         }
       }
@@ -33,7 +33,9 @@
     .navbar {
       justify-content: center;
 
-      @include respond-below(sm) {
+      @include respond-below(lg) {
+        padding-top: 0;
+        padding-bottom: 0;
         justify-content: space-between;
       }
 
@@ -64,22 +66,32 @@
                 content: '';
                 position: absolute;
                 background: url("../../styles/images/icons/loto-flower.png");
+
+
+                @include respond-below(lg) {
+                  left: inherit;
+                  bottom: inherit;
+                  right: 20%;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
               }
             }
           }
         }
       }
       &-social {
-        @include respond-below(sm) {
+        @include respond-below(lg) {
           flex-direction: row;
           justify-content: center;
         }
+
         .nav {
           &-item-text {
             display: none;
           }
           &-link {
-            @include respond-below(sm) {
+            @include respond-below(lg) {
               margin: 0 $margin-base;
             }
             img {
