@@ -50,9 +50,21 @@
           &-item {
             padding-left: $padding-base * .5;
             padding-right: $padding-base * .5;
+          }
 
-            &:first-child {
-              margin-left: 0;
+          &-link {
+            &--active {
+              position: relative;
+              &:after {
+                left: 50%;
+                bottom: 12%;
+                transform: translateX(-50%);
+                width: 16px;
+                height: 16px;
+                content: '';
+                position: absolute;
+                background: url("../../styles/images/icons/loto-flower.png");
+              }
             }
           }
         }
