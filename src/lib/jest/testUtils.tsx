@@ -4,7 +4,6 @@ import { NextRouter } from 'next/router';
 import { mockRouter } from '@mocks/next';
 import { createApolloClient } from '@lib/apollo/client';
 import { ApolloClient, ApolloProvider } from '@apollo/client';
-import { AppConfigProvider } from '@context/AppConfig/AppConfigContext';
 import { render as defaultRender, RenderResult } from '@testing-library/react';
 
 type DefaultParams = Parameters<typeof defaultRender>;

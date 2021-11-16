@@ -18,10 +18,13 @@ const NavigationItem: React.FC<Props> = ({ item }) => {
   const { title, link, id, icon } = item;
 
   const getClassNames = () => {
-    let classes = '';
-    classes += asPath === link ? 'nav-link--active ' : '';
-    classes += icon ? styles.navLinkIcon : styles.navLinkText;
-    return classes;
+    const classes = '';
+
+    if (asPath === link) {
+      classes.concat(' ', 'nav-link--active');
+    }
+
+    return classes.concat(' ', icon ? styles.navLinkIcon : styles.navLinkText);
   };
 
   return (
