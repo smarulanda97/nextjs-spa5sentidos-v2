@@ -1,19 +1,21 @@
 @import './../../../node_modules/bootstrap/scss/functions', './../../../node_modules/bootstrap/scss/variables';
 
-$dark: #212529;
-
 $primary: #1bdacc;
+$primary-light: #4ECDC4;
 $secondary: #b5b5b5;
 $info: #fc3d6a;
 $gray: #3d3b3c;
 $gray-light: #999;
 $gray-light-transparent: #b5b5b557;
+$dark: #212529;
+$dark-light: #343a40;
 
 $theme-colors: (
   'info': $info,
   'gray': $gray,
   'white': $white,
   'primary': $primary,
+  'primary-light': $primary-light,
   'secondary': $secondary,
   "white-transparent": rgba(255, 255, 255, .55),
   "primary-transparent": rgba(27, 218, 204, .75),
@@ -27,7 +29,9 @@ $text-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
-  'gray-light': $gray-light
+  'dark-light': $dark-light,
+  'gray-light': $gray-light,
+  'primary-light': $primary-light,
 );
 
 $hovers: (

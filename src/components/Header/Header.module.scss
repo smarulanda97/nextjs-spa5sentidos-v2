@@ -22,6 +22,7 @@
         }
       }
       &-mobile {
+        max-width: 200px;
         padding-top: .5rem;
 
         @include respond-above(lg) {

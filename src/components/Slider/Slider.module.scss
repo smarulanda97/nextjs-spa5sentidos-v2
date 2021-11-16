@@ -35,51 +35,54 @@
 
 .caption {
   left: 0;
-  bottom: 10%;
+  bottom: 15%;
   right: inherit;
-
   text-align: left;
   padding: 1rem 2rem 1rem 2rem;
 
   @include respond-below(sm) {
+    bottom: 10%;
     background: none;
     text-align: center;
     backdrop-filter: none;
   }
 
-  @include respond-below(sm) {
-    bottom: 5%;
+  @include respond-above(xxl) {
+    left: 15%;
+    bottom: 25%;
   }
 
-  h1,
-  h2 {
-    color: text-color('white');
-    font-size: $font-size-base * 4;
-    font-family: $font-family-montez;
-    text-shadow: 1px 2px 2px text-color('dark');
+  h1 {
+    font-weight: 500;
+    text-align: left;
+    font-size: $font-size-base * 4.3;
+    color: text-color('primary-light');
+    font-family: $font-family-paytone-one;
 
     @include respond-below(sm) {
-      font-size: $font-size-base * 2.4;
+      font-size: $font-size-base * 2;
     }
 
-    @include respond-between(sm, xl) {
+    @include respond-between(sm, lg) {
       font-size: $font-size-base * 3;
     }
   }
 
-  p {
-    text-align: right;
-    color: text-color('white');
-    font-size: $font-size-base * 1.5;
-    font-family: $font-family-open-sans;
-    text-shadow: 1px 1px 1px text-color('dark');
+  h2 {
+    color: $dark-light;
+    letter-spacing: 1px;
+    padding-top: $padding-base * 2;
+    font-size: $font-size-base * 2.5;
+    font-family: $font-family-paytone-one;
+    text-shadow: 1px 0 4px text-color('white');
 
     @include respond-below(sm) {
-      display: none;
+      padding-top: $padding-base;
+      font-size: $font-size-base * 1.2;
     }
 
-    @include respond-above(xl) {
-      font-size: $font-size-base * 1.7;
+    @include respond-between(sm, lg) {
+      font-size: $font-size-base * 1.6;
     }
   }
 }

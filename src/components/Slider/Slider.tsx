@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './Slider.module.scss';
-import { asset } from '@utils/imageUtils';
 import { isMobileOnly } from 'react-device-detect';
 import { Container, Carousel } from 'react-bootstrap';
+
+import { asset } from '@utils/index';
 import { StrapiImage, ResponsiveImages } from '@types-app/index';
+
+import styles from './Slider.module.scss';
 
 type SliderItem = {
   id: string;
@@ -61,8 +63,8 @@ const Slider: React.FC<Props> = (props) => {
             >
               {renderImage(item.images)}
               <Carousel.Caption className={styles.caption}>
-                <h2>{item.title}</h2>
-                <p>{item.subtitle}</p>
+                <h1>{item.title}</h1>
+                <h2>{item.subtitle}</h2>
               </Carousel.Caption>
             </Carousel.Item>
           ))}
