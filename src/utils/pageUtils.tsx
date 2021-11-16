@@ -9,6 +9,7 @@ import {
   GET_DATA_APP_CONFIG_CONTEXT,
   GET_DATA_SERVICES_ALL_COMPONENT,
   GET_DATA_APP_COMPONENT,
+  GET_DATA_LINK_TREE_COMPONENT,
 } from '@queries/index';
 
 /**
@@ -29,6 +30,7 @@ const globalPageQueries = [
 const pageQueries: PageQueriesType = {
   indexPage: [GET_DATA_SERVICES_HOME_COMPONENT, GET_DATA_VIDEO_BLOCK_COMPONENT],
   servicesPage: [GET_DATA_SERVICES_ALL_COMPONENT],
+  linkTreePage: [GET_DATA_LINK_TREE_COMPONENT],
 };
 
 /**
@@ -49,7 +51,7 @@ const pageComponents: any = {
       component: 'servicesAll',
     },
   ],
-  socialPage: [
+  linkTreePage: [
     {
       component: 'LinkTree',
     },

@@ -1,10 +1,11 @@
-import { App } from '@components/index';
 import absoluteUrl from 'next-absolute-url';
-import { PageProps } from '@types-app/index';
-import { addApolloState, initializeApollo } from '@lib/apollo/client';
-import { queriesForPage, renderPageComponents } from '@utils/pageUtils';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetServerSidePropsContext, GetServerSideProps, NextPage } from 'next';
+
+import { App } from '@components/index';
+import { PageProps } from '@types-app/index';
+import { queriesForPage, renderPageComponents } from '@utils/index';
+import { addApolloState, initializeApollo } from '@lib/apollo/client';
 
 const Home: NextPage<PageProps> = (props) => {
   return (
