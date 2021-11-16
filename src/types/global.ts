@@ -51,7 +51,7 @@ type Svg = {
   height: string;
 };
 
-type Metatags = {
+type MetaTags = {
   pathname: string;
   basic_tags: {
     [name: string]: string;
@@ -87,5 +87,5 @@ export type {
   Service,
   Url,
   Svg,
-  Metatags,
+  MetaTags,
 };

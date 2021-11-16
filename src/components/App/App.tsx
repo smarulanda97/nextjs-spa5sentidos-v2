@@ -1,10 +1,11 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
-import { Url } from '@types-app/index';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
+
+import { Url } from '@types-app/index';
 import { Layout } from '@components/index';
-import { MetatagsProcessor } from '@utils/index';
+import { MetaTagsProcessor } from '@utils/index';
 import { GET_DATA_APP_COMPONENT } from '@queries/index';
 
 interface Props {
@@ -14,22 +15,29 @@ interface Props {
 }
 
 const App: React.FC<Props> = (props) => {
-  const { locale, pathname } = useRouter();
-  const { layout, children } = props;
+  const { layout, children, url } = props;
+  const { locale, asPath, pathname, route } = useRouter();
+  const location = {
+    url,
+    route,
+    asPath,
+    locale,
+    pathname,
+  };
   const { error, data, loading } = useQuery(GET_DATA_APP_COMPONENT, {
     variables: {
       locale,
     },
   });
 
-  const metatags =
-    !error && !loading
-      ? new MetatagsProcessor(data.metatags, pathname).getObjectNextSEO()
+  const metaTags =
+    !error && !loading && url
+      ? new MetaTagsProcessor(location, data.metatags).getObjectNextSEO()
       : {};
 
   return (
     <React.Fragment>
-      {!error && !loading ? <NextSeo {...metatags} /> : null}
+      {!error && !loading ? <NextSeo {...metaTags} /> : null}
       <div className={'app'} id={'app'}>
         {layout ? <Layout>{children}</Layout> : children}
       </div>
