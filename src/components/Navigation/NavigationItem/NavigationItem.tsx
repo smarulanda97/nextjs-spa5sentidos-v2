@@ -17,6 +17,13 @@ const NavigationItem: React.FC<Props> = ({ item }) => {
   const { asPath } = useRouter();
   const { title, link, id, icon } = item;
 
+  const getClassNames = () => {
+    let classes = '';
+    classes += asPath === link ? 'nav-link--active ' : '';
+    classes += icon ? styles.navLinkIcon : styles.navLinkText;
+    return classes;
+  };
+
   return (
     <Nav.Item key={id}>
       {link === '<nolink>' ? (
@@ -26,10 +33,7 @@ const NavigationItem: React.FC<Props> = ({ item }) => {
           <Nav.Link
             title={title}
             {...getLinkAttributes(link)}
-            className={`
-              ${icon ? styles.navLinkIcon : styles.navLinkText} 
-              ${asPath === link ? 'nav-link--active' : ''} 
-            `}
+            className={getClassNames()}
           >
             {icon ? (
               <Image
